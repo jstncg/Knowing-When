@@ -1,0 +1,35 @@
+{
+  "id": "bk-08-a-push-alone-is-not-a-reason",
+  "role": "backend",
+  "trap": "weak_signal_alone",
+  "subject": "person:bk-h",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "push",
+      "type": "github_activity",
+      "date": "2026-09-16",
+      "observed": "2026-09-16",
+      "source": "github_v2",
+      "tier": 1,
+      "url": "https://github.com/example-bk-h/streamgate",
+      "quote": "Pushed to example-bk-h/streamgate: Add backpressure to the websocket fan-out; Drop frames older than 200 ms under load"
+    },
+    {
+      "id": "push-read",
+      "type": "work_in_progress",
+      "date": "2026-09-16",
+      "observed": "2026-09-16",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://github.com/example-bk-h/streamgate",
+      "quote": "Pushed to example-bk-h/streamgate: Add backpressure to the websocket fan-out; Drop frames older than 200 ms under load"
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "They pushed two commits to their own streamgate repo on 16 September: backpressure on a websocket fan-out, and dropping frames older than 200 ms. The work is close to GI's real-time streaming, but they have said nothing about it: there is no post and no release, and the reader's work-in-progress tag is a label on that same push, not a second sign. A push is everyday activity with nothing to write about beyond two commit messages, so keep watching for a post or release about it. Justin decided (2026-09-24): a push can back up a post or release but never makes the call by itself."
+  }
+}

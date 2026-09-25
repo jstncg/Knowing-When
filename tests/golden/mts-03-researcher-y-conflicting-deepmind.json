@@ -1,0 +1,55 @@
+{
+  "id": "mts-03-researcher-y-conflicting-deepmind",
+  "role": "mts",
+  "trap": "conflicting_claims",
+  "subject": "person:researcher-y",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "student",
+      "type": "job_started",
+      "date": "2026-06",
+      "observed": "2026-07-01",
+      "source": "homepage",
+      "tier": 1,
+      "quote": "Student Researcher, Google DeepMind (June 2026 to mid-October 2026)."
+    },
+    {
+      "id": "student_end",
+      "type": "placement_end_expected",
+      "date": "2026-10",
+      "observed": "2026-07-01",
+      "source": "homepage",
+      "tier": 1,
+      "quote": "Student Researcher, Google DeepMind (June 2026 to mid-October 2026)."
+    },
+    {
+      "id": "rs_incoming",
+      "type": "role_announced",
+      "date": null,
+      "observed": "2026-09-08",
+      "source": "workshop_bio",
+      "tier": 2,
+      "quote": "Researcher Y is an incoming Research Scientist at Google DeepMind."
+    },
+    {
+      "id": "accepted",
+      "type": "paper_accepted",
+      "date": "2026-09-01",
+      "observed": "2026-09-01",
+      "source": "openreview",
+      "tier": 1,
+      "quote": "Accepted to TMLR: 'Latent action models from gameplay video'"
+    }
+  ],
+  "expected": {
+    "call": "verify_first",
+    "reason": "The internship ends mid-October, which would be the moment, but another page calls them an incoming DeepMind research scientist. If that offer is real the call is not now; if the page is premature, reach before mid-October. Confirm which before contacting.",
+    "cites": [
+      "student_end",
+      "rs_incoming"
+    ]
+  }
+}

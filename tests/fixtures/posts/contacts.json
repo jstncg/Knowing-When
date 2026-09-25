@@ -1,0 +1,5 @@
+{
+  "note": "Invented people.",
+  "X900": [{"kind": "x", "value": "@maraquill_example", "source_url": "https://x.com/maraquill_example", "x_user_id": "900", "open_dms": true}],
+  "X902": [{"kind": "email", "value": "noa@noabrandt.example", "source_url": "https://noabrandt.example/about"}]
+}

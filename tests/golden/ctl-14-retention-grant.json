@@ -1,0 +1,73 @@
+{
+  "id": "ctl-14-retention-grant",
+  "role": "controller",
+  "trap": "recent_retention",
+  "subject": "controller-n|org:orion",
+  "related": [
+    "org:orion",
+    "cfo|org:orion"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "grant",
+      "type": "retention_or_commitment",
+      "date": "2026-08-20",
+      "observed": "2026-08-24",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "On August 20, 2026 the Company granted Controller N a retention award vesting in equal installments on August 20, 2027 and August 20, 2028.",
+      "subject": "controller-n|org:orion"
+    },
+    {
+      "id": "cfo_exit",
+      "type": "officer_departure",
+      "date": "2026-08-10",
+      "observed": "2026-08-12",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "The Chief Financial Officer notified the Company of their resignation, effective 2026-08-10.",
+      "subject": "cfo|org:orion"
+    },
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-08-01",
+      "observed": "2026-08-03",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-08-01: 140 employees affected by a reduction in force.",
+      "subject": "org:orion"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2019-05-01",
+      "observed": "2019-05-03",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-n|org:orion",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Orion"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "Just granted a retention award whose first half vests August 2027; the CFO exit and layoffs are why the company paid it. Reach ahead of the first vest.",
+    "until_between": [
+      "2027-06-01",
+      "2027-08-31"
+    ],
+    "also_ok": [
+      "not_now"
+    ],
+    "cites": [
+      "grant"
+    ]
+  }
+}

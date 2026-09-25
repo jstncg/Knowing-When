@@ -1,0 +1,6 @@
+{"notes": [
+  {"id": "sub2", "forum": "sub2", "cdate": 1727740800000, "invitations": ["ICLR.cc/2025/Conference/-/Submission"],
+   "content": {"title": {"value": "A Rejected Note"}}},
+  {"id": "dec2", "forum": "sub2", "cdate": 1737504000000, "invitation": "ICLR.cc/2025/Conference/Submission2/-/Decision",
+   "content": {"decision": "Reject"}}
+], "count": 2}

@@ -1,0 +1,51 @@
+{
+  "id": "mts-09-leak-later-job",
+  "role": "mts",
+  "trap": "observed_after_as_of",
+  "subject": "person:mts-i",
+  "related": [],
+  "as_of": "2026-06-20",
+  "judgment": false,
+  "events": [
+    {
+      "id": "pi",
+      "type": "pi_departure",
+      "date": "2026-06-01",
+      "observed": "2026-06-02",
+      "source": "lab_news",
+      "tier": 2,
+      "quote": "Our PI is leaving the university to start a company."
+    },
+    {
+      "id": "accepted",
+      "type": "paper_accepted",
+      "date": "2026-05-01",
+      "observed": "2026-05-01",
+      "source": "openreview",
+      "tier": 1,
+      "quote": "Accepted to ICML 2026: 'Latent action models from gameplay video'"
+    },
+    {
+      "id": "joined",
+      "type": "profile_change",
+      "date": "2026-06-10",
+      "observed": "2026-07-15",
+      "source": "crustdata",
+      "tier": 1,
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Research Scientist, OpenAI"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "reason": "As of 20 June the PI had left and a paper was accepted: two independent reasons to call. The OpenAI start dated 10 June only became visible on 15 July, so using it on 20 June would be leakage.",
+    "cites": [
+      "pi",
+      "accepted"
+    ]
+  }
+}

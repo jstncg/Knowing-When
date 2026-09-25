@@ -1,0 +1,34 @@
+{
+  "note": "Invented people for route.py --demo: one per circumstance the other fixtures lack (an acquisition, a launch, open to work), so the demo's cards show each message.",
+  "contexts": [
+    {"subject_id": "M901", "name": "Kai Moreno", "role": "product-designer", "employer": "Loopcast",
+     "anchors": {"linkedin": "https://www.linkedin.com/in/kaimoreno-example", "homepage": "https://kaimoreno.example/"}},
+    {"subject_id": "M902", "name": "Sol Adeyemi", "role": "backend", "employer": "Framewise",
+     "anchors": {"github": "https://github.com/soladeyemi-example", "x": "https://x.com/soladeyemi_example"}},
+    {"subject_id": "M903", "name": "Ari Chen", "role": "mts", "affiliations": ["Parallax Lab"],
+     "anchors": {"homepage": "https://arichen.example/", "x": "https://x.com/arichen_example"}}
+  ],
+  "events": [
+    {"subject_id": "M901", "event_type": "linkedin_post", "event_date": "2026-09-08",
+     "quote": "Loopcast has been acquired by Northwind! So proud of the clip editor our four-person design team shipped this year.",
+     "source_url": "https://www.linkedin.com/posts/kaimoreno-example-3001"},
+    {"subject_id": "M901", "event_type": "acquisition", "event_date": "2026-09-08",
+     "quote": "Loopcast has been acquired by Northwind! So proud of the clip editor our four-person design team shipped this year.",
+     "source_url": "https://www.linkedin.com/posts/kaimoreno-example-3001"},
+    {"subject_id": "M902", "event_type": "x_post", "event_date": "2026-09-05",
+     "quote": "Shipped clipcache 1.0 today: a read-through cache for short video that holds p99 under 40ms at 2M reads/s.",
+     "source_url": "https://x.com/soladeyemi_example/status/4001"},
+    {"subject_id": "M902", "event_type": "launch_announced", "event_date": "2026-09-05",
+     "quote": "Shipped clipcache 1.0 today: a read-through cache for short video that holds p99 under 40ms at 2M reads/s.",
+     "source_url": "https://x.com/soladeyemi_example/status/4001"},
+    {"subject_id": "M903", "event_type": "coauthor_link", "event_date": "2026-06-12",
+     "quote": "Mika Sato (A777) on 'Eval harnesses for embodied game agents'",
+     "source_url": "https://arichen.example/papers"},
+    {"subject_id": "M903", "event_type": "x_post", "event_date": "2026-09-09",
+     "quote": "Wrapping up four years building eval tooling at Parallax Lab. I'm open to new research roles in world models and agents, starting now.",
+     "source_url": "https://x.com/arichen_example/status/5001"},
+    {"subject_id": "M903", "event_type": "self_stated_availability", "event_date": "2026-09-09",
+     "quote": "I'm open to new research roles in world models and agents, starting now.",
+     "source_url": "https://x.com/arichen_example/status/5001"}
+  ]
+}

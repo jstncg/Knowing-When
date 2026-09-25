@@ -1,0 +1,21 @@
+{
+  "note": "Invented people. Rin Vale (A900) is an MTS candidate; Sam Peer (A123) is a coauthor who left Acme Research.",
+  "contexts": [
+    {"subject_id": "A900", "name": "Rin Vale", "role": "mts", "affiliations": ["Acme Research"], "related": ["A123"],
+     "anchors": {"openalex": "A900", "homepage": "https://rinvale.example/", "github": "https://github.com/rinvale-example"}}
+  ],
+  "events": [
+    {"subject_id": "A900", "event_type": "affiliation_change", "event_date": "2022", "observed_at": "2022-12-31T23:59:59+00:00",
+     "quote": "Acme Research: years [2022, 2023, 2024, 2025]", "source_url": "https://openalex.org/A900"},
+    {"subject_id": "A900", "event_type": "coauthor_link", "event_date": "2025-02-01",
+     "quote": "Sam Peer (A123) on 'Scaling laws' | at Acme Research | middle", "source_url": "https://doi.org/10.0000/example.1"},
+    {"subject_id": "A900", "event_type": "coauthor_link", "event_date": "2025-11-10",
+     "quote": "Dana Kest (A555) on 'Action-conditioned world models' | at Pine Lab | last", "source_url": "https://doi.org/10.0000/example.2"},
+    {"subject_id": "A900", "event_type": "paper_accepted", "event_date": "2026-08-20",
+     "quote": "Scaling laws II: Accept (NeurIPS 2026)", "source_url": "https://openreview.net/forum?id=example"},
+    {"subject_id": "A123", "event_type": "job_ended", "event_date": "2026-09-01",
+     "quote": "Sam Peer left Acme Research", "source_url": "https://sampeer.example/news"},
+    {"subject_id": "A900", "event_type": "gi_citation", "event_date": "2026-09-10",
+     "quote": "GI's world-model post cites Scaling laws II", "source_url": "https://gi.example/blog/post"}
+  ]
+}

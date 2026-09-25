@@ -1,0 +1,14 @@
+[
+ {"subject_id": "A900", "name": "Rin Vale", "role": "mts", "city": "New York", "topics": ["world models", "robot learning"]},
+ {"subject_id": "X900", "name": "Mara Quill", "role": "mts", "city": "New York", "topics": ["world models", "game clips"]},
+ {"subject_id": "X901", "name": "Ivy Stroud", "role": "mts", "city": "New York", "topics": ["reinforcement learning"]},
+ {"subject_id": "D904", "name": "Lena Okafor", "role": "mts", "city": "London", "topics": ["robot learning", "reinforcement learning"]},
+ {"subject_id": "D901", "name": "Theo Marsh", "role": "backend", "city": "New York", "topics": ["real-time systems", "video infrastructure"]},
+ {"subject_id": "D902", "name": "Jonah Pike", "role": "backend", "city": "New York", "topics": ["real-time systems"]},
+ {"subject_id": "X902", "name": "Noa Brandt", "role": "product-designer", "city": "New York", "topics": ["design systems", "creator tools"]},
+ {"subject_id": "D903", "name": "Priya Vance", "role": "product-designer", "city": "New York", "topics": ["design systems"]},
+ {"subject_id": "P801", "name": "Tove Lind", "role": "mts", "city": "New York", "topics": ["robot learning"]},
+ {"subject_id": "P802", "name": "Kofi Adair", "role": "mts", "city": "Boston", "topics": ["world models"]},
+ {"subject_id": "C801", "name": "Sam Okoro", "role": "mts", "city": "New York", "topics": ["model evals", "world models"],
+  "employer": "Example Robotics", "links": {"homepage": "https://example.com/sam-okoro"}}
+]

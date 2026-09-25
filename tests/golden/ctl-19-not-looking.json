@@ -1,0 +1,47 @@
+{
+  "id": "ctl-19-not-looking",
+  "role": "controller",
+  "trap": "contact_me_after",
+  "subject": "controller-s|org:quarry",
+  "related": [
+    "org:quarry",
+    "cfo|org:quarry"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "optout",
+      "type": "contact_constraint",
+      "date": null,
+      "observed": "2026-09-05",
+      "source": "personal_site",
+      "tier": 1,
+      "quote": "I'm not looking for new opportunities; please no recruiter outreach."
+    },
+    {
+      "id": "cfo_exit",
+      "type": "officer_departure",
+      "date": "2026-09-01",
+      "observed": "2026-09-03",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "The Chief Financial Officer notified the Company of their resignation, effective 2026-09-01.",
+      "subject": "cfo|org:quarry"
+    },
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-08-25",
+      "observed": "2026-08-27",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-08-25: 140 employees affected by a reduction in force.",
+      "subject": "org:quarry"
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "They wrote this month that they want no recruiter outreach. The CFO exit and layoffs don't override it; keep watching for the statement to change."
+  }
+}

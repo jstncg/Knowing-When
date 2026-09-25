@@ -1,0 +1,37 @@
+{
+  "id": "mts-24-build-release-is-not-a-launch",
+  "role": "mts",
+  "trap": "stale_signal",
+  "subject": "person:mts-w",
+  "related": [],
+  "as_of": "2026-09-16",
+  "judgment": false,
+  "events": [
+    {
+      "id": "wip",
+      "type": "work_in_progress",
+      "date": "2026-09-06",
+      "observed": "2026-09-06",
+      "source": "x_read",
+      "tier": 1,
+      "quote": "Been hacking on a scraper that learns each site's layout from a few pages of gameplay wikis. Early results are promising."
+    },
+    {
+      "id": "build",
+      "type": "project_release",
+      "date": "2026-09-13",
+      "observed": "2026-09-13",
+      "source": "x_read",
+      "tier": 1,
+      "quote": "Released rules-20260811-0932 of example/scraper: Rules update"
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "track": "rapport",
+    "reason": "A release tagged with a date and a time of day is a build a script made, not a launch: it is neither a launch-week hold nor a public moment. The work-in-progress post alone opens a note about their work.",
+    "cites": [
+      "wip"
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+ "archetype": "publishing_research",
+ "detectors": [
+  {
+   "id": "tenure_milestone",
+   "reason": "Time in their current role is listed on a call as context, never a reason."
+  },
+  {
+   "id": "pi_departure",
+   "reason": "A PI or senior coauthor leaving changes the lab behind the attributable work the JD asks for."
+  },
+  {
+   "id": "team_exodus",
+   "reason": "Two or more colleagues leaving one lab within weeks changes the group they work in."
+  },
+  {
+   "id": "coauthor_departure",
+   "reason": "A coauthor leaving changes who they do their research with."
+  },
+  {
+   "id": "retention_cliff",
+   "reason": "An acquisition's retention cliff is listed on a call as context, never a reason."
+  },
+  {
+   "id": "paper_v1",
+   "reason": "A new preprint is attributable work and a specific technical conversation opener."
+  },
+  {
+   "id": "paper_accepted",
+   "reason": "An acceptance marks finished work and a natural pause in a research agenda."
+  },
+  {
+   "id": "paper_talk",
+   "reason": "A talk on their work is a dated opening to discuss it."
+  },
+  {
+   "id": "rhythm_change",
+   "reason": "A burst of papers above their own cadence, or a silence well past it since their last paper, is a change in their work worth asking about."
+  },
+  {
+   "id": "own_precedent",
+   "reason": "The pattern before their past moves is listed on a call as context, never a reason."
+  },
+  {
+   "id": "acquisition_closed",
+   "reason": "An acquisition of their employer changes a researcher's scope and resources."
+  },
+  {
+   "id": "warn_notice",
+   "reason": "Layoffs at their employer put research teams at risk."
+  },
+  {
+   "id": "grant_end",
+   "reason": "The end of their funding, announced ahead, is a dated change in the research the JD asks for."
+  },
+  {
+   "id": "gi_citation",
+   "reason": "Citing GI's work shows overlap with action and world-model research."
+  },
+  {
+   "id": "gi_attention",
+   "reason": "Public attention to GI shows interest in its mandate."
+  },
+  {
+   "id": "topic_drift",
+   "reason": "Moving into world models or action policies brings them toward GI's research."
+  },
+  {
+   "id": "calendar_quiet_conference",
+   "reason": "Submission deadlines and conferences are when researchers do not engage."
+  },
+  {
+   "id": "private_note",
+   "reason": "A GI human hearing of an invitation or reconnect is the explicit_invitation hypothesis."
+  },
+  {
+   "id": "self_stated_availability",
+   "reason": "A researcher saying they are on the job market is an invitation to talk."
+  }
+ ],
+ "answer_key": {
+  "query": "Researchers in action policies or world models whose arXiv or OpenAlex affiliation moves to a new lab, and lab or team join announcements naming them",
+  "sources": [
+   "arxiv",
+   "openalex",
+   "exa"
+  ]
+ },
+ "hypotheses": [
+  {
+   "id": "explicit_invitation",
+   "detector_ids": [
+    "private_note",
+    "self_stated_availability"
+   ],
+   "gap": ""
+  },
+  {
+   "id": "organization_change",
+   "detector_ids": [
+    "pi_departure",
+    "team_exodus",
+    "acquisition_closed",
+    "warn_notice",
+    "grant_end",
+    "retention_cliff"
+   ],
+   "gap": ""
+  },
+  {
+   "id": "warm_route",
+   "detector_ids": [],
+   "gap": "gap: needs adapter for confirmed introducer records (who can introduce, and whether they will)"
+  },
+  {
+   "id": "research_milestone",
+   "detector_ids": [
+    "paper_v1",
+    "paper_accepted",
+    "paper_talk",
+    "gi_citation"
+   ],
+   "gap": ""
+  }
+ ],
+ "gaps": [
+  "gap: needs adapter for benchmark, dataset and system releases as new work (project_release is read only as a launch hold)",
+  "gap: needs adapter for confirmed introducer records (who can introduce, and whether they will)",
+  "gap: needs adapter for conference_deadline or conference_attending events (calendar_quiet_conference)"
+ ],
+ "role_id": "mts-research",
+ "sources": [
+  "sec",
+  "warn",
+  "nsf",
+  "arxiv",
+  "openreview",
+  "openalex",
+  "openalex_citations",
+  "crustdata_person",
+  "wayback",
+  "exa",
+  "research_extraction",
+  "manual_note"
+ ],
+ "calendars": [
+  "calendar_quiet_conference"
+ ],
+ "manifest_version": "2026-09-22.3",
+ "compiled_at": "2026-09-22T22:53:30.582451+00:00",
+ "topics": [
+  "world models and video prediction for games or embodied agents",
+  "action-conditioned models, inverse dynamics, and action labels recovered from video",
+  "agents that play games from pixels; imitation and reinforcement learning from gameplay",
+  "large action models, behavior cloning at scale, vision-language-action models",
+  "gameplay and screen-recording datasets and how they are labeled",
+  "transfer from game or video pretraining to robotics and the physical world",
+  "training infrastructure for large video models: data pipelines, efficient training and inference",
+  "evaluating world models and game agents",
+  "GitHub: new repos building or reproducing world models or game agents, and activity on General Intuition's or DIAMOND's repos"
+ ]
+}

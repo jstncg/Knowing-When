@@ -1,0 +1,9 @@
+[["timestamp","original","mimetype","statuscode","digest"],
+ ["20190315120000","http://lab.example.edu/people/alex","text/html","200","AAAA1111"],
+ ["20190901090000","http://lab.example.edu/people/alex","text/html","200","AAAA1111"],
+ ["20210602101500","https://lab.example.edu/people/alex","text/html","200","BBBB2222"],
+ ["20211120000000","https://lab.example.edu/people/alex","text/html","200","BBBB2222"],
+ ["20230108153000","https://lab.example.edu/people/alex","text/html","200","CCCC3333"],
+ ["20230412080000","https://lab.example.edu/people/alex","text/html","200","CCCC3333"],
+ ["20230412090000","https://lab.example.edu/people/alex","text/html","200","BBBB2222"],
+ ["20250220110000","https://lab.example.edu/people/alex","text/html","200","DDDD4444"]]

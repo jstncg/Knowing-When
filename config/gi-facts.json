@@ -1,0 +1,127 @@
+{
+  "note": "Public facts about General Intuition a draft may use, each in its source's own words as closely as possible, with the source; a draft states no other GI fact. roles lists the config/roles.json ids a fact is for ('*' is every role). offers are things GI could give a person (data, compute, a problem); a draft uses an offer only once Justin sets confirmed to true. sender signs a draft when the team file names no one to write it (app/routing.sender).",
+  "sender": "Justin",
+  "facts": [
+    {
+      "id": "gi",
+      "roles": [
+        "*"
+      ],
+      "text": "General Intuition builds large action models and world models that can perceive, predict, and act across virtual and physical environments.",
+      "source": "https://jobs.ashbyhq.com/generalintuition-medal/9f974f5b-ded9-4b4f-8a81-113e7866305c and https://jobs.ashbyhq.com/generalintuition-medal/46c2672e-d2a8-4a36-aa1b-e4313e9969b4 (About the company)"
+    },
+    {
+      "id": "medal",
+      "roles": [
+        "*"
+      ],
+      "text": "General Intuition builds on the strength of Medal, the world's largest and fastest-growing platform for gaming clips, where millions of gamers capture, share, and discover new games every year.",
+      "source": "https://jobs.ashbyhq.com/generalintuition-medal/9f974f5b-ded9-4b4f-8a81-113e7866305c and https://jobs.ashbyhq.com/generalintuition-medal/46c2672e-d2a8-4a36-aa1b-e4313e9969b4 (About the company)"
+    },
+    {
+      "id": "spatial",
+      "roles": [
+        "mts-research"
+      ],
+      "text": "General Intuition teaches agents spatial reasoning using video game clips.",
+      "source": "https://techcrunch.com/2025/10/16/general-intuition-lands-134m-seed-to-teach-agents-spatial-reasoning-using-video-game-clips/ (headline, 2025-10-16)"
+    },
+    {
+      "id": "mira",
+      "roles": [
+        "mts-research"
+      ],
+      "text": "General Intuition released MIRA, a playable multiplayer world model of a Rocket League-style game, built with Kyutai, in collaboration with Epic Games.",
+      "source": "https://mira-wm.com/, https://x.com/gen_intuition/status/2074104524596457706 and https://x.com/kyutai_labs/status/2074104480178503943 (2026-07-06)"
+    },
+    {
+      "id": "diamond",
+      "roles": [
+        "mts-research"
+      ],
+      "text": "DIAMOND's lead authors now work at General Intuition. DIAMOND is a diffusion world model of Atari games and Counter-Strike that people can play.",
+      "source": "https://arxiv.org/abs/2405.12399 and its project page https://diamond-wm.github.io (May 2024, before General Intuition) and GI's launch post of 2025-10-16, which thanks its lead authors by name"
+    },
+    {
+      "id": "medal-backend",
+      "roles": [
+        "backend"
+      ],
+      "text": "Medal's backend powers everything from real-time in-app communications and storage of billions of user-generated clips to our ML-based feed and social features.",
+      "source": "https://jobs.ashbyhq.com/generalintuition-medal/9f974f5b-ded9-4b4f-8a81-113e7866305c (The role)"
+    },
+    {
+      "id": "backend-role",
+      "roles": [
+        "backend"
+      ],
+      "text": "The Senior / Lead Backend Engineer works closely with product, infra, and data teams to architect and build highly scalable, low-latency systems.",
+      "source": "https://jobs.ashbyhq.com/generalintuition-medal/9f974f5b-ded9-4b4f-8a81-113e7866305c (The role)"
+    },
+    {
+      "id": "medal-design",
+      "roles": [],
+      "text": "The Product Designer joins a small, talented product team designing consumer-facing experiences built around gaming culture and creator-driven communities, and owns meaningful parts of the product end to end, from the core flows players use every day to the design system that keeps the team moving fast.",
+      "source": "https://jobs.ashbyhq.com/generalintuition-medal/46c2672e-d2a8-4a36-aa1b-e4313e9969b4 (The role)",
+      "held": "Off the Product Designer's drafts since 2026-09-24: the posting's text could not be read or confirmed by search, and Medal is now a separate company. Put the role back once the posting is read and these are its own words."
+    },
+    {
+      "id": "design-team",
+      "roles": [],
+      "text": "The product team is small and designs consumer-facing experiences built around gaming culture and creator-driven communities.",
+      "source": "https://jobs.ashbyhq.com/generalintuition-medal/46c2672e-d2a8-4a36-aa1b-e4313e9969b4 (The role)",
+      "held": "Off the Product Designer's drafts since 2026-09-24: the posting's text could not be read or confirmed by search, and Medal is now a separate company. Put the role back once the posting is read and these are its own words."
+    },
+    {
+      "id": "nyc",
+      "roles": [
+        "backend"
+      ],
+      "text": "The role is in person in New York City.",
+      "source": "https://jobs.ashbyhq.com/generalintuition-medal/9f974f5b-ded9-4b4f-8a81-113e7866305c (New York City, on-site) and https://jobs.ashbyhq.com/generalintuition-medal/46c2672e-d2a8-4a36-aa1b-e4313e9969b4 (hire in NYC, 5 days in the office)",
+      "held": "Off the Product Designer's drafts since 2026-09-24: the posting's text could not be read or confirmed by search, and Medal is now a separate company. Put the role back once the posting is read and these are its own words."
+    }
+  ],
+  "offers": [
+    {
+      "id": "gameplay-data",
+      "roles": [
+        "mts-research"
+      ],
+      "confirmed": false,
+      "text": "Access to action-labeled gameplay video from Medal for a research project."
+    },
+    {
+      "id": "compute",
+      "roles": [
+        "mts-research"
+      ],
+      "confirmed": false,
+      "text": "Compute for a research project close to General Intuition's work."
+    },
+    {
+      "id": "research-chat",
+      "roles": [
+        "mts-research"
+      ],
+      "confirmed": false,
+      "text": "A technical conversation with the researchers who built DIAMOND."
+    },
+    {
+      "id": "scale-problem",
+      "roles": [
+        "backend"
+      ],
+      "confirmed": false,
+      "text": "A walk through the clip storage and feed problems at Medal's scale."
+    },
+    {
+      "id": "design-review",
+      "roles": [
+        "product-designer"
+      ],
+      "confirmed": false,
+      "text": "A look at Medal's clip and creator flows with the product team."
+    }
+  ]
+}

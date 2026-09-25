@@ -1,0 +1,11 @@
+{"meta": {"count": 2}, "results": [
+  {"id": "https://openalex.org/W1000000001", "title": "Action-Conditioned World Models for Long Horizons",
+   "publication_date": "2025-01-05", "doi": "https://doi.org/10.48550/arxiv.2501.01234",
+   "authorships": [
+     {"author": {"id": "https://openalex.org/A5000000001", "display_name": "Jane Doe"},
+      "institutions": [{"id": "https://openalex.org/I1", "display_name": "Example University"}]},
+     {"author": {"id": "https://openalex.org/A5000000002", "display_name": "Alex Roe"},
+      "institutions": [{"id": "https://openalex.org/I2", "display_name": "Example Lab"}]}]},
+  {"id": "https://openalex.org/W1000000002", "title": "Undated Preprint", "publication_date": null, "doi": null,
+   "authorships": [{"author": {"id": "https://openalex.org/A5000000001", "display_name": "Jane Doe"}, "institutions": []}]}
+]}

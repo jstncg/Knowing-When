@@ -1,0 +1,52 @@
+{
+  "id": "ctl-20-old-news-found-late",
+  "role": "controller",
+  "trap": "stale_signal",
+  "subject": "controller-t|org:basalt",
+  "related": [
+    "org:basalt",
+    "cfo|org:basalt"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "cfo_exit",
+      "type": "officer_departure",
+      "date": "2026-03-02",
+      "observed": "2026-09-15",
+      "source": "wayback",
+      "tier": 1,
+      "quote": "The Chief Financial Officer resigned effective March 2, 2026.",
+      "subject": "cfo|org:basalt"
+    },
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-02-20",
+      "observed": "2026-09-15",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-02-20: 140 employees affected by a reduction in force.",
+      "subject": "org:basalt"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2019-04-01",
+      "observed": "2019-04-03",
+      "source": "crustdata",
+      "tier": 1,
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Basalt"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "The CFO exit and layoffs happened in February and March; we only found them this week. Freshness runs from when things happened, not when we noticed: this is seven-month-old news they stayed through."
+  }
+}

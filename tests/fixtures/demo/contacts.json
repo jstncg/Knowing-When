@@ -1,0 +1,5 @@
+{
+  "note": "Invented people.",
+  "D901": [{"kind": "email", "value": "theo@theomarsh.example", "source_url": "https://github.com/theomarsh-example"}],
+  "D903": [{"kind": "site", "value": "https://priyavance.example", "source_url": "https://www.linkedin.com/in/priyavance-example"}]
+}

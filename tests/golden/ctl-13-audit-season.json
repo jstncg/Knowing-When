@@ -1,0 +1,70 @@
+{
+  "id": "ctl-13-audit-season",
+  "role": "controller",
+  "trap": "quiet_period",
+  "subject": "controller-m|org:cobalt",
+  "related": [
+    "org:cobalt",
+    "cfo|org:cobalt"
+  ],
+  "as_of": "2026-02-16",
+  "judgment": false,
+  "events": [
+    {
+      "id": "tenk",
+      "type": "annual_report_filed",
+      "date": "2025-02-27",
+      "observed": "2025-02-27",
+      "source": "sec_filing",
+      "tier": 1,
+      "quote": "Form 10-K filed 2025-02-27.",
+      "subject": "org:cobalt"
+    },
+    {
+      "id": "cfo_exit",
+      "type": "officer_departure",
+      "date": "2026-02-02",
+      "observed": "2026-02-04",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "The Chief Financial Officer notified the Company of their resignation, effective 2026-02-02.",
+      "subject": "cfo|org:cobalt"
+    },
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-01-20",
+      "observed": "2026-01-22",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-01-20: 140 employees affected by a reduction in force.",
+      "subject": "org:cobalt"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2020-06-01",
+      "observed": "2020-06-03",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-m|org:cobalt",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Cobalt"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "Two strong reasons, but the 10-K is due around 27 February, as last year. Reach once it is filed.",
+    "until_between": [
+      "2026-02-28",
+      "2026-03-31"
+    ],
+    "cites": [
+      "tenk"
+    ]
+  }
+}

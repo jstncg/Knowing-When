@@ -1,0 +1,37 @@
+{
+  "id": "mts-25-layoff-read-from-a-post",
+  "role": "mts",
+  "trap": "forced_move",
+  "subject": "person:mts-x",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "started",
+      "type": "job_started",
+      "date": "2026-03-02",
+      "observed": "2026-03-02",
+      "source": "claude_extract_v1",
+      "tier": 1,
+      "quote": "Research Engineer, Example Robotics"
+    },
+    {
+      "id": "layoff",
+      "type": "layoff",
+      "date": "2026-09-12",
+      "observed": "2026-09-14",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "quote": "Friday was my last day at Example Robotics; the whole world-model team was let go."
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "track": "pitch",
+    "reason": "Their own post says their job ended, which is a forced move whatever its source: page or post. It also ends the first-year hold on the job they started in March. The role is fair to raise; the message never names the layoff.",
+    "cites": [
+      "layoff"
+    ]
+  }
+}

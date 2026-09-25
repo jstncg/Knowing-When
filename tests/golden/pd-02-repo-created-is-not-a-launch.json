@@ -1,0 +1,35 @@
+{
+  "id": "pd-02-repo-created-is-not-a-launch",
+  "role": "product-designer",
+  "trap": "weak_signal_alone",
+  "subject": "person:pd-b",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "repo",
+      "type": "github_repo",
+      "date": "2026-09-15",
+      "observed": "2026-09-15",
+      "source": "github_v2",
+      "tier": 1,
+      "url": "https://github.com/example-pd/tiny-canvas",
+      "quote": "Created example-pd/tiny-canvas: Sketches of a canvas interaction (HTML)"
+    },
+    {
+      "id": "read",
+      "type": "project_release",
+      "date": "2026-09-15",
+      "observed": "2026-09-15",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://github.com/example-pd/tiny-canvas",
+      "quote": "Created example-pd/tiny-canvas: Sketches of a canvas interaction (HTML)"
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "Opening a repo of canvas sketches is neither a launch nor something they announced, and the reader's 'release' label is wrong. With nothing shown yet there is no specific work to write about; keep watching for a post or a demo from it. Justin decided (2026-09-24): a repo they created, with no post or release about it, is never a reason on its own."
+  }
+}

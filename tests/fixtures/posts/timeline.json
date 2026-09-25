@@ -1,0 +1,177 @@
+{
+ "note": "Invented people. Posts land as the tracker writes them (detectors.POST_TYPES, observed when published); the early-sign events are what extraction.read_posts writes from them, so the demo needs no model call.",
+ "contexts": [
+  {
+   "subject_id": "X900",
+   "name": "Mara Quill",
+   "role": "mts",
+   "affiliations": [
+    "Acme Research"
+   ],
+   "anchors": {
+    "x": "https://x.com/maraquill_example",
+    "homepage": "https://maraquill.example/"
+   }
+  },
+  {
+   "subject_id": "X902",
+   "name": "Noa Brandt",
+   "role": "product-designer",
+   "employer": "Tallyfin",
+   "anchors": {
+    "linkedin": "https://www.linkedin.com/in/noabrandt-example",
+    "homepage": "https://noabrandt.example/"
+   }
+  },
+  {
+   "subject_id": "X901",
+   "name": "Ivy Stroud",
+   "role": "mts",
+   "affiliations": [
+    "Pine Lab"
+   ],
+   "anchors": {
+    "x": "https://x.com/ivystroud_example",
+    "homepage": "https://ivystroud.example/"
+   }
+  }
+ ],
+ "events": [
+  {
+   "subject_id": "X900",
+   "event_type": "x_post",
+   "event_date": "2026-07-02",
+   "observed_at": "2026-07-02T16:05:00+00:00",
+   "quote": "Great panel on robot learning today. Coffee was terrible.",
+   "source_url": "https://x.com/maraquill_example/status/1001"
+  },
+  {
+   "subject_id": "X900",
+   "event_type": "x_post",
+   "event_date": "2026-09-08",
+   "observed_at": "2026-09-08T14:20:00+00:00",
+   "quote": "Has anyone found a good source of action-labeled gameplay video? Our world model keeps overfitting to the three games we have. Happy to swap notes.",
+   "source_url": "https://x.com/maraquill_example/status/1002"
+  },
+  {
+   "subject_id": "X900",
+   "event_type": "technical_ask",
+   "event_date": "2026-09-08",
+   "observed_at": "2026-09-08T14:20:00+00:00",
+   "quote": "Has anyone found a good source of action-labeled gameplay video?",
+   "source_url": "https://x.com/maraquill_example/status/1002"
+  },
+  {
+   "subject_id": "X900",
+   "event_type": "gi_topic",
+   "event_date": "2026-09-08",
+   "observed_at": "2026-09-08T14:20:00+00:00",
+   "quote": "Our world model keeps overfitting to the three games we have.",
+   "source_url": "https://x.com/maraquill_example/status/1002"
+  },
+  {
+   "subject_id": "X902",
+   "event_type": "linkedin_post",
+   "event_date": "2026-03-10",
+   "observed_at": "2026-03-10T15:00:00+00:00",
+   "quote": "Shipped a new onboarding flow for our budgeting app. Completion is up 18%.",
+   "source_url": "https://www.linkedin.com/posts/noabrandt-example-2001"
+  },
+  {
+   "subject_id": "X902",
+   "event_type": "linkedin_post",
+   "event_date": "2026-05-02",
+   "observed_at": "2026-05-02T15:00:00+00:00",
+   "quote": "Hot take: most type scales have too many steps.",
+   "source_url": "https://www.linkedin.com/posts/noabrandt-example-2002"
+  },
+  {
+   "subject_id": "X902",
+   "event_type": "linkedin_post",
+   "event_date": "2026-06-20",
+   "observed_at": "2026-06-20T15:00:00+00:00",
+   "quote": "Two days of Config talks. My notes on variables are below.",
+   "source_url": "https://www.linkedin.com/posts/noabrandt-example-2003"
+  },
+  {
+   "subject_id": "X902",
+   "event_type": "linkedin_post",
+   "event_date": "2026-08-12",
+   "observed_at": "2026-08-12T15:00:00+00:00",
+   "quote": "Been studying how Discord and Twitch handle clip sharing. The share sheet is where most of them lose people.",
+   "source_url": "https://www.linkedin.com/posts/noabrandt-example-2004"
+  },
+  {
+   "subject_id": "X902",
+   "event_type": "gi_topic",
+   "event_date": "2026-08-12",
+   "observed_at": "2026-08-12T15:00:00+00:00",
+   "quote": "Been studying how Discord and Twitch handle clip sharing.",
+   "source_url": "https://www.linkedin.com/posts/noabrandt-example-2004"
+  },
+  {
+   "subject_id": "X902",
+   "event_type": "linkedin_post",
+   "event_date": "2026-09-05",
+   "observed_at": "2026-09-05T15:00:00+00:00",
+   "quote": "Rebuilding our component library in Figma variables so a clip editor prototype can ship on desktop and mobile from one set of tokens. Early, but auto layout is holding up.",
+   "source_url": "https://www.linkedin.com/posts/noabrandt-example-2005"
+  },
+  {
+   "subject_id": "X902",
+   "event_type": "work_in_progress",
+   "event_date": "2026-09-05",
+   "observed_at": "2026-09-05T15:00:00+00:00",
+   "quote": "Rebuilding our component library in Figma variables so a clip editor prototype can ship on desktop and mobile from one set of tokens.",
+   "source_url": "https://www.linkedin.com/posts/noabrandt-example-2005"
+  },
+  {
+   "subject_id": "X902",
+   "event_type": "gi_topic",
+   "event_date": "2026-09-05",
+   "observed_at": "2026-09-05T15:00:00+00:00",
+   "quote": "a clip editor prototype can ship on desktop and mobile",
+   "source_url": "https://www.linkedin.com/posts/noabrandt-example-2005"
+  },
+  {
+   "subject_id": "X901",
+   "event_type": "x_post",
+   "event_date": "2026-06-01",
+   "observed_at": "2026-06-01T09:00:00+00:00",
+   "quote": "Thrilled to join Pine Lab as a research scientist today!",
+   "source_url": "https://x.com/ivystroud_example/status/3001"
+  },
+  {
+   "subject_id": "X901",
+   "event_type": "job_started",
+   "event_date": "2026-06-01",
+   "observed_at": "2026-06-01T09:00:00+00:00",
+   "quote": "Thrilled to join Pine Lab as a research scientist today!",
+   "source_url": "https://x.com/ivystroud_example/status/3001"
+  },
+  {
+   "subject_id": "X901",
+   "event_type": "x_post",
+   "event_date": "2026-09-10",
+   "observed_at": "2026-09-10T18:30:00+00:00",
+   "quote": "Trying diffusion world models on Minecraft trajectories this week. Early rollouts are surprisingly stable.",
+   "source_url": "https://x.com/ivystroud_example/status/3002"
+  },
+  {
+   "subject_id": "X901",
+   "event_type": "work_in_progress",
+   "event_date": "2026-09-10",
+   "observed_at": "2026-09-10T18:30:00+00:00",
+   "quote": "Trying diffusion world models on Minecraft trajectories this week.",
+   "source_url": "https://x.com/ivystroud_example/status/3002"
+  },
+  {
+   "subject_id": "X901",
+   "event_type": "gi_topic",
+   "event_date": "2026-09-10",
+   "observed_at": "2026-09-10T18:30:00+00:00",
+   "quote": "Trying diffusion world models on Minecraft trajectories this week.",
+   "source_url": "https://x.com/ivystroud_example/status/3002"
+  }
+ ]
+}

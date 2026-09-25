@@ -1,0 +1,12 @@
+[
+  {
+    "person_id": "A900",
+    "kind": "identity",
+    "at": "2026-09-01T00:00:00+00:00",
+    "links": [
+      "https://rinvale.example/",
+      "https://github.com/rinvale-example"
+    ],
+    "note": "Invented: their site links their GitHub, and the GitHub profile links the site back."
+  }
+]

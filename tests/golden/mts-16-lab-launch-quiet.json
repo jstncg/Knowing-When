@@ -1,0 +1,52 @@
+{
+  "id": "mts-16-lab-launch-quiet",
+  "role": "mts",
+  "trap": "quiet_period",
+  "subject": "person:mts-p",
+  "related": [
+    "org:example-lab"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "note",
+      "type": "note_open",
+      "date": "2026-09-12",
+      "observed": "2026-09-12T20:00:00Z",
+      "source": "note",
+      "tier": 0,
+      "quote": "Met at a GI meetup; said they're open to hearing about roles."
+    },
+    {
+      "id": "cite",
+      "type": "gi_citation",
+      "date": "2026-09-10",
+      "observed": "2026-09-11",
+      "source": "openalex",
+      "tier": 1,
+      "quote": "Cites General Intuition's world-model technical report."
+    },
+    {
+      "id": "launch",
+      "type": "launch_announced",
+      "date": "2026-10-01",
+      "observed": "2026-09-15",
+      "source": "press",
+      "tier": 2,
+      "quote": "Example Lab will release its next model on October 1, 2026.",
+      "subject": "org:example-lab"
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "They told us they're open and they cite GI, but their lab ships its next model in nine days. Nobody on that team engages launch week; reach after it.",
+    "until_between": [
+      "2026-10-05",
+      "2026-10-31"
+    ],
+    "cites": [
+      "launch"
+    ]
+  }
+}

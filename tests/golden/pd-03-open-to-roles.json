@@ -1,0 +1,39 @@
+{
+  "id": "pd-03-open-to-roles",
+  "role": "product-designer",
+  "trap": "self_stated_window",
+  "subject": "person:pd-c",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "post",
+      "type": "linkedin_post",
+      "date": "2026-09-18",
+      "observed": "2026-09-18",
+      "source": "linkedin_posts_v1",
+      "tier": 1,
+      "url": "https://www.linkedin.com/posts/example-pd-c-9001",
+      "quote": "I'm open to new product design roles, ideally on tools for creators and games. Portfolio in the comments."
+    },
+    {
+      "id": "open",
+      "type": "self_stated_availability",
+      "date": "2026-09-18",
+      "observed": "2026-09-18",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://www.linkedin.com/posts/example-pd-c-9001",
+      "quote": "I'm open to new product design roles, ideally on tools for creators and games. Portfolio in the comments."
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "track": "pitch",
+    "cites": [
+      "open"
+    ],
+    "reason": "Four days ago they wrote that they are open to product design roles, ideally on tools for creators and games. Their own word is enough on its own and the fit is direct, so the role is fair to raise."
+  }
+}

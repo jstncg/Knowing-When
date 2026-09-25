@@ -1,0 +1,59 @@
+{
+  "id": "bk-09-a-push-backs-up-their-post",
+  "role": "backend",
+  "trap": "positive",
+  "subject": "person:bk-i",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "push",
+      "type": "github_activity",
+      "date": "2026-09-12",
+      "observed": "2026-09-12",
+      "source": "github_v2",
+      "tier": 1,
+      "url": "https://github.com/example-bk-i/fanout",
+      "quote": "Pushed to example-bk-i/fanout: Add backpressure to the websocket fan-out; Drop frames older than 200 ms under load"
+    },
+    {
+      "id": "push-read",
+      "type": "work_in_progress",
+      "date": "2026-09-12",
+      "observed": "2026-09-12",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://github.com/example-bk-i/fanout",
+      "quote": "Pushed to example-bk-i/fanout: Add backpressure to the websocket fan-out; Drop frames older than 200 ms under load"
+    },
+    {
+      "id": "post",
+      "type": "x_post",
+      "date": "2026-09-18",
+      "observed": "2026-09-18",
+      "source": "x_posts_v1",
+      "tier": 1,
+      "url": "https://x.com/example_bk_i/status/9001",
+      "quote": "Spent the week making my websocket fan-out survive 10x load: backpressure, plus dropping frames that are already stale. Writeup once the numbers settle."
+    },
+    {
+      "id": "post-read",
+      "type": "work_in_progress",
+      "date": "2026-09-18",
+      "observed": "2026-09-18",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://x.com/example_bk_i/status/9001",
+      "quote": "Spent the week making my websocket fan-out survive 10x load: backpressure, plus dropping frames that are already stale. Writeup once the numbers settle."
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "track": "rapport",
+    "cites": [
+      "post-read"
+    ],
+    "reason": "Four days ago they posted that they spent the week making their websocket fan-out survive 10x load, with backpressure and by dropping frames that are already stale. That is an early sign of work close to the real-time streaming GI runs, and it comes before the writeup they promise. The 12 September push of the same two changes backs up the post but is not the reason, and a work-in-progress post opens a note about the work, not a pitch. Justin decided (2026-09-24): a push can back up a post or release but never makes the call by itself."
+  }
+}

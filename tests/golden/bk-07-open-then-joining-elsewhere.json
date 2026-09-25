@@ -1,0 +1,65 @@
+{
+  "id": "bk-07-open-then-joining-elsewhere",
+  "role": "backend",
+  "trap": "later_job_announced",
+  "subject": "person:bk-g",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "open-post",
+      "type": "linkedin_post",
+      "date": "2026-08-03",
+      "observed": "2026-08-03",
+      "source": "linkedin_posts_v1",
+      "tier": 1,
+      "url": "https://www.linkedin.com/posts/example-bk-g-7001",
+      "quote": "Wrapping up at Example Pay at the end of August. Open to backend roles from September, ping me."
+    },
+    {
+      "id": "open",
+      "type": "self_stated_availability",
+      "date": "2026-09-01",
+      "observed": "2026-08-03",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://www.linkedin.com/posts/example-bk-g-7001",
+      "quote": "Wrapping up at Example Pay at the end of August. Open to backend roles from September, ping me."
+    },
+    {
+      "id": "joining-post",
+      "type": "linkedin_post",
+      "date": "2026-09-15",
+      "observed": "2026-09-15",
+      "source": "linkedin_posts_v1",
+      "tier": 1,
+      "url": "https://www.linkedin.com/posts/example-bk-g-7002",
+      "quote": "Excited to share I'm joining Example Cloud as a staff engineer on the storage team, starting October 6."
+    },
+    {
+      "id": "joining",
+      "type": "role_announced",
+      "date": "2026-10-06",
+      "observed": "2026-09-15",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://www.linkedin.com/posts/example-bk-g-7002",
+      "quote": "Staff Engineer, Example Cloud"
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "also_ok": [
+      "wait"
+    ],
+    "until_between": [
+      "2027-07-01",
+      "2028-06-30"
+    ],
+    "cites": [
+      "joining"
+    ],
+    "reason": "Their August 'open from September' was overtaken on 15 September by their own post that they join Example Cloud on 6 October: the newer word wins and that market is closed. Revisit about a year into the new role."
+  }
+}

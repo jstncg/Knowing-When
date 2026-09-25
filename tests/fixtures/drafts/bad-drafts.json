@@ -1,0 +1,130 @@
+[
+ {
+  "found": "Fact-check of live cards, 2026-09-24: a repo the person created was congratulated as a release, and the feed line was pasted in quotes.",
+  "fails": [
+   "quote is not in their words",
+   "that is not what happened"
+  ],
+  "role": "product-designer",
+  "items": [
+   {
+    "id": "g1",
+    "date": "2026-09",
+    "url": "https://github.com/rin/lantern",
+    "text": "Created rin/lantern: Lantern — a tiny clip viewer for the terminal (Rust)",
+    "context": "",
+    "title": false
+   }
+  ],
+  "draft": {
+   "subject": "Your work on GitHub",
+   "note": "",
+   "body": "Hey Rin, congrats on the new release! Saw the release on GitHub: \"Created rin/lantern: Lantern — a tiny clip viewer for the terminal (Rust).\" It really caught my eye. General Intuition builds large action models and world models that can perceive, predict, and act across virtual and physical environments. We're hiring for our Product Designer role (https://jobs.example.test/pd), and I'd love to chat more if you're interested.\n\nNoor"
+  },
+  "happened": [
+   "work"
+  ]
+ },
+ {
+  "found": "Fact-check of live cards, 2026-09-24: a post was quoted cut off in the middle of a list.",
+  "fails": [
+   "quote is cut off",
+   "quote is a list"
+  ],
+  "role": "mts-research",
+  "items": [
+   {
+    "id": "x1",
+    "date": "2026-09",
+    "url": "https://x.com/rin/status/12",
+    "text": "Wrote a toy physics engine from scratch - rigid bodies - a contact solver - broadphase - sleeping islands - joints, motors, ragdolls and a replay tool",
+    "context": "",
+    "title": false
+   }
+  ],
+  "draft": {
+   "subject": "Your post on X",
+   "note": "",
+   "body": "Hey Rin, saw your X post: \"Wrote a toy physics engine from scratch - rigid bodies - a contact solver - broadphase - sleeping islands - joints, motors, ragdolls and…\" It really caught my eye. General Intuition builds large action models and world models that can perceive, predict, and act across virtual and physical environments. We're hiring for our Member of Technical Staff role (https://jobs.example.test/mts), and I'd love to chat more if you're interested.\n\nOda"
+  },
+  "happened": [
+   "work"
+  ]
+ },
+ {
+  "found": "Fact-check of live cards, 2026-09-24: the LinkedIn message once connected opened with the connection note's first two sentences and repeated its hiring line.",
+  "fails": [
+   "LinkedIn follow-up says the connection note again"
+  ],
+  "role": "product-designer",
+  "items": [
+   {
+    "id": "x2",
+    "date": "2026-09",
+    "url": "https://x.com/rin/status/11",
+    "text": "Pocket Diary v2.3 is out now",
+    "context": "",
+    "title": false
+   }
+  ],
+  "draft": {
+   "subject": "Congrats on Pocket Diary v2.3",
+   "note": "Hey Rin, congrats on shipping Pocket Diary v2.3! Saw your X post. We're hiring for our Product Designer role at General Intuition, and I'd love to connect.",
+   "body": "Hey Rin, congrats on shipping Pocket Diary v2.3! Saw your X post. General Intuition builds large action models and world models that can perceive, predict, and act across virtual and physical environments. We're hiring for our Product Designer role (https://jobs.example.test/pd), and I'd love to chat more if you're interested.\n\nNoor",
+   "after": "Hey Rin, congrats on shipping Pocket Diary v2.3! Saw your X post. General Intuition builds large action models and world models that can perceive, predict, and act across virtual and physical environments. We're hiring for our Product Designer role at General Intuition (https://jobs.example.test/pd), and I'd love to chat more if you're interested.\n\nNoor"
+  },
+  "happened": [
+   "release"
+  ]
+ },
+ {
+  "found": "Fact-check of live cards, 2026-09-24: \"it really caught my eye\" never said what did.",
+  "fails": [
+   "caught my eye without saying what"
+  ],
+  "role": "product-designer",
+  "items": [
+   {
+    "id": "x3",
+    "date": "2026-09",
+    "url": "https://x.com/rin/status/13",
+    "text": "Been sketching a new onboarding flow for clip sharing, more soon",
+    "context": "",
+    "title": false
+   }
+  ],
+  "draft": {
+   "subject": "Your post on X",
+   "note": "",
+   "body": "Hey Rin, saw your X post, and it really caught my eye. General Intuition builds large action models and world models that can perceive, predict, and act across virtual and physical environments. We're hiring for our Product Designer role (https://jobs.example.test/pd), and I'd love to chat more if you're interested.\n\nNoor"
+  },
+  "happened": [
+   "work"
+  ]
+ },
+ {
+  "found": "The rule a quote follows (2026-09-24): it ends where their sentence ends, never partway through it.",
+  "fails": [
+   "quote stops mid-sentence"
+  ],
+  "role": "product-designer",
+  "items": [
+   {
+    "id": "x4",
+    "date": "2026-09",
+    "url": "https://x.com/rin/status/14",
+    "text": "Been hacking on a tiny renderer for game clips that runs in the browser",
+    "context": "",
+    "title": false
+   }
+  ],
+  "draft": {
+   "subject": "Your post on X",
+   "note": "",
+   "body": "Hey Rin, saw your X post: \"Been hacking on a tiny renderer for game clips.\" It really caught my eye. General Intuition builds large action models and world models that can perceive, predict, and act across virtual and physical environments. We're hiring for our Product Designer role (https://jobs.example.test/pd), and I'd love to chat more if you're interested.\n\nNoor"
+  },
+  "happened": [
+   "work"
+  ]
+ }
+]

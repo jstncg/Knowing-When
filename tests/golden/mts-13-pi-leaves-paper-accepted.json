@@ -1,0 +1,37 @@
+{
+  "id": "mts-13-pi-leaves-paper-accepted",
+  "role": "mts",
+  "trap": "positive",
+  "subject": "person:mts-m",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "pi",
+      "type": "pi_departure",
+      "date": "2026-09-01",
+      "observed": "2026-09-02",
+      "source": "lab_news",
+      "tier": 2,
+      "quote": "Our PI is leaving the university to start a company."
+    },
+    {
+      "id": "accepted",
+      "type": "paper_accepted",
+      "date": "2026-09-12",
+      "observed": "2026-09-12",
+      "source": "openreview",
+      "tier": 1,
+      "quote": "Accepted to TMLR: 'Latent action models from gameplay video'"
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "reason": "The PI leaving forces a decision about where to work next, and a fresh acceptance gives a natural opener. Independent reasons, both current.",
+    "cites": [
+      "pi",
+      "accepted"
+    ]
+  }
+}

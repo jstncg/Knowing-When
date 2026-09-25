@@ -1,0 +1,6 @@
+{"results": [
+  {"id": "https://openalex.org/A5000000009", "display_name": "Jane Doe",
+   "affiliations": [{"institution": {"display_name": "Other College"}, "years": [2020]}]},
+  {"id": "https://openalex.org/A5000000001", "display_name": "Jane Doe",
+   "affiliations": [{"institution": {"display_name": "Example University"}, "years": [2024]}]}
+]}

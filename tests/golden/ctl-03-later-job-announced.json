@@ -1,0 +1,58 @@
+{
+  "id": "ctl-03-later-job-announced",
+  "role": "controller",
+  "trap": "later_job_announced",
+  "subject": "controller-c|org:harbor",
+  "related": [
+    "org:harbor"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-09-01",
+      "observed": "2026-09-03",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-09-01: 140 employees affected by a reduction in force.",
+      "subject": "org:harbor"
+    },
+    {
+      "id": "next_job",
+      "type": "role_announced",
+      "date": "2026-11-01",
+      "observed": "2026-09-10",
+      "source": "press",
+      "tier": 2,
+      "quote": "Beacon Corp. announced that Controller C will join as Chief Accounting Officer effective November 1, 2026."
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2022-05-02",
+      "observed": "2022-05-06",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-c|org:harbor",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Corporate Controller, Harbor"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "They have accepted a CAO job starting 1 November. The Harbor layoffs are why they left, not a reason to call.",
+    "until_between": [
+      "2027-09-01",
+      "2028-06-30"
+    ],
+    "also_ok": [
+      "wait"
+    ]
+  }
+}

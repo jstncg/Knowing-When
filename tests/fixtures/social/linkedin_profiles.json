@@ -1,0 +1,17 @@
+[
+ {"linkedinUrl": "https://www.linkedin.com/in/ada-example", "publicIdentifier": "ada-example", "headline": "Engineer at Brambleworld",
+  "originalQuery": {"query": "https://www.linkedin.com/in/ada-example"}, "id": "ACoAAA_invented0000000000000000000000",
+  "experience": [
+   {"position": "Staff Engineer", "companyName": "Brambleworld", "startDate": {"month": "Mar", "year": 2024, "text": "Mar 2024"}, "endDate": {"text": "Present"}},
+   {"position": "Advisor", "companyName": "Side Lab", "startDate": {"text": "2025"}},
+   {"position": "Engineer", "companyName": "Old Co", "startDate": {"month": "Jun", "year": 2020}, "endDate": {"month": "Feb", "year": 2024, "text": "Feb 2024"}}
+  ]},
+ {"linkedinUrl": "https://uk.linkedin.com/in/Bo-Ops/", "headline": "Between things",
+  "experience": [
+   {"companyName": "Grouped Inc", "positions": [
+     {"title": "Lead Designer", "startDate": "2022-01", "endDate": "2025-08"},
+     {"title": "Designer", "startDate": "2020-05", "endDate": "2021-12"}]}
+  ]},
+ {"linkedinUrl": "https://www.linkedin.com/in/cy-private", "headline": "", "experience": []},
+ {"linkedinUrl": "https://www.linkedin.com/in/someone-else", "experience": [{"position": "CEO", "companyName": "X"}]}
+]

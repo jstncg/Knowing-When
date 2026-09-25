@@ -1,0 +1,31 @@
+{
+  "id": "mts-23-own-launch-this-week",
+  "role": "mts",
+  "trap": "quiet_period",
+  "subject": "person:mts-w",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "launch",
+      "type": "launch_announced",
+      "date": "2026-09-20",
+      "observed": "2026-09-20",
+      "source": "x_read",
+      "tier": 1,
+      "quote": "We just launched Brambleworld 2.0 today, September 20, 2026: a world model you can play in the browser."
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "Their own launch was two days ago. It is a good reason to write about their work, but not in launch week: wait until the week is over.",
+    "until_between": [
+      "2026-09-27",
+      "2026-10-05"
+    ],
+    "cites": [
+      "launch"
+    ]
+  }
+}

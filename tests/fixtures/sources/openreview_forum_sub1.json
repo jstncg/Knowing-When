@@ -1,0 +1,8 @@
+{"notes": [
+  {"id": "sub1", "forum": "sub1", "cdate": 1727740800000, "invitations": ["ICLR.cc/2025/Conference/-/Submission"],
+   "content": {"title": {"value": "Action-Conditioned World Models for Long Horizons"}}},
+  {"id": "rev1", "forum": "sub1", "cdate": 1730419200000, "invitations": ["ICLR.cc/2025/Conference/Submission1/-/Official_Review"],
+   "content": {"rating": {"value": "8"}}},
+  {"id": "dec1", "forum": "sub1", "cdate": 1737504000000, "invitations": ["ICLR.cc/2025/Conference/Submission1/-/Decision"],
+   "content": {"decision": {"value": "Accept (Poster)"}, "comment": {"value": "Solid work."}}}
+], "count": 3}

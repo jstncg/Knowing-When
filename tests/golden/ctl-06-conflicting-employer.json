@@ -1,0 +1,70 @@
+{
+  "id": "ctl-06-conflicting-employer",
+  "role": "controller",
+  "trap": "conflicting_claims",
+  "subject": "controller-f|org:northgate",
+  "related": [
+    "org:northgate"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "moved",
+      "type": "profile_change",
+      "date": "2026-09-01",
+      "observed": "2026-09-04",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-f|org:northgate",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Beacon Corp."
+        }
+      ]
+    },
+    {
+      "id": "still",
+      "type": "other_professional",
+      "date": "2026-09-15",
+      "observed": "2026-09-15",
+      "source": "press",
+      "tier": 2,
+      "quote": "Northgate reported preliminary third-quarter results on September 15, 2026, said Controller F, Corporate Controller."
+    },
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-08-10",
+      "observed": "2026-08-12",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-08-10: 140 employees affected by a reduction in force.",
+      "subject": "org:northgate"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2020-02-03",
+      "observed": "2020-02-07",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-f|org:northgate",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Corporate Controller, Northgate"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "verify_first",
+    "reason": "LinkedIn says they joined Beacon on 1 September; a Northgate press release two weeks later quotes them as its controller. If they moved it's a new hire and the call is not now; if not, the layoffs make now good. Confirm which.",
+    "cites": [
+      "moved",
+      "still"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "mts-07-one-paper-alone",
+  "role": "mts",
+  "trap": "weak_signal_alone",
+  "subject": "person:mts-g",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "preprint",
+      "type": "paper_v1",
+      "date": "2026-09-15",
+      "observed": "2026-09-15",
+      "source": "arxiv",
+      "tier": 1,
+      "quote": "Submitted 15 Sep 2026: 'Action tokenizers for games'"
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "reason": "A new preprint is a reason to write about their work, not evidence of wanting to move: a note about the paper (rapport), never a pitch. Changed 2026-09-23 when a paper out became enough for a note (see the pre-registration).",
+    "cites": [
+      "preprint"
+    ],
+    "track": "rapport"
+  }
+}

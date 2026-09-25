@@ -1,0 +1,24 @@
+{
+  "id": "mts-21-old-launch-reposted",
+  "role": "mts",
+  "trap": "stale_signal",
+  "subject": "person:mts-u",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "repost",
+      "type": "launch_announced",
+      "date": "2024-09-20",
+      "observed": "2026-09-20",
+      "source": "x_read",
+      "tier": 1,
+      "quote": "Two years ago today we launched Brambleworld on September 20, 2024. Still proud of it."
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "Old news re-shared this week is not a fresh moment: the launch was two years ago, so there is nothing new to write about and no reason to reach now."
+  }
+}

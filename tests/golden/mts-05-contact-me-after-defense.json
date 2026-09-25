@@ -1,0 +1,49 @@
+{
+  "id": "mts-05-contact-me-after-defense",
+  "role": "mts",
+  "trap": "contact_me_after",
+  "subject": "person:mts-e",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "ask",
+      "type": "contact_constraint",
+      "date": "2026-12",
+      "observed": "2026-09-01",
+      "source": "homepage",
+      "tier": 1,
+      "quote": "I am focused on finishing my thesis; please reach out about roles after my defense in December 2026."
+    },
+    {
+      "id": "pi",
+      "type": "pi_departure",
+      "date": "2026-08-20",
+      "observed": "2026-08-21",
+      "source": "lab_news",
+      "tier": 2,
+      "quote": "Our PI is leaving the university to start a company."
+    },
+    {
+      "id": "accepted",
+      "type": "paper_accepted",
+      "date": "2026-09-10",
+      "observed": "2026-09-10",
+      "source": "openreview",
+      "tier": 1,
+      "quote": "Accepted to TMLR: 'Latent action models from gameplay video'"
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "They asked in writing to be contacted after their December defense. Two open reasons to call do not override an explicit request; reaching now burns the relationship.",
+    "until_between": [
+      "2026-12-31",
+      "2027-02-15"
+    ],
+    "cites": [
+      "ask"
+    ]
+  }
+}

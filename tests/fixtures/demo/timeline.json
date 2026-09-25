@@ -1,0 +1,41 @@
+{
+  "note": "Invented people for the app's Today's calls, beside tests/fixtures/posts and tests/fixtures/routing: a backend engineer building in public, one whose posts only drift toward GI's topics, a designer who named a date, and a researcher whose role claims conflict. Early-sign events are what extraction.read_posts would write, so the demo needs no model call.",
+  "contexts": [
+    {"subject_id": "D901", "name": "Theo Marsh", "role": "backend", "employer": "Kestrel Clips",
+     "anchors": {"github": "https://github.com/theomarsh-example"}},
+    {"subject_id": "D902", "name": "Jonah Pike", "role": "backend", "employer": "Driftwire",
+     "anchors": {"x": "https://x.com/jonahpike_example"}},
+    {"subject_id": "D903", "name": "Priya Vance", "role": "product-designer", "employer": "Framewell",
+     "anchors": {"linkedin": "https://www.linkedin.com/in/priyavance-example"}},
+    {"subject_id": "D904", "name": "Lena Okafor", "role": "mts", "affiliations": ["Lumen Harbor Lab"],
+     "anchors": {"x": "https://x.com/lenaokafor_example"}}
+  ],
+  "events": [
+    {"subject_id": "D901", "event_type": "github_activity", "event_date": "2026-05-06", "quote": "Opened a pull request: fix retry backoff in the payments webhook worker", "source_url": "https://github.com/theomarsh-example/billing-worker/pull/41"},
+    {"subject_id": "D901", "event_type": "github_activity", "event_date": "2026-06-18", "quote": "Opened a pull request: bump Postgres driver and drop Java 11", "source_url": "https://github.com/theomarsh-example/billing-worker/pull/52"},
+    {"subject_id": "D901", "event_type": "github_repo", "event_date": "2026-09-02", "quote": "New repository clipstore: a sharded index for short video clips on ScyllaDB, with a feed read path. Work in progress.", "source_url": "https://github.com/theomarsh-example/clipstore"},
+    {"subject_id": "D901", "event_type": "work_in_progress", "event_date": "2026-09-02", "quote": "clipstore: a sharded index for short video clips on ScyllaDB, with a feed read path. Work in progress.", "source_url": "https://github.com/theomarsh-example/clipstore"},
+    {"subject_id": "D901", "event_type": "gi_topic", "event_date": "2026-09-02", "quote": "a sharded index for short video clips", "source_url": "https://github.com/theomarsh-example/clipstore"},
+    {"subject_id": "D901", "event_type": "github_activity", "event_date": "2026-09-11", "quote": "Opened an issue: how are people handling hot partitions when one clip goes viral? Our p99 read latency triples.", "source_url": "https://github.com/theomarsh-example/clipstore/issues/3"},
+    {"subject_id": "D901", "event_type": "technical_ask", "event_date": "2026-09-11", "quote": "How are people handling hot partitions when one clip goes viral? Our p99 read latency triples.", "source_url": "https://github.com/theomarsh-example/clipstore/issues/3"},
+    {"subject_id": "D901", "event_type": "gi_topic", "event_date": "2026-09-11", "quote": "hot partitions when one clip goes viral", "source_url": "https://github.com/theomarsh-example/clipstore/issues/3"},
+    {"subject_id": "D901", "event_type": "x_post", "event_date": "2026-09-11", "quote": "Anyone solved hot partitions for a clip index? One clip goes viral and our p99 read latency triples. Notes in the issue: github.com/theomarsh-example/clipstore/issues/3", "source_url": "https://x.com/theomarsh_example/status/9101"},
+    {"subject_id": "D901", "event_type": "technical_ask", "event_date": "2026-09-11", "quote": "Anyone solved hot partitions for a clip index? One clip goes viral and our p99 read latency triples.", "source_url": "https://x.com/theomarsh_example/status/9101"},
+
+    {"subject_id": "D902", "event_type": "x_post", "event_date": "2026-05-12", "quote": "Our on-call rotation finally has a runbook for every alert. Small wins.", "source_url": "https://x.com/jonahpike_example/status/5001"},
+    {"subject_id": "D902", "event_type": "x_post", "event_date": "2026-06-30", "quote": "Kotlin coroutines in a Spring service: fine until you need tracing.", "source_url": "https://x.com/jonahpike_example/status/5002"},
+    {"subject_id": "D902", "event_type": "x_post", "event_date": "2026-08-21", "quote": "Reading everything I can find on how game clip feeds rank what you see first.", "source_url": "https://x.com/jonahpike_example/status/5003"},
+    {"subject_id": "D902", "event_type": "gi_topic", "event_date": "2026-08-21", "quote": "how game clip feeds rank what you see first", "source_url": "https://x.com/jonahpike_example/status/5003"},
+    {"subject_id": "D902", "event_type": "x_post", "event_date": "2026-09-09", "quote": "Good thread on fan-out for social feeds with billions of items. Worth a read.", "source_url": "https://x.com/jonahpike_example/status/5004"},
+    {"subject_id": "D902", "event_type": "gi_topic", "event_date": "2026-09-09", "quote": "fan-out for social feeds with billions of items", "source_url": "https://x.com/jonahpike_example/status/5004"},
+
+    {"subject_id": "D903", "event_type": "linkedin_post", "event_date": "2026-06-04", "quote": "Wrapped a design system audit for our checkout. Fewer components, clearer states.", "source_url": "https://www.linkedin.com/posts/priyavance-example-7001"},
+    {"subject_id": "D903", "event_type": "linkedin_post", "event_date": "2026-09-09", "quote": "Prototyping a timeline editor for short gameplay clips: trimming on a phone has to feel like scrubbing a video game replay. Heads down on our launch until October, happy to compare notes after.", "source_url": "https://www.linkedin.com/posts/priyavance-example-7002"},
+    {"subject_id": "D903", "event_type": "work_in_progress", "event_date": "2026-09-09", "quote": "Prototyping a timeline editor for short gameplay clips.", "source_url": "https://www.linkedin.com/posts/priyavance-example-7002"},
+    {"subject_id": "D903", "event_type": "contact_constraint", "event_date": "2026-10", "observed_at": "2026-09-09T00:00:00+00:00", "quote": "Heads down on our launch until October, happy to compare notes after.", "source_url": "https://www.linkedin.com/posts/priyavance-example-7002"},
+
+    {"subject_id": "D904", "event_type": "x_post", "event_date": "2026-09-01", "quote": "After three years at Lumen Harbor Lab I'm looking for my next research role in world models, from November.", "source_url": "https://x.com/lenaokafor_example/status/9001"},
+    {"subject_id": "D904", "event_type": "self_stated_availability", "event_date": "2026-11-01", "observed_at": "2026-09-01T00:00:00+00:00", "quote": "I'm looking for my next research role in world models, from November.", "source_url": "https://x.com/lenaokafor_example/status/9001"},
+    {"subject_id": "D904", "event_type": "job_started", "event_date": "2026-09-10", "quote": "Research scientist, Birchwood Lab (team page lists Lena Okafor as joining in September)", "source_url": "https://birchwood-lab.example/team"}
+  ]
+}

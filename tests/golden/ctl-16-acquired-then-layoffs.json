@@ -1,0 +1,56 @@
+{
+  "id": "ctl-16-acquired-then-layoffs",
+  "role": "controller",
+  "trap": "single_family_strong",
+  "subject": "controller-p|org:ember",
+  "related": [
+    "org:ember"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "deal",
+      "type": "acquisition_closed",
+      "date": "2026-06-30",
+      "observed": "2026-07-01",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "Ember completed its acquisition by Northstar on June 30, 2026.",
+      "subject": "org:ember"
+    },
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-09-01",
+      "observed": "2026-09-03",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-09-01: 140 employees affected by a reduction in force.",
+      "subject": "org:ember"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2021-07-01",
+      "observed": "2021-07-02",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-p|org:ember",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Ember"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "reason": "Ember was acquired in June and is now filing layoffs; the acquired company's finance team is consolidated first.",
+    "cites": [
+      "deal",
+      "warn"
+    ]
+  }
+}

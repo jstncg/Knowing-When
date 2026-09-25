@@ -1,0 +1,72 @@
+{
+  "id": "ctl-09-leak-later-job",
+  "role": "controller",
+  "trap": "observed_after_as_of",
+  "subject": "controller-i|org:summit",
+  "related": [
+    "org:summit",
+    "cfo|org:summit"
+  ],
+  "as_of": "2026-06-15",
+  "judgment": false,
+  "events": [
+    {
+      "id": "cfo_exit",
+      "type": "officer_departure",
+      "date": "2026-05-01",
+      "observed": "2026-05-04",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "The Chief Financial Officer notified the Company of their resignation, effective 2026-05-01.",
+      "subject": "cfo|org:summit"
+    },
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-05-20",
+      "observed": "2026-05-22",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-05-20: 140 employees affected by a reduction in force.",
+      "subject": "org:summit"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2021-01-04",
+      "observed": "2021-01-06",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-i|org:summit",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Summit"
+        }
+      ]
+    },
+    {
+      "id": "joined",
+      "type": "profile_change",
+      "date": "2026-06-01",
+      "observed": "2026-07-01",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-i|org:summit",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Crest Inc."
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "reason": "As of 15 June their CFO had left and layoffs were filed. The Crest start dated 1 June only became visible on 1 July; using it on 15 June would be leakage.",
+    "cites": [
+      "cfo_exit",
+      "warn"
+    ]
+  }
+}

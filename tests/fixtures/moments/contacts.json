@@ -1,0 +1,7 @@
+{
+  "note": "Invented public routes, each with the page it is listed on.",
+  "M901": [{"kind": "linkedin", "value": "https://www.linkedin.com/in/kaimoreno-example", "source_url": "https://kaimoreno.example/"}],
+  "M902": [{"kind": "email", "value": "sol@soladeyemi.example", "source_url": "https://github.com/soladeyemi-example"},
+           {"kind": "x", "value": "@soladeyemi_example", "source_url": "https://github.com/soladeyemi-example"}],
+  "M903": [{"kind": "email", "value": "ari@arichen.example", "source_url": "https://arichen.example/"}]
+}

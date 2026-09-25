@@ -1,0 +1,41 @@
+{
+  "id": "ctl-07-gi-attention-alone",
+  "role": "controller",
+  "trap": "weak_signal_alone",
+  "subject": "controller-g|org:pinecrest",
+  "related": [
+    "org:pinecrest"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "follow",
+      "type": "gi_attention",
+      "date": "2026-09-18",
+      "observed": "2026-09-18",
+      "source": "gi",
+      "tier": 1,
+      "quote": "Followed General Intuition's company page."
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2022-01-10",
+      "observed": "2022-01-12",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-g|org:pinecrest",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Pinecrest"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "Following GI's page is curiosity, not timing. On its own it doesn't justify a call; keep watching."
+  }
+}

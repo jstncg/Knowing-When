@@ -1,0 +1,112 @@
+{
+ "archetype": "engineering",
+ "detectors": [
+  {
+   "id": "tenure_milestone",
+   "reason": "Time in their current role is listed on a call as context, never a reason."
+  },
+  {
+   "id": "team_exodus",
+   "reason": "Two or more people leaving their team within weeks changes the team they work in."
+  },
+  {
+   "id": "acquisition_closed",
+   "reason": "An acquisition of their employer reshapes teams and scope, so a new conversation lands."
+  },
+  {
+   "id": "warn_notice",
+   "reason": "A WARN layoff notice at their employer means teams are being cut."
+  },
+  {
+   "id": "retention_cliff",
+   "reason": "An acquisition's retention cliff is listed on a call as context, never a reason."
+  },
+  {
+   "id": "paper_talk",
+   "reason": "An engineering talk puts their production work in public, per the JD's systems scope."
+  },
+  {
+   "id": "gi_attention",
+   "reason": "Public attention to GI or Medal is a direct reason to write."
+  },
+  {
+   "id": "topic_drift",
+   "reason": "Posts and GitHub work moving toward clips, real-time or feed systems at GI's scale."
+  },
+  {
+   "id": "private_note",
+   "reason": "A GI teammate hearing they are open is the strongest reason to write."
+  },
+  {
+   "id": "self_stated_availability",
+   "reason": "They said they are looking, or when they are free: an invitation to talk."
+  }
+ ],
+ "answer_key": {
+  "query": "Backend engineers joining gaming, creator or real-time platforms: LinkedIn job-change posts and engineering-team announcements that name them",
+  "sources": [
+   "crustdata_person",
+   "research_extraction",
+   "exa"
+  ]
+ },
+ "hypotheses": [
+  {
+   "id": "explicit_invitation",
+   "detector_ids": [
+    "private_note",
+    "self_stated_availability"
+   ],
+   "gap": ""
+  },
+  {
+   "id": "organization_change",
+   "detector_ids": [
+    "team_exodus",
+    "acquisition_closed",
+    "warn_notice",
+    "retention_cliff"
+   ],
+   "gap": ""
+  },
+  {
+   "id": "warm_route",
+   "detector_ids": [],
+   "gap": "gap: needs adapter for confirmed introducer records (who can introduce, and whether they will)"
+  },
+  {
+   "id": "production_milestone",
+   "detector_ids": [
+    "paper_talk",
+    "topic_drift"
+   ],
+   "gap": ""
+  }
+ ],
+ "gaps": [
+  "gap: needs adapter for engineering releases and blog posts as new work (project_release is read only as a launch hold)",
+  "gap: needs adapter for confirmed introducer records (who can introduce, and whether they will)"
+ ],
+ "topics": [
+  "high-throughput Java or JVM microservices behind a consumer app with millions of users",
+  "real-time in-app communication backends: chat, presence, voice, websockets",
+  "storing, transcoding and serving billions of user video clips: object storage, CDN, video pipelines",
+  "ML-based feeds, ranking and social graph services for consumer or creator apps",
+  "backends for gaming, game capture, streaming or creator platforms (clip sharing, Discord-like communities)",
+  "GitHub: new repos in this territory, stars of them, and activity on General Intuition's, Medal's or DIAMOND's repos"
+ ],
+ "role_id": "backend",
+ "sources": [
+  "sec",
+  "warn",
+  "openalex",
+  "crustdata_person",
+  "wayback",
+  "exa",
+  "research_extraction",
+  "manual_note"
+ ],
+ "calendars": [],
+ "manifest_version": "2026-09-23.3",
+ "compiled_at": "2026-09-23T21:25:53.103450+00:00"
+}

@@ -1,0 +1,12 @@
+[
+ {"id": "7348473344318504960",
+  "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7348370815530258432?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7348370815530258432%2C7348473344318504960%29",
+  "commentary": "Would love to compare notes on how you handle long-horizon credit assignment here.\n",
+  "createdAt": "2025-09-14T22:09:33.318Z", "createdAtTimestamp": 1757887773318, "postId": "7348473369610080256",
+  "actor": {"id": "ACoAAA1", "name": "Ada Example", "linkedinUrl": "https://www.linkedin.com/in/ada-example/", "position": "Research Engineer"},
+  "post": {"content": "We are hiring for our world-models team.", "author": {"name": "Gi Researcher"}}},
+ {"id": "7348473344318504961",
+  "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7348370815530258499",
+  "commentary": "Congrats!", "createdAt": "2025-09-14T23:00:00.000Z",
+  "actor": {"name": "Someone Else", "linkedinUrl": "https://www.linkedin.com/in/someone-else"}}
+]

@@ -1,0 +1,231 @@
+{
+  "status": "working-pilot",
+  "roles": [
+    {
+      "id": "mts-research",
+      "title": "Member of Technical Staff",
+      "jd_url": "https://jobs.ashbyhq.com/generalintuition-medal/7dab49be-3551-45ca-9d43-58b339e04417",
+      "locations": [
+        "New York City",
+        "Geneva",
+        "London",
+        "Paris"
+      ],
+      "lane": "research",
+      "interpretation": "Research on action policies/world models; specialization proposed for broad MTS posting, not a narrower explicit JD.",
+      "criteria": [
+        "Exceptional relevant technical work with attributable evidence",
+        "Action/world-model problem overlap (proposed specialization)"
+      ],
+      "sources": [
+        "arxiv",
+        "author_website",
+        "conference_program",
+        "linked_artifact",
+        "professional_endorsement",
+        "github",
+        "authorized_talent_network",
+        "owned_recruiting_history",
+        "candidate_supplied_update",
+        "authorized_referral"
+      ],
+      "public_code_required": false,
+      "papers_required": false,
+      "observed_on": "2026-09-21",
+      "status_at_observation": "open",
+      "location_type": "on-site",
+      "brief_version": 1,
+      "brief_status": "proposed",
+      "manager_preferences": [
+        "Verified public JD context (September 21, 2026): GI trains action policies and world models using action-labeled gaming data. MTS covers research, engineering and infrastructure; judge attributable exceptional work and relevant strengths, not prestige or title. This pilot tests action/world-model research. Match conversation topics to this actual mandate; do not invent a specific GI project or research result."
+      ],
+      "candidate_exemplars": [],
+      "feedback_event_ids": [],
+      "unknowns": [
+        "Hiring-manager nuances",
+        "Authorized sender and offer",
+        "Contact history",
+        "Candidate location/relocation compatibility"
+      ],
+      "independent_fit_verification_required": true,
+      "implementation_stage": "pilot",
+      "required_criteria": [
+        "Exceptional relevant technical work with attributable evidence",
+        "Action/world-model problem overlap (proposed specialization)"
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Senior / Lead Backend Engineer",
+      "jd_url": "https://jobs.ashbyhq.com/generalintuition-medal/9f974f5b-ded9-4b4f-8a81-113e7866305c",
+      "locations": [
+        "New York City"
+      ],
+      "lane": "production-engineering",
+      "interpretation": "Medal backend production ownership, distinct from frontier research.",
+      "criteria": [
+        "Production backend experience",
+        "Java and scalable services",
+        "Distributed systems and API design",
+        "Relational database performance",
+        "Cross-team technical leadership"
+      ],
+      "sources": [
+        "github",
+        "engineering_blog",
+        "technical_talk",
+        "professional_profile",
+        "professional_endorsement",
+        "authorized_talent_network",
+        "owned_recruiting_history",
+        "candidate_supplied_update",
+        "authorized_referral"
+      ],
+      "public_code_required": false,
+      "papers_required": false,
+      "observed_on": "2026-09-21",
+      "status_at_observation": "open",
+      "location_type": "on-site",
+      "brief_version": 1,
+      "brief_status": "proposed",
+      "manager_preferences": [],
+      "candidate_exemplars": [],
+      "feedback_event_ids": [],
+      "unknowns": [
+        "Hiring-manager nuances",
+        "Authorized sender and offer",
+        "Contact history",
+        "Candidate location/relocation compatibility"
+      ],
+      "independent_fit_verification_required": true,
+      "implementation_stage": "transfer-test",
+      "required_criteria": [
+        "Production backend experience",
+        "Java and scalable services",
+        "Distributed systems and API design"
+      ]
+    },
+    {
+      "id": "controller",
+      "title": "Global Controller",
+      "jd_url": "https://jobs.ashbyhq.com/generalintuition-medal/dc84b323-7cd4-4e97-8fc4-6df668c9810d",
+      "locations": [
+        "New York City"
+      ],
+      "lane": "finance-operations",
+      "interpretation": "Demonstrate sourcing without public papers or code.",
+      "criteria": [
+        "Hands-on accounting and close",
+        "US GAAP",
+        "US and international tax",
+        "Multi-entity work and audits",
+        "Finance automation",
+        "Substantial experience including public accounting"
+      ],
+      "sources": [
+        "professional_profile",
+        "company_bio",
+        "finance_vendor_case_study",
+        "event_bio",
+        "professional_endorsement",
+        "authorized_talent_network",
+        "owned_recruiting_history",
+        "candidate_supplied_update",
+        "authorized_referral"
+      ],
+      "public_code_required": false,
+      "papers_required": false,
+      "observed_on": "2026-09-21",
+      "status_at_observation": "open",
+      "location_type": "on-site",
+      "brief_version": 1,
+      "brief_status": "proposed",
+      "manager_preferences": [
+        "Verified public JD context (September 21, 2026): this is hands-on operating-company finance, including ledger ownership, close, US GAAP, US and international corporate tax, cross-border entities and transfer pricing, payroll compliance, audits, reporting, and AI-assisted finance automation. The JD seeks 10\u201315 years including Big 4/public accounting; building a finance function from scratch is a bonus. A fund-accounting title or ERP case study alone does not establish this scope. On-site NYC compatibility remains unknown until evidenced."
+      ],
+      "candidate_exemplars": [],
+      "feedback_event_ids": [],
+      "unknowns": [
+        "Hiring-manager nuances",
+        "Authorized sender and offer",
+        "Contact history",
+        "Candidate location/relocation compatibility"
+      ],
+      "independent_fit_verification_required": true,
+      "implementation_stage": "pilot",
+      "required_criteria": [
+        "Hands-on accounting and close",
+        "US GAAP",
+        "US and international tax",
+        "Multi-entity work and audits",
+        "Finance automation",
+        "Substantial experience including public accounting"
+      ]
+    },
+    {
+      "id": "product-designer",
+      "title": "Product Designer",
+      "jd_url": "https://jobs.ashbyhq.com/generalintuition-medal/46c2672e-d2a8-4a36-aa1b-e4313e9969b4",
+      "locations": [
+        "New York City"
+      ],
+      "lane": "product-design",
+      "interpretation": "Consumer product design for Medal's gaming and creator product: core flows end to end, desktop and mobile, and the design system that keeps the team shipping.",
+      "criteria": [
+        "4+ years designing consumer-facing digital products, ideally social or creator-driven",
+        "Product judgment: starts from the user problem and the outcome, prioritizes hard",
+        "Holistic product sense, from core loops to the moments that hook a new user",
+        "Iteration over big launches: ships small, improves over many rounds, follows up after launch",
+        "Design systems: tokens, components, documentation, deep Figma (component architecture, variables, auto layout)",
+        "Works closely with engineers so components translate accurately into code",
+        "Desktop and mobile, platform UX patterns and accessibility",
+        "A passion for games and gaming communities",
+        "Bonus: communities, content creation or real-time interaction products (Discord, Twitch, TikTok)"
+      ],
+      "sources": [
+        "portfolio",
+        "professional_profile",
+        "professional_endorsement",
+        "authorized_talent_network",
+        "owned_recruiting_history",
+        "candidate_supplied_update",
+        "authorized_referral"
+      ],
+      "public_code_required": false,
+      "papers_required": false,
+      "observed_on": "2026-09-23",
+      "status_at_observation": "open",
+      "location_type": "on-site",
+      "brief_version": 1,
+      "brief_status": "proposed",
+      "manager_preferences": [],
+      "candidate_exemplars": [],
+      "feedback_event_ids": [],
+      "unknowns": [
+        "Hiring-manager nuances",
+        "Authorized sender and offer",
+        "Contact history",
+        "Candidate location/relocation compatibility"
+      ],
+      "independent_fit_verification_required": true,
+      "implementation_stage": "transfer-test",
+      "required_criteria": [
+        "4+ years designing consumer-facing digital products, ideally social or creator-driven",
+        "Design systems: tokens, components, documentation, deep Figma (component architecture, variables, auto layout)",
+        "A passion for games and gaming communities"
+      ]
+    }
+  ],
+  "build_sequence": {
+    "pilot": [
+      "mts-research",
+      "controller"
+    ],
+    "transfer_test": [
+      "backend",
+      "product-designer"
+    ],
+    "submission_minimum_roles": 3,
+    "new_jd_policy": "generate_reviewable_brief_and_source_plan_then_validate_coverage"
+  }
+}

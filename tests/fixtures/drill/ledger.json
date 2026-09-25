@@ -1,0 +1,165 @@
+[
+ {
+  "person_id": "D01",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://ariavennexample.example/",
+   "https://x.com/ariavenn_example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D02",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://bolindqvistexample.example/",
+   "https://x.com/bolindqvist_example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D03",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://cleomarshexample.example/",
+   "https://x.com/cleomarsh_example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D04",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://devokaforexample.example/",
+   "https://x.com/devokafor_example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D05",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://esmetranexample.example/",
+   "https://github.com/esme-tran-example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D06",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://finnadlerexample.example/",
+   "https://github.com/finn-adler-example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D07",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://giamoreauexample.example/",
+   "https://github.com/gia-moreau-example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D08",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://halbrennerexample.example/",
+   "https://www.linkedin.com/in/halbrenner-example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D09",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://iriskadeexample.example/",
+   "https://www.linkedin.com/in/iriskade-example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D10",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://junoparkexample.example/",
+   "https://x.com/junopark_example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D11",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://kaimossexample.example/",
+   "https://x.com/kaimoss_example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D12",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://lenaruizexample.example/",
+   "https://www.linkedin.com/in/lenaruiz-example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D13",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://milograntexample.example/",
+   "https://x.com/milogrant_example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D15",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://orensatoexample.example/",
+   "https://x.com/orensato_example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D12",
+  "kind": "never",
+  "at": "2026-05-02T00:00:00+00:00",
+  "note": "Invented: asked never to be contacted."
+ },
+ {
+  "person_id": "D16",
+  "kind": "identity",
+  "at": "2026-05-01T00:00:00+00:00",
+  "links": [
+   "https://piahaleexample.example/",
+   "https://x.com/piahale_example"
+  ],
+  "note": "Invented: two pages that tie the profile to them."
+ },
+ {
+  "person_id": "D13",
+  "kind": "pinged",
+  "at": "2026-04-10T13:00:00+00:00",
+  "role_id": "mts-research",
+  "note": "Invented: on an MTS card before the drill."
+ }
+]

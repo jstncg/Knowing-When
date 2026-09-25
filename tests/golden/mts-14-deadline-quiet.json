@@ -1,0 +1,49 @@
+{
+  "id": "mts-14-deadline-quiet",
+  "role": "mts",
+  "trap": "quiet_period",
+  "subject": "person:mts-n",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "deadline",
+      "type": "conference_deadline",
+      "date": "2026-10-01",
+      "observed": "2026-08-01",
+      "source": "homepage",
+      "tier": 1,
+      "quote": "Currently preparing our ICLR 2027 submission (deadline October 1, 2026)."
+    },
+    {
+      "id": "pi",
+      "type": "pi_departure",
+      "date": "2026-09-05",
+      "observed": "2026-09-06",
+      "source": "lab_news",
+      "tier": 2,
+      "quote": "Our PI is leaving the university to start a company."
+    },
+    {
+      "id": "preprint",
+      "type": "paper_v1",
+      "date": "2026-09-15",
+      "observed": "2026-09-15",
+      "source": "arxiv",
+      "tier": 1,
+      "quote": "Submitted 15 Sep 2026: 'Game engines as simulators'"
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "The PI's departure makes this their moment, but they are nine days from a paper deadline they named. Reach right after it.",
+    "until_between": [
+      "2026-10-02",
+      "2026-10-15"
+    ],
+    "cites": [
+      "deadline"
+    ]
+  }
+}

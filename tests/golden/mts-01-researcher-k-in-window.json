@@ -1,0 +1,36 @@
+{
+  "id": "mts-01-researcher-k-in-window",
+  "role": "mts",
+  "trap": "self_stated_window",
+  "subject": "person:researcher-k",
+  "related": [],
+  "as_of": "2026-10-05",
+  "judgment": false,
+  "events": [
+    {
+      "id": "avail",
+      "type": "self_stated_availability",
+      "date": "2026-10",
+      "observed": "2026-09-10",
+      "source": "homepage",
+      "tier": 1,
+      "quote": "I am on the industry job market and available from October 2026."
+    },
+    {
+      "id": "aff",
+      "type": "affiliation_seen",
+      "date": "2025",
+      "observed": "2025-06-01",
+      "source": "openalex",
+      "tier": 1,
+      "quote": "Researcher K (Example University) on 'Scaling world models for embodied agents'"
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "reason": "K said they are available from October 2026 and it is now October: the person's own stated window is open. A self-statement is enough on its own.",
+    "cites": [
+      "avail"
+    ]
+  }
+}

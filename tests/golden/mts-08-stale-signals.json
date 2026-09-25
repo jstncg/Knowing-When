@@ -1,0 +1,33 @@
+{
+  "id": "mts-08-stale-signals",
+  "role": "mts",
+  "trap": "stale_signal",
+  "subject": "person:mts-h",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "pi",
+      "type": "pi_departure",
+      "date": "2026-03-20",
+      "observed": "2026-03-21",
+      "source": "lab_news",
+      "tier": 2,
+      "quote": "Our PI is leaving the university to start a company."
+    },
+    {
+      "id": "accepted",
+      "type": "paper_accepted",
+      "date": "2026-05-01",
+      "observed": "2026-05-01",
+      "source": "openreview",
+      "tier": 1,
+      "quote": "Accepted to ICML 2026: 'Latent action models from gameplay video'"
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "The PI left six months ago and the acceptance is five months old; both windows closed about twelve weeks ago. Whatever the departure set in motion has played out."
+  }
+}

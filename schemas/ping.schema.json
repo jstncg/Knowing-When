@@ -1,0 +1,453 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "live",
+        "retrospective",
+        "synthetic-fixture"
+      ]
+    },
+    "person": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "public_profile_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "public_profile_url"
+      ]
+    },
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "jd_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "brief_version": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "jd_url",
+        "brief_version"
+      ]
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "event_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "what_changed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "date_basis": {
+          "enum": [
+            "published_event_date",
+            "observed_change_date",
+            "source_statement_date"
+          ]
+        },
+        "date_caveat": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "minItems": 1
+        },
+        "detected_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_verified_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "date_source_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "window": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "opens",
+            "closes",
+            "detector_id"
+          ],
+          "properties": {
+            "opens": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "closes": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "detector_id": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": [
+        "event_key",
+        "type",
+        "what_changed",
+        "date",
+        "date_basis",
+        "date_caveat",
+        "source_urls",
+        "detected_at",
+        "last_verified_at"
+      ]
+    },
+    "why_now": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fit": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "timing_evidence": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "route": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "reasoning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "what_would_prove_wrong": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "fit",
+        "timing_evidence",
+        "route",
+        "reasoning",
+        "what_would_prove_wrong"
+      ]
+    },
+    "draft_outreach": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel": {
+          "enum": [
+            "email",
+            "linkedin",
+            "x",
+            "introduction"
+          ]
+        },
+        "sender_status": {
+          "enum": [
+            "proposed",
+            "verified"
+          ]
+        },
+        "claim_source_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "minItems": 1
+        },
+        "review_status": {
+          "enum": [
+            "unreviewed",
+            "reviewed"
+          ]
+        },
+        "sender": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "proposed_function",
+            "selection_rationale",
+            "roster_id",
+            "identity_use_authorized"
+          ],
+          "properties": {
+            "proposed_function": {
+              "type": "string",
+              "minLength": 1
+            },
+            "selection_rationale": {
+              "type": "string",
+              "minLength": 1
+            },
+            "roster_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "identity_use_authorized": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "required": [
+        "subject",
+        "body",
+        "channel",
+        "sender_status",
+        "claim_source_urls",
+        "review_status",
+        "sender"
+      ]
+    },
+    "route_in": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "none_found",
+            "plausible_unconfirmed",
+            "verified"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "status",
+        "description",
+        "source_urls"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "none_found"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "description": {
+                "const": "none found"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "source_urls": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "policy_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Operational deadline to revalidate sources and contact-now review, not a forecast of receptivity."
+    },
+    "expiry_basis": {
+      "const": "review_revalidation_policy"
+    },
+    "recipient_value": {
+      "type": "string",
+      "minLength": 15
+    },
+    "contact_purpose": {
+      "enum": [
+        "rapport",
+        "hiring",
+        "unassessed"
+      ]
+    },
+    "purpose_reason": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "evidence_id": {
+          "type": "string"
+        },
+        "quote": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement",
+        "evidence_id",
+        "quote"
+      ],
+      "additionalProperties": false
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "score",
+        "families",
+        "explanation"
+      ],
+      "properties": {
+        "action": {
+          "enum": [
+            "reach_now",
+            "verify_first",
+            "watch_until",
+            "respect_follow_up",
+            "quiet"
+          ]
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "families": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "mode",
+    "person",
+    "role",
+    "trigger",
+    "why_now",
+    "confidence",
+    "draft_outreach",
+    "route_in",
+    "policy_version",
+    "expires_at",
+    "expiry_basis",
+    "recipient_value"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GI timing ping: seven required fields plus audit metadata",
+  "description": "Structure only. Runtime must enforce evidence, dates, role membership, suppression, approval and receipts."
+}

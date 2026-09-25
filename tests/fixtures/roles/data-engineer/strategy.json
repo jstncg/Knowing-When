@@ -1,0 +1,81 @@
+{
+  "title": "Data Engineer",
+  "title_quote": "Data Engineer",
+  "lane": "production-engineering",
+  "criteria": [
+    "4+ years building production data pipelines",
+    "Strong Python and SQL",
+    "Distributed processing experience such as Spark, Ray or Beam",
+    "Experience with video or other large media datasets",
+    "Open-source contributions to data tooling",
+    "Build and run batch and streaming pipelines that ingest, filter and label gameplay video at petabyte scale"
+  ],
+  "required_criteria": [
+    "4+ years building production data pipelines",
+    "Strong Python and SQL",
+    "Distributed processing experience such as Spark, Ray or Beam"
+  ],
+  "criterion_evidence": [
+    {"criterion": "4+ years building production data pipelines", "jd_quote": "- 4+ years building production data pipelines.", "requirement_kind": "required"},
+    {"criterion": "Strong Python and SQL", "jd_quote": "- Strong Python and SQL.", "requirement_kind": "required"},
+    {"criterion": "Distributed processing experience such as Spark, Ray or Beam", "jd_quote": "- Distributed processing experience such as Spark, Ray or Beam.", "requirement_kind": "required"},
+    {"criterion": "Experience with video or other large media datasets", "jd_quote": "- Experience with video or other large media datasets.", "requirement_kind": "preferred"},
+    {"criterion": "Open-source contributions to data tooling", "jd_quote": "- Open-source contributions to data tooling.", "requirement_kind": "preferred"},
+    {"criterion": "Build and run batch and streaming pipelines that ingest, filter and label gameplay video at petabyte scale", "jd_quote": "- Build and run batch and streaming pipelines that ingest, filter and label gameplay video at petabyte scale.", "requirement_kind": "responsibility"}
+  ],
+  "manager_notes": "Open question for the hiring manager: does streaming experience count as much as batch, and is video data a must or a plus?",
+  "signals": [
+    {
+      "id": "explicit_invitation",
+      "name": "A professional invitation or agreed reconnect",
+      "mechanism": "A data engineer asking publicly for help with a pipeline or dataset problem, or agreeing to reconnect, invites a timely technical conversation. It does not establish job interest unless they say so.",
+      "where_to_watch": ["Their own posts and replies", "Authorized recruiting history"],
+      "person_specific_evidence_needed": "The same person, the dated ask or agreement, what it is about, and any conditions they set on contact.",
+      "counterevidence": "An expired ask, a decline, recent contact, or an ask about something GI cannot help with.",
+      "recheck_hours": 24,
+      "status": "hypothesis",
+      "action": "consider_conversation",
+      "jd_quotes": []
+    },
+    {
+      "id": "organization_change",
+      "name": "Employer change with attributable individual impact",
+      "mechanism": "An acquisition, layoff or data team shutdown can change a data engineer's scope. Investigate that individual impact before proposing an approach; company news alone does not establish reachability.",
+      "where_to_watch": ["Official company announcements", "Layoff notices", "Their own posts"],
+      "person_specific_evidence_needed": "Current employer, and dated evidence that this person's team or pipelines were affected.",
+      "counterevidence": "A retention commitment, an unaffected team, a promotion, or a newly accepted role.",
+      "recheck_hours": 24,
+      "status": "hypothesis",
+      "action": "investigate",
+      "jd_quotes": []
+    },
+    {
+      "id": "warm_route",
+      "name": "A current, permissioned introduction opportunity",
+      "mechanism": "A GI teammate who has worked with them and is willing to introduce makes a useful conversation possible now. A follow or a shared repo is only a lead to verify.",
+      "where_to_watch": ["Authorized referral", "Owned relationship notes"],
+      "person_specific_evidence_needed": "Who knows whom, how, the introducer's willingness, and why the talk helps the candidate.",
+      "counterevidence": "An unconfirmed or stale relationship, or an introducer unwilling to help.",
+      "recheck_hours": 72,
+      "status": "hypothesis",
+      "action": "consider_conversation",
+      "jd_quotes": []
+    },
+    {
+      "id": "production_milestone",
+      "name": "Attributable data platform milestone",
+      "mechanism": "A shipped pipeline, a dataset release, a data tooling release or a talk on data infrastructure shows owned work and a current problem worth discussing with GI.",
+      "where_to_watch": ["Their GitHub releases", "Engineering talks", "Their own posts"],
+      "person_specific_evidence_needed": "Personal responsibility for the work, the original date, and a link to large video or media data at scale.",
+      "counterevidence": "A team release with no personal attribution, an old talk, or an unrelated stack.",
+      "recheck_hours": 48,
+      "status": "hypothesis",
+      "action": "consider_conversation",
+      "jd_quotes": ["Open-source contributions to data tooling."]
+    }
+  ],
+  "unsupported_alone": [
+    "A GitHub star or follow as proof of interest in GI"
+  ],
+  "review_status": "proposal"
+}

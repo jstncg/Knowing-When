@@ -1,0 +1,39 @@
+{
+  "id": "bk-01-hand-made-release-after-launch-week",
+  "role": "backend",
+  "trap": "positive",
+  "subject": "person:bk-a",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "release",
+      "type": "github_activity",
+      "date": "2026-09-10",
+      "observed": "2026-09-10",
+      "source": "github_v2",
+      "tier": 1,
+      "url": "https://github.com/example-bk/tidewire/releases/tag/v2.0.0",
+      "quote": "Released v2.0.0 of example-bk/tidewire: Exactly-once delivery for Postgres-backed job queues"
+    },
+    {
+      "id": "read",
+      "type": "project_release",
+      "date": "2026-09-10",
+      "observed": "2026-09-10",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://github.com/example-bk/tidewire/releases/tag/v2.0.0",
+      "quote": "Released v2.0.0 of example-bk/tidewire: Exactly-once delivery for Postgres-backed job queues"
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "track": "rapport",
+    "cites": [
+      "read"
+    ],
+    "reason": "A hand-tagged v2.0.0 of their own job-queue library is a real launch of their work, and its launch week ended on 17 September. A release of the last month opens a note about the work (exactly-once delivery on Postgres), not a pitch."
+  }
+}

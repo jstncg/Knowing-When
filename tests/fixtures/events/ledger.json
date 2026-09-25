@@ -1,0 +1,18 @@
+[
+  {
+    "person_id": "P801",
+    "kind": "replied",
+    "at": "2026-08-04T15:00:00+00:00",
+    "team": "recruiting",
+    "by": "Dana Kest",
+    "note": "Invented: answered recruiting's note after the July dinner; a conversation is open."
+  },
+  {
+    "person_id": "P802",
+    "kind": "never",
+    "at": "2026-07-16T23:00:00+00:00",
+    "team": "events",
+    "by": "Nora Example",
+    "note": "Invented: asked at the July dinner not to be written to again."
+  }
+]

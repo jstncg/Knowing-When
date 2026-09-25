@@ -1,0 +1,44 @@
+{
+  "assumptions": {
+    "year": 2027,
+    "yearly_budget": 3400000,
+    "overhead_pct": 25,
+    "agency_fee_pct": 20,
+    "outreach_cost": 0,
+    "conversations_per_hire": 3,
+    "salary_estimates": {
+      "mts-research": 250000,
+      "backend": 210000,
+      "product-designer": 170000,
+      "controller": 190000
+    },
+    "note": "Invented for the demo: the budget, overhead, fees, every salary estimate and the payroll export (tests/fixtures/hiring/payroll.csv, nine made-up rows with no names). None is GI's or anyone's pay."
+  },
+  "lines": [
+    {
+      "role_id": "mts-research",
+      "subject_id": "A900",
+      "name": "Rin Vale",
+      "count": 1,
+      "start_month": 1,
+      "source": "outreach",
+      "office": "New York City"
+    },
+    {
+      "role_id": "product-designer",
+      "subject_id": "X902",
+      "name": "Noa Brandt",
+      "count": 1,
+      "start_month": 2,
+      "source": "outreach",
+      "office": "New York City"
+    },
+    {
+      "role_id": "backend",
+      "count": 2,
+      "start_month": 3,
+      "source": "agency",
+      "office": "New York City"
+    }
+  ]
+}

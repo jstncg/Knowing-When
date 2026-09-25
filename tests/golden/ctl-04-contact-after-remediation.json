@@ -1,0 +1,69 @@
+{
+  "id": "ctl-04-contact-after-remediation",
+  "role": "controller",
+  "trap": "contact_me_after",
+  "subject": "controller-d|org:lumen",
+  "related": [
+    "org:lumen",
+    "cfo|org:lumen"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "ask",
+      "type": "contact_constraint",
+      "date": "2027-03",
+      "observed": "2026-09-12",
+      "source": "personal_site",
+      "tier": 1,
+      "quote": "Heads down on the 10-K and remediation work; happy to talk about anything new after March 2027."
+    },
+    {
+      "id": "cfo_exit",
+      "type": "officer_departure",
+      "date": "2026-09-01",
+      "observed": "2026-09-02",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "The Chief Financial Officer notified the Company of their resignation, effective 2026-09-01.",
+      "subject": "cfo|org:lumen"
+    },
+    {
+      "id": "late",
+      "type": "late_filing",
+      "date": "2026-08-16",
+      "observed": "2026-08-16",
+      "source": "sec_filing",
+      "tier": 1,
+      "quote": "Form 12b-25: the registrant cannot file its Form 10-Q within the prescribed time.",
+      "subject": "org:lumen"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2021-06-01",
+      "observed": "2021-06-04",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-d|org:lumen",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Lumen"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "They wrote that they'll talk after March 2027. The CFO exit and late filing make this a hard quarter, which is why they asked; respect the date.",
+    "until_between": [
+      "2027-04-01",
+      "2027-05-15"
+    ],
+    "cites": [
+      "ask"
+    ]
+  }
+}

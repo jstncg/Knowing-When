@@ -1,0 +1,32 @@
+{
+ "response": {
+  "award": [
+   {
+    "id": "2403987",
+    "title": "CAREER: Verifiable Learning for Robot Manipulation",
+    "date": "01/22/2024",
+    "startDate": "02/01/2024",
+    "expDate": "01/31/2029",
+    "pdPIName": "Jane Q Researcher",
+    "awardeeName": "Massachusetts Institute of Technology",
+    "awardeeCity": "Cambridge",
+    "awardeeStateCode": "MA",
+    "fundsObligatedAmt": "412000",
+    "fundProgramName": "Robust Intelligence"
+   },
+   {
+    "id": "1955123",
+    "title": "Collaborative Research: Scalable Program Synthesis",
+    "date": "06/10/2020",
+    "startDate": "07/01/2020",
+    "expDate": "06/30/2024",
+    "pdPIName": "Jane Q Researcher",
+    "awardeeName": "Massachusetts Institute of Technology",
+    "awardeeCity": "Cambridge",
+    "awardeeStateCode": "MA",
+    "fundsObligatedAmt": "250000.00",
+    "fundProgramName": "Software & Hardware Foundation"
+   }
+  ]
+ }
+}

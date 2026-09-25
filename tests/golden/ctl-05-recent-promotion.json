@@ -1,0 +1,58 @@
+{
+  "id": "ctl-05-recent-promotion",
+  "role": "controller",
+  "trap": "recent_promotion",
+  "subject": "controller-e|org:vantage",
+  "related": [
+    "org:vantage",
+    "cfo|org:vantage"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "promo",
+      "type": "officer_appointment",
+      "date": "2026-07-01",
+      "observed": "2026-07-03",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "Effective July 1, 2026, the Board appointed Controller E, previously Corporate Controller, as Chief Accounting Officer.",
+      "subject": "controller-e|org:vantage"
+    },
+    {
+      "id": "cfo_exit",
+      "type": "officer_departure",
+      "date": "2026-09-01",
+      "observed": "2026-09-02",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "The Chief Financial Officer notified the Company of their resignation, effective 2026-09-01.",
+      "subject": "cfo|org:vantage"
+    },
+    {
+      "id": "auditor",
+      "type": "auditor_change",
+      "date": "2026-08-15",
+      "observed": "2026-08-17",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "Item 4.01: the Audit Committee dismissed its independent registered public accounting firm.",
+      "subject": "org:vantage"
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "Promoted to CAO in July, with a new auditor on their first year-end audit and a CFO seat that may open to them. Reach after the audit, once the new title has settled.",
+    "until_between": [
+      "2027-03-15",
+      "2027-09-30"
+    ],
+    "also_ok": [
+      "not_now"
+    ],
+    "cites": [
+      "promo"
+    ]
+  }
+}

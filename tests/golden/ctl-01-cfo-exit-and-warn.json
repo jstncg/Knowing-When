@@ -1,0 +1,57 @@
+{
+  "id": "ctl-01-cfo-exit-and-warn",
+  "role": "controller",
+  "trap": "positive",
+  "subject": "controller-a|org:northwind",
+  "related": [
+    "org:northwind",
+    "cfo|org:northwind"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "cfo_exit",
+      "type": "officer_departure",
+      "date": "2026-09-01",
+      "observed": "2026-09-03",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "The Chief Financial Officer notified the Company of their resignation, effective 2026-09-01.",
+      "subject": "cfo|org:northwind"
+    },
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-08-20",
+      "observed": "2026-08-22",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-08-20: 140 employees affected by a reduction in force.",
+      "subject": "org:northwind"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2023-03-01",
+      "observed": "2023-03-05",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-a|org:northwind",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Corporate Controller, Northwind"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "reason": "Their CFO just resigned and the company filed layoffs: a new boss and a shrinking team at once. Both current and independent.",
+    "cites": [
+      "cfo_exit",
+      "warn"
+    ]
+  }
+}

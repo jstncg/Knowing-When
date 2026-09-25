@@ -1,0 +1,90 @@
+{
+  "id": "mts-06-recent-promotion",
+  "role": "mts",
+  "trap": "recent_promotion",
+  "subject": "person:mts-f",
+  "related": [
+    "person:coauthor-1",
+    "person:coauthor-2"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "promo",
+      "type": "profile_change",
+      "date": "2026-08-15",
+      "observed": "2026-08-16",
+      "source": "crustdata",
+      "tier": 1,
+      "changes": [
+        {
+          "field": "basic_profile.current_title",
+          "from": "Research Scientist",
+          "to": "Senior Research Scientist"
+        }
+      ]
+    },
+    {
+      "id": "accepted",
+      "type": "paper_accepted",
+      "date": "2026-09-02",
+      "observed": "2026-09-02",
+      "source": "openreview",
+      "tier": 1,
+      "quote": "Accepted to TMLR: 'Latent action models from gameplay video'"
+    },
+    {
+      "id": "link1",
+      "type": "coauthor_link",
+      "date": null,
+      "observed": "2026-05-01",
+      "source": "openalex",
+      "tier": 1,
+      "quote": "Coauthor One (person:coauthor-1) on 'World models at scale'"
+    },
+    {
+      "id": "link2",
+      "type": "coauthor_link",
+      "date": null,
+      "observed": "2026-05-01",
+      "source": "openalex",
+      "tier": 1,
+      "quote": "Coauthor Two (person:coauthor-2) on 'World models at scale'"
+    },
+    {
+      "id": "c1_left",
+      "type": "job_ended",
+      "date": "2026-08-01",
+      "observed": "2026-08-03",
+      "source": "lab_news",
+      "tier": 2,
+      "quote": "Coauthor One left the lab on August 1, 2026.",
+      "subject": "person:coauthor-1"
+    },
+    {
+      "id": "c2_left",
+      "type": "job_ended",
+      "date": "2026-08-25",
+      "observed": "2026-08-27",
+      "source": "lab_news",
+      "tier": 2,
+      "quote": "Coauthor Two left the lab on August 25, 2026.",
+      "subject": "person:coauthor-2"
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "Promoted five weeks ago. People rarely leave in the first months after a promotion even when colleagues are leaving; wait until the new title has settled, about six months.",
+    "until_between": [
+      "2027-01-15",
+      "2027-08-31"
+    ],
+    "also_ok": [
+      "not_now"
+    ],
+    "cites": [
+      "promo"
+    ]
+  }
+}

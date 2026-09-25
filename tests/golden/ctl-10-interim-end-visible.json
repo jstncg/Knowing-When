@@ -1,0 +1,45 @@
+{
+  "id": "ctl-10-interim-end-visible",
+  "role": "controller",
+  "trap": "announced_future_date",
+  "subject": "controller-j|org:atlas",
+  "related": [
+    "org:atlas"
+  ],
+  "as_of": "2026-10-20",
+  "judgment": false,
+  "events": [
+    {
+      "id": "contract",
+      "type": "placement_end_expected",
+      "date": "2026-12-31",
+      "observed": "2026-06-01",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "The Interim Controller engagement runs through December 31, 2026.",
+      "subject": "controller-j|org:atlas"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2026-01-05",
+      "observed": "2026-01-07",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-j|org:atlas",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Interim Controller, Atlas"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "reason": "The interim engagement ends 31 December, announced in June, ten weeks out now. An interim controller is expected to move at the end of the term; short tenure is no reason to hold.",
+    "cites": [
+      "contract"
+    ]
+  }
+}

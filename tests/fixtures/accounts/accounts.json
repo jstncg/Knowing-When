@@ -1,0 +1,246 @@
+{
+ "note": "Invented for the demo: every company, person, quote and link here is made up. GI's real accounts are Justin's to pick.",
+ "accounts": [
+  {
+   "id": "driftwire",
+   "name": "Driftwire",
+   "segment": "Game studio",
+   "buys": "agents",
+   "fit": 5,
+   "why": "Ships AI teammates in its shooter and wants them to play like people.",
+   "owner": "Luis Example",
+   "contacts": [
+    {
+     "name": "Lee Example",
+     "title": "Head of AI R&D",
+     "part": "champion",
+     "source_url": "https://example.org/driftwire/team/lee"
+    },
+    {
+     "name": "Jonah Pike",
+     "subject_id": "D902",
+     "title": "Backend engineer"
+    }
+   ],
+   "signals": [
+    {
+     "kind": "team_paper",
+     "day": "2026-08-25",
+     "who": "the studio's AI team",
+     "quote": "Learning game agents from player clips",
+     "source_url": "https://example.org/driftwire/research/agents-from-clips",
+     "gist": "teaching game agents from the clips players already share",
+     "authors": [
+      {
+       "name": "Lee Example",
+       "at": "Driftwire"
+      },
+      {
+       "name": "Jonah Pike",
+       "at": "Driftwire"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "example-robotics",
+   "name": "Example Robotics Co",
+   "segment": "Robotics",
+   "buys": "both",
+   "fit": 4,
+   "why": "Sells warehouse robots and buys its models rather than training them.",
+   "owner": "Omar Example",
+   "contacts": [
+    {
+     "name": "Tove Lind",
+     "subject_id": "P801",
+     "title": "Head of robot learning (new)",
+     "part": "champion"
+    },
+    {
+     "name": "Sid Example",
+     "title": "VP Engineering",
+     "part": "decision_maker",
+     "source_url": "https://example.org/example-robotics/team/sid"
+    }
+   ],
+   "signals": [
+    {
+     "kind": "new_lead",
+     "day": "2026-09-01",
+     "who": "Tove Lind",
+     "quote": "Excited to start as head of robot learning at Example Robotics Co.",
+     "source_url": "https://example.org/example-robotics/news/new-head-of-robot-learning"
+    }
+   ]
+  },
+  {
+   "id": "birchwood-lab",
+   "name": "Birchwood Lab",
+   "segment": "Drones and robotics",
+   "buys": "both",
+   "fit": 4,
+   "why": "Search-and-rescue drones with a small autonomy team.",
+   "owner": "Nora Example",
+   "ties": [
+    {
+     "by": "Nora Example",
+     "to": "Pat Example",
+     "what": "Nora Example at GI worked with Pat Example at their last company."
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Pat Example",
+     "title": "Head of autonomy",
+     "part": "decision_maker",
+     "source_url": "https://birchwood-lab.example/team"
+    },
+    {
+     "name": "Lena Okafor",
+     "subject_id": "D904",
+     "title": "Research scientist (joined in September)",
+     "part": ""
+    }
+   ],
+   "signals": [
+    {
+     "kind": "job_post",
+     "day": "2026-09-08",
+     "quote": "Research Engineer, Flight Policies from Video",
+     "source_url": "https://birchwood-lab.example/jobs/flight-policies"
+    }
+   ]
+  },
+  {
+   "id": "sample-sim",
+   "name": "Sample Sim Labs",
+   "segment": "Simulation tooling",
+   "buys": "partner",
+   "fit": 4,
+   "why": "Sells simulators to robot teams; could bundle a pretrained policy.",
+   "owner": "Ines Example",
+   "investors": [
+    "Example Ventures (invented)"
+   ],
+   "contacts": [
+    {
+     "name": "Ray Example",
+     "title": "CTO",
+     "part": "champion",
+     "source_url": "https://example.org/sample-sim/team/ray"
+    },
+    {
+     "name": "Kofi Adair",
+     "subject_id": "P802",
+     "title": "Research engineer"
+    }
+   ],
+   "signals": [
+    {
+     "kind": "public_ask",
+     "day": "2026-09-11",
+     "who": "Ray Example",
+     "quote": "We need a lot more action-labeled gameplay video for our simulator benchmarks. Who has it?",
+     "source_url": "https://example.org/sample-sim/ray/posts/ask"
+    }
+   ]
+  },
+  {
+   "id": "loam-robotics",
+   "name": "Loam Robotics",
+   "segment": "Robot foundation models",
+   "buys": "data",
+   "own_models": true,
+   "fit": 4,
+   "why": "Trains its own robot model on video; would buy action-labeled gameplay, and competes on models.",
+   "owner": "Omar Example",
+   "contacts": [
+    {
+     "name": "Rue Example",
+     "title": "Head of data",
+     "part": "champion",
+     "source_url": "https://example.org/loam-robotics/team/rue"
+    }
+   ],
+   "signals": [
+    {
+     "kind": "team_paper",
+     "day": "2026-09-12",
+     "quote": "Pretraining robot policies on a million hours of video",
+     "source_url": "https://example.org/loam-robotics/research/video-pretraining",
+     "gist": "pretraining robot arms on a huge pile of video before any teleoperation",
+     "authors": [
+      {
+       "name": "Rue Example",
+       "at": "Loam Robotics"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "placeholder-autonomy",
+   "name": "Placeholder Autonomy Inc",
+   "segment": "Autonomy",
+   "buys": "both",
+   "fit": 3,
+   "why": "Autonomy software for farm vehicles.",
+   "owner": "Omar Example",
+   "contacts": [
+    {
+     "name": "Max Example",
+     "title": "Head of autonomy (new)",
+     "part": "decision_maker",
+     "source_url": "https://example.org/placeholder-autonomy/team/max"
+    }
+   ],
+   "signals": [
+    {
+     "kind": "funding",
+     "day": "2026-06-02",
+     "quote": "Placeholder Autonomy raises its Series B",
+     "source_url": "https://example.org/placeholder-autonomy/news/series-b"
+    },
+    {
+     "kind": "new_lead",
+     "day": "2026-09-10",
+     "who": "Max Example",
+     "quote": "Joining Placeholder Autonomy to lead autonomy.",
+     "source_url": "https://example.org/placeholder-autonomy/news/new-head-of-autonomy"
+    }
+   ]
+  },
+  {
+   "id": "mock-worlds",
+   "name": "Mock World Models Lab",
+   "segment": "World-model lab",
+   "buys": "watch",
+   "fit": 1,
+   "why": "Builds its own world models and action models.",
+   "contacts": [
+    {
+     "name": "Ada Example",
+     "title": "Research lead",
+     "part": "champion"
+    }
+   ],
+   "signals": [
+    {
+     "kind": "team_paper",
+     "day": "2026-09-05",
+     "quote": "A world model for every game",
+     "source_url": "https://example.org/mock-worlds/blog/every-game",
+     "gist": "one world model that learns a new game from a few minutes of play",
+     "authors": [
+      {
+       "name": "Ada Example",
+       "at": "Mock World Models Lab"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

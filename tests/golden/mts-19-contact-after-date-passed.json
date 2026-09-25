@@ -1,0 +1,27 @@
+{
+  "id": "mts-19-contact-after-date-passed",
+  "role": "mts",
+  "trap": "contact_me_after",
+  "subject": "person:mts-s",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "ask",
+      "type": "contact_constraint",
+      "date": "2026-08",
+      "observed": "2026-05-10",
+      "source": "homepage",
+      "tier": 1,
+      "quote": "Busy with my defense until August 2026; happy to talk about roles after that."
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "cites": [
+      "ask"
+    ],
+    "reason": "They asked to be contacted after their August defense, and it is now late September. The request has expired into an invitation."
+  }
+}

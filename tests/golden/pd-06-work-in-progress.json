@@ -1,0 +1,39 @@
+{
+  "id": "pd-06-work-in-progress",
+  "role": "product-designer",
+  "trap": "positive",
+  "subject": "person:pd-f",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "post",
+      "type": "x_post",
+      "date": "2026-09-17",
+      "observed": "2026-09-17",
+      "source": "x_posts_v1",
+      "tier": 1,
+      "url": "https://x.com/example_pd_f/status/12001",
+      "quote": "Prototyping a way to scrub through a game replay with the keyboard only. Rough, but it already beats the mouse. Video below."
+    },
+    {
+      "id": "wip",
+      "type": "work_in_progress",
+      "date": "2026-09-17",
+      "observed": "2026-09-17",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://x.com/example_pd_f/status/12001",
+      "quote": "Prototyping a way to scrub through a game replay with the keyboard only. Rough, but it already beats the mouse."
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "track": "rapport",
+    "cites": [
+      "wip"
+    ],
+    "reason": "Five days ago they showed a keyboard-only way to scrub a game replay, an early sign of work right in GI's area. A work-in-progress post opens a note about the work, not a pitch."
+  }
+}

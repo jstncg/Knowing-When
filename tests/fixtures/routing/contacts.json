@@ -1,0 +1,8 @@
+{
+  "note": "Invented people. Real contact routes live in research/private/contacts.json, each with the public page it came from.",
+  "A900": [
+    {"kind": "email", "value": "rin@rinvale.example", "source_url": "https://rinvale.example/about"},
+    {"kind": "x", "value": "@rinvale_example", "source_url": "https://x.com/rinvale_example"},
+    {"kind": "linkedin", "value": "https://www.linkedin.com/in/rinvale-example", "source_url": "https://rinvale.example/about"}
+  ]
+}

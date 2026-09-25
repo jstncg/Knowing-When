@@ -1,0 +1,16 @@
+{
+  "note": "Invented for the demo: the ops owners, the hire, their dates and what they said at the offer stage.",
+  "owners": ["Kai Example", "Rae Example"],
+  "default_owner": {"start_date": "Kai Example", "visa": "Kai Example", "relocation": "Kai Example",
+                    "desk": "Rae Example", "laptop": "Rae Example"},
+  "hires": [
+    {"id": "wren", "name": "Wren Example", "role_id": "backend", "office": "New York City", "start": "2026-10-05",
+     "offer_on": "2026-09-08",
+     "items": {
+       "start_date": {"owner": "Kai Example", "state": "done"},
+       "visa": {"owner": "Kai Example", "state": "not_needed", "note": "Said at the offer stage: no visa needed."},
+       "relocation": {"owner": "Kai Example", "state": "open", "note": "Said at the offer stage: moving from Boston."},
+       "desk": {"owner": "Rae Example", "state": "open"},
+       "laptop": {"owner": "Rae Example", "state": "open"}}}
+  ]
+}

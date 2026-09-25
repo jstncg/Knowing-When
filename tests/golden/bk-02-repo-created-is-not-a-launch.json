@@ -1,0 +1,35 @@
+{
+  "id": "bk-02-repo-created-is-not-a-launch",
+  "role": "backend",
+  "trap": "weak_signal_alone",
+  "subject": "person:bk-b",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "repo",
+      "type": "github_repo",
+      "date": "2026-09-18",
+      "observed": "2026-09-18",
+      "source": "github_v2",
+      "tier": 1,
+      "url": "https://github.com/example-bk/ledgerkit",
+      "quote": "Created example-bk/ledgerkit: Double-entry ledger tables and migrations for Postgres (Go)"
+    },
+    {
+      "id": "read",
+      "type": "project_release",
+      "date": "2026-09-18",
+      "observed": "2026-09-18",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://github.com/example-bk/ledgerkit",
+      "quote": "Created example-bk/ledgerkit: Double-entry ledger tables and migrations for Postgres (Go)"
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "Creating a repo is not a launch and not something they said to anyone: nothing has shipped and there is no work yet to write about beyond a one-line description. Engineers open repos all the time, so it is no launch-week hold and no reason to write; keep watching for a release or a post about it. Justin decided (2026-09-24): a repo they created, with no post or release about it, is never a reason on its own."
+  }
+}

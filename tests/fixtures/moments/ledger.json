@@ -1,0 +1,11 @@
+[
+  {"person_id": "M901", "kind": "identity", "at": "2026-09-01T00:00:00+00:00",
+   "links": ["https://kaimoreno.example/", "https://www.linkedin.com/in/kaimoreno-example"],
+   "note": "Invented: their site links their LinkedIn."},
+  {"person_id": "M902", "kind": "identity", "at": "2026-09-01T00:00:00+00:00",
+   "links": ["https://github.com/soladeyemi-example", "https://x.com/soladeyemi_example"],
+   "note": "Invented: their GitHub links their X."},
+  {"person_id": "M903", "kind": "identity", "at": "2026-09-01T00:00:00+00:00",
+   "links": ["https://arichen.example/", "https://x.com/arichen_example"],
+   "note": "Invented: their site links their X."}
+]

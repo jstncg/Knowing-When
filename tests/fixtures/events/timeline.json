@@ -1,0 +1,11 @@
+{
+  "note": "Invented door notes from GI's past events, as the Events tab writes them: a private note on the person's timeline, tagged with the event.",
+  "events": [
+    {"subject_id": "P801", "event_type": "note_open", "event_date": "2026-07-16", "observed_at": "2026-07-16T23:00:00+00:00",
+     "tier": 0, "extractor": "manual_note", "author": "Nora Example",
+     "quote": "At Sim-to-real dinner (gi-2026-07-dinner, 2026-07-16): wants to talk about robot learning roles once her summer project wraps"},
+    {"subject_id": "P802", "event_type": "private_note", "event_date": "2026-07-16", "observed_at": "2026-07-16T23:00:00+00:00",
+     "tier": 0, "extractor": "manual_note", "author": "Nora Example",
+     "quote": "At Sim-to-real dinner (gi-2026-07-dinner, 2026-07-16): enjoyed it, and asked us not to write again"}
+  ]
+}

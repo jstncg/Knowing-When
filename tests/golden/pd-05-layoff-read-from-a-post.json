@@ -1,0 +1,39 @@
+{
+  "id": "pd-05-layoff-read-from-a-post",
+  "role": "product-designer",
+  "trap": "forced_move",
+  "subject": "person:pd-e",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "post",
+      "type": "x_post",
+      "date": "2026-09-16",
+      "observed": "2026-09-16",
+      "source": "x_posts_v1",
+      "tier": 1,
+      "url": "https://x.com/example_pd_e/status/11001",
+      "quote": "Example Maps let the whole design team go today. Four years, a lot of maps. Figuring out what's next."
+    },
+    {
+      "id": "layoff",
+      "type": "layoff",
+      "date": "2026-09-16",
+      "observed": "2026-09-16",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://x.com/example_pd_e/status/11001",
+      "quote": "Example Maps let the whole design team go today."
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "track": "pitch",
+    "cites": [
+      "layoff"
+    ],
+    "reason": "Their own post says Example Maps let the whole design team go and they are figuring out what's next: a forced move six days ago, so the role is fair to raise. The message never names the layoff."
+  }
+}

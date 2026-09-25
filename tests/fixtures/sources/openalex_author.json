@@ -1,0 +1,5 @@
+{"id": "https://openalex.org/A5000000001", "display_name": "Jane Doe",
+ "affiliations": [
+   {"institution": {"id": "https://openalex.org/I2", "display_name": "Example Lab"}, "years": [2025]},
+   {"institution": {"id": "https://openalex.org/I1", "display_name": "Example University"}, "years": [2024, 2023, 2022]},
+   {"institution": {"id": "https://openalex.org/I3", "display_name": "No Years Inst"}, "years": []}]}

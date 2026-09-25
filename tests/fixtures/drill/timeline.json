@@ -1,0 +1,513 @@
+{
+ "note": "Invented people for the 120-morning drill (tests/test_invented_drill.py). Raw posts and GitHub items as the pull writes them; the reader's tags on them (extractor claude_extract_v1:posts:) as extraction.read_posts would, so no model call is needed.",
+ "contexts": [
+  {
+   "subject_id": "D01",
+   "name": "Aria Venn",
+   "role": "mts",
+   "anchors": {
+    "x": "https://x.com/ariavenn_example",
+    "homepage": "https://ariavennexample.example/"
+   },
+   "affiliations": [
+    "Harbor Lab"
+   ]
+  },
+  {
+   "subject_id": "D02",
+   "name": "Bo Lindqvist",
+   "role": "mts",
+   "anchors": {
+    "x": "https://x.com/bolindqvist_example",
+    "homepage": "https://bolindqvistexample.example/"
+   },
+   "affiliations": [
+    "North University"
+   ]
+  },
+  {
+   "subject_id": "D03",
+   "name": "Cleo Marsh",
+   "role": "mts",
+   "anchors": {
+    "x": "https://x.com/cleomarsh_example",
+    "homepage": "https://cleomarshexample.example/"
+   },
+   "affiliations": [
+    "Tiny Arcade"
+   ]
+  },
+  {
+   "subject_id": "D04",
+   "name": "Dev Okafor",
+   "role": "mts",
+   "anchors": {
+    "x": "https://x.com/devokafor_example",
+    "homepage": "https://devokaforexample.example/"
+   },
+   "affiliations": [
+    "Pine Robotics"
+   ]
+  },
+  {
+   "subject_id": "D05",
+   "name": "Esme Tran",
+   "role": "mts",
+   "anchors": {
+    "github": "https://github.com/esme-tran-example",
+    "homepage": "https://esmetranexample.example/"
+   }
+  },
+  {
+   "subject_id": "D06",
+   "name": "Finn Adler",
+   "role": "backend",
+   "anchors": {
+    "github": "https://github.com/finn-adler-example",
+    "homepage": "https://finnadlerexample.example/"
+   }
+  },
+  {
+   "subject_id": "D07",
+   "name": "Gia Moreau",
+   "role": "backend",
+   "anchors": {
+    "github": "https://github.com/gia-moreau-example",
+    "homepage": "https://giamoreauexample.example/"
+   }
+  },
+  {
+   "subject_id": "D08",
+   "name": "Hal Brenner",
+   "role": "backend",
+   "anchors": {
+    "linkedin": "https://www.linkedin.com/in/halbrenner-example",
+    "homepage": "https://halbrennerexample.example/"
+   },
+   "employer": "Example Pay"
+  },
+  {
+   "subject_id": "D09",
+   "name": "Iris Kade",
+   "role": "backend",
+   "anchors": {
+    "linkedin": "https://www.linkedin.com/in/iriskade-example",
+    "homepage": "https://iriskadeexample.example/"
+   },
+   "employer": "Example Freight"
+  },
+  {
+   "subject_id": "D10",
+   "name": "Juno Park",
+   "role": "product-designer",
+   "anchors": {
+    "x": "https://x.com/junopark_example",
+    "homepage": "https://junoparkexample.example/"
+   }
+  },
+  {
+   "subject_id": "D11",
+   "name": "Kai Moss",
+   "role": "product-designer",
+   "anchors": {
+    "x": "https://x.com/kaimoss_example",
+    "homepage": "https://kaimossexample.example/"
+   }
+  },
+  {
+   "subject_id": "D12",
+   "name": "Lena Ruiz",
+   "role": "product-designer",
+   "anchors": {
+    "linkedin": "https://www.linkedin.com/in/lenaruiz-example",
+    "homepage": "https://lenaruizexample.example/"
+   }
+  },
+  {
+   "subject_id": "D13",
+   "name": "Milo Grant",
+   "role": "product-designer",
+   "anchors": {
+    "x": "https://x.com/milogrant_example",
+    "homepage": "https://milograntexample.example/"
+   }
+  },
+  {
+   "subject_id": "D14",
+   "name": "Nia Obi",
+   "role": "mts",
+   "anchors": {
+    "x": "https://x.com/niaobi_example",
+    "homepage": "https://niaobiexample.example/"
+   }
+  },
+  {
+   "subject_id": "D15",
+   "name": "Oren Sato",
+   "role": "mts",
+   "anchors": {
+    "x": "https://x.com/orensato_example",
+    "homepage": "https://orensatoexample.example/"
+   },
+   "affiliations": [
+    "Delta Lab"
+   ]
+  },
+  {
+   "subject_id": "D16",
+   "name": "Pia Hale",
+   "role": "backend",
+   "anchors": {
+    "x": "https://x.com/piahale_example",
+    "homepage": "https://piahaleexample.example/"
+   }
+  }
+ ],
+ "events": [
+  {
+   "subject_id": "D01",
+   "event_type": "x_post",
+   "event_date": "2026-05-28",
+   "observed_at": "2026-05-28T15:00:00+00:00",
+   "quote": "Great workshop on robot learning today. The coffee was not.",
+   "source_url": "https://x.com/ariavenn_example/status/101"
+  },
+  {
+   "subject_id": "D01",
+   "event_type": "x_post",
+   "event_date": "2026-06-10",
+   "observed_at": "2026-06-10T14:20:00+00:00",
+   "quote": "Does anyone have action-labeled gameplay video beyond Atari? Our world model overfits to the handful of games we have. Happy to swap notes.",
+   "source_url": "https://x.com/ariavenn_example/status/102"
+  },
+  {
+   "subject_id": "D01",
+   "event_type": "technical_ask",
+   "event_date": "2026-06-10",
+   "observed_at": "2026-06-10T14:20:00+00:00",
+   "quote": "Does anyone have action-labeled gameplay video beyond Atari?",
+   "source_url": "https://x.com/ariavenn_example/status/102",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D01",
+   "event_type": "gi_topic",
+   "event_date": "2026-06-10",
+   "observed_at": "2026-06-10T14:20:00+00:00",
+   "quote": "Our world model overfits to the handful of games we have.",
+   "source_url": "https://x.com/ariavenn_example/status/102",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D01",
+   "event_type": "x_post",
+   "event_date": "2026-08-20",
+   "observed_at": "2026-08-20T15:00:00+00:00",
+   "quote": "Our new paper is out: arxiv.org/abs/2608.01234. World models that learn controls from unlabeled play.",
+   "source_url": "https://x.com/ariavenn_example/status/103"
+  },
+  {
+   "subject_id": "D01",
+   "event_type": "publication",
+   "event_date": "2026-08-20",
+   "observed_at": "2026-08-20T15:00:00+00:00",
+   "quote": "Our new paper is out: arxiv.org/abs/2608.01234. World models that learn controls from unlabeled play.",
+   "source_url": "https://x.com/ariavenn_example/status/103",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D02",
+   "event_type": "paper_v1",
+   "event_date": "2026-07-14",
+   "observed_at": "2026-07-14T02:00:00+00:00",
+   "quote": "Submitted 14 Jul 2026: 'Latent action models from gameplay video'",
+   "source_url": "https://arxiv.org/abs/2607.05555",
+   "extractor": "arxiv"
+  },
+  {
+   "subject_id": "D03",
+   "event_type": "x_post",
+   "event_date": "2026-08-03",
+   "observed_at": "2026-08-03T16:00:00+00:00",
+   "quote": "We just launched Tiny Arcade 1.0 today: a world model you can play in the browser.",
+   "source_url": "https://x.com/cleomarsh_example/status/301"
+  },
+  {
+   "subject_id": "D03",
+   "event_type": "launch_announced",
+   "event_date": "2026-08-03",
+   "observed_at": "2026-08-03T16:00:00+00:00",
+   "quote": "We just launched Tiny Arcade 1.0 today: a world model you can play in the browser.",
+   "source_url": "https://x.com/cleomarsh_example/status/301",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D04",
+   "event_type": "x_post",
+   "event_date": "2026-04-01",
+   "observed_at": "2026-04-01T09:00:00+00:00",
+   "quote": "Thrilled to join Pine Robotics as a research scientist today!",
+   "source_url": "https://x.com/devokafor_example/status/401"
+  },
+  {
+   "subject_id": "D04",
+   "event_type": "job_started",
+   "event_date": "2026-04-01",
+   "observed_at": "2026-04-01T09:00:00+00:00",
+   "quote": "Research Scientist, Pine Robotics",
+   "source_url": "https://x.com/devokafor_example/status/401",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D04",
+   "event_type": "x_post",
+   "event_date": "2026-07-20",
+   "observed_at": "2026-07-20T15:00:00+00:00",
+   "quote": "Trying diffusion world models on Minecraft trajectories this week. Early rollouts look surprisingly stable.",
+   "source_url": "https://x.com/devokafor_example/status/402"
+  },
+  {
+   "subject_id": "D04",
+   "event_type": "work_in_progress",
+   "event_date": "2026-07-20",
+   "observed_at": "2026-07-20T15:00:00+00:00",
+   "quote": "Trying diffusion world models on Minecraft trajectories this week.",
+   "source_url": "https://x.com/devokafor_example/status/402",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D04",
+   "event_type": "gi_topic",
+   "event_date": "2026-07-20",
+   "observed_at": "2026-07-20T15:00:00+00:00",
+   "quote": "Trying diffusion world models on Minecraft trajectories this week.",
+   "source_url": "https://x.com/devokafor_example/status/402",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D05",
+   "event_type": "github_activity",
+   "event_date": "2026-07-02",
+   "observed_at": "2026-07-02T12:00:00+00:00",
+   "quote": "Released nightly-20260702 of esme-tran-example/rl-kit: Nightly build",
+   "source_url": "https://github.com/esme-tran-example/rl-kit/releases/tag/nightly-20260702",
+   "extractor": "github_v2"
+  },
+  {
+   "subject_id": "D05",
+   "event_type": "project_release",
+   "event_date": "2026-07-02",
+   "observed_at": "2026-07-02T12:00:00+00:00",
+   "quote": "Released nightly-20260702 of esme-tran-example/rl-kit: Nightly build",
+   "source_url": "https://github.com/esme-tran-example/rl-kit/releases/tag/nightly-20260702",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D06",
+   "event_type": "github_activity",
+   "event_date": "2026-06-22",
+   "observed_at": "2026-06-22T12:00:00+00:00",
+   "quote": "Released v2.0.0 of finn-adler-example/tidewire: Exactly-once delivery for Postgres-backed job queues",
+   "source_url": "https://github.com/finn-adler-example/tidewire/releases/tag/v2.0.0",
+   "extractor": "github_v2"
+  },
+  {
+   "subject_id": "D06",
+   "event_type": "project_release",
+   "event_date": "2026-06-22",
+   "observed_at": "2026-06-22T12:00:00+00:00",
+   "quote": "Released v2.0.0 of finn-adler-example/tidewire: Exactly-once delivery for Postgres-backed job queues",
+   "source_url": "https://github.com/finn-adler-example/tidewire/releases/tag/v2.0.0",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D07",
+   "event_type": "github_repo",
+   "event_date": "2026-07-06",
+   "observed_at": "2026-07-06T12:00:00+00:00",
+   "quote": "Created gia-moreau-example/ledgerkit: Double-entry ledger tables and migrations for Postgres (Go)",
+   "source_url": "https://github.com/gia-moreau-example/ledgerkit",
+   "extractor": "github_v2"
+  },
+  {
+   "subject_id": "D07",
+   "event_type": "project_release",
+   "event_date": "2026-07-06",
+   "observed_at": "2026-07-06T12:00:00+00:00",
+   "quote": "Created gia-moreau-example/ledgerkit: Double-entry ledger tables and migrations for Postgres (Go)",
+   "source_url": "https://github.com/gia-moreau-example/ledgerkit",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D08",
+   "event_type": "linkedin_post",
+   "event_date": "2026-08-24",
+   "observed_at": "2026-08-24T15:00:00+00:00",
+   "quote": "After five years building the payments platform at Example Pay, I'm looking for my next backend role. Distributed systems, Go, Postgres. Open to chat.",
+   "source_url": "https://www.linkedin.com/posts/halbrenner-example-801"
+  },
+  {
+   "subject_id": "D08",
+   "event_type": "self_stated_availability",
+   "event_date": "2026-08-24",
+   "observed_at": "2026-08-24T15:00:00+00:00",
+   "quote": "I'm looking for my next backend role. Distributed systems, Go, Postgres. Open to chat.",
+   "source_url": "https://www.linkedin.com/posts/halbrenner-example-801",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D09",
+   "event_type": "linkedin_post",
+   "event_date": "2026-08-24",
+   "observed_at": "2026-08-24T15:00:00+00:00",
+   "quote": "Friday was my last day at Example Freight. The company let go of most of engineering, my team included.",
+   "source_url": "https://www.linkedin.com/posts/iriskade-example-901"
+  },
+  {
+   "subject_id": "D09",
+   "event_type": "layoff",
+   "event_date": "2026-08-21",
+   "observed_at": "2026-08-24T15:00:00+00:00",
+   "quote": "Friday was my last day at Example Freight. The company let go of most of engineering, my team included.",
+   "source_url": "https://www.linkedin.com/posts/iriskade-example-901",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D10",
+   "event_type": "x_post",
+   "event_date": "2026-08-24",
+   "observed_at": "2026-08-24T15:00:00+00:00",
+   "quote": "Prototyping a way to scrub through a game replay with the keyboard only. Rough, but it already beats the mouse.",
+   "source_url": "https://x.com/junopark_example/status/1001"
+  },
+  {
+   "subject_id": "D10",
+   "event_type": "work_in_progress",
+   "event_date": "2026-08-24",
+   "observed_at": "2026-08-24T15:00:00+00:00",
+   "quote": "Prototyping a way to scrub through a game replay with the keyboard only.",
+   "source_url": "https://x.com/junopark_example/status/1001",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D11",
+   "event_type": "x_post",
+   "event_date": "2026-08-17",
+   "observed_at": "2026-08-17T15:00:00+00:00",
+   "quote": "Harbor Notes v3.1 is live: offline sync and a new capture sheet.",
+   "source_url": "https://x.com/kaimoss_example/status/1101"
+  },
+  {
+   "subject_id": "D11",
+   "event_type": "launch_announced",
+   "event_date": "2026-08-17",
+   "observed_at": "2026-08-17T15:00:00+00:00",
+   "quote": "Harbor Notes v3.1 is live: offline sync and a new capture sheet.",
+   "source_url": "https://x.com/kaimoss_example/status/1101",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D15",
+   "event_type": "x_post",
+   "event_date": "2026-08-25",
+   "observed_at": "2026-08-25T15:00:00+00:00",
+   "quote": "Anyone benchmarked inverse dynamics models on real game footage? Looking for a baseline to compare our labeler against.",
+   "source_url": "https://x.com/orensato_example/status/1501"
+  },
+  {
+   "subject_id": "D15",
+   "event_type": "technical_ask",
+   "event_date": "2026-08-25",
+   "observed_at": "2026-08-25T15:00:00+00:00",
+   "quote": "Anyone benchmarked inverse dynamics models on real game footage?",
+   "source_url": "https://x.com/orensato_example/status/1501",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D15",
+   "event_type": "gi_topic",
+   "event_date": "2026-08-25",
+   "observed_at": "2026-08-25T15:00:00+00:00",
+   "quote": "inverse dynamics models on real game footage",
+   "source_url": "https://x.com/orensato_example/status/1501",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D12",
+   "event_type": "linkedin_post",
+   "event_date": "2026-07-01",
+   "observed_at": "2026-07-01T15:00:00+00:00",
+   "quote": "Working on a new onboarding for our sketching app: three screens instead of nine.",
+   "source_url": "https://www.linkedin.com/posts/lenaruiz-example-1201"
+  },
+  {
+   "subject_id": "D12",
+   "event_type": "work_in_progress",
+   "event_date": "2026-07-01",
+   "observed_at": "2026-07-01T15:00:00+00:00",
+   "quote": "Working on a new onboarding for our sketching app: three screens instead of nine.",
+   "source_url": "https://www.linkedin.com/posts/lenaruiz-example-1201",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D13",
+   "event_type": "x_post",
+   "event_date": "2026-07-28",
+   "observed_at": "2026-07-28T15:00:00+00:00",
+   "quote": "Sketching a clip editor where you trim by dragging the waveform. First pass below.",
+   "source_url": "https://x.com/milogrant_example/status/1301"
+  },
+  {
+   "subject_id": "D13",
+   "event_type": "work_in_progress",
+   "event_date": "2026-07-28",
+   "observed_at": "2026-07-28T15:00:00+00:00",
+   "quote": "Sketching a clip editor where you trim by dragging the waveform.",
+   "source_url": "https://x.com/milogrant_example/status/1301",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D14",
+   "event_type": "x_post",
+   "event_date": "2026-06-03",
+   "observed_at": "2026-06-03T15:00:00+00:00",
+   "quote": "Teaching a pocket model to guess the next frame of kart replays this week on one old laptop GPU, and it mostly works.",
+   "source_url": "https://x.com/niaobi_example/status/1401"
+  },
+  {
+   "subject_id": "D14",
+   "event_type": "work_in_progress",
+   "event_date": "2026-06-03",
+   "observed_at": "2026-06-03T15:00:00+00:00",
+   "quote": "Teaching a pocket model to guess the next frame of kart replays this week.",
+   "source_url": "https://x.com/niaobi_example/status/1401",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D14",
+   "event_type": "gi_topic",
+   "event_date": "2026-06-03",
+   "observed_at": "2026-06-03T15:00:00+00:00",
+   "quote": "a pocket model to guess the next frame of kart replays",
+   "source_url": "https://x.com/niaobi_example/status/1401",
+   "extractor": "claude_extract_v1:posts:fixture"
+  },
+  {
+   "subject_id": "D16",
+   "event_type": "x_post",
+   "event_date": "2026-08-26",
+   "observed_at": "2026-08-26T14:00:00+00:00",
+   "quote": "Has anyone run Postgres logical replication past 50k writes a second? We're hitting WAL lag spikes and I'd love to compare notes.",
+   "source_url": "https://x.com/piahale_example/status/1601"
+  },
+  {
+   "subject_id": "D16",
+   "event_type": "technical_ask",
+   "event_date": "2026-08-26",
+   "observed_at": "2026-08-26T14:00:00+00:00",
+   "quote": "Has anyone run Postgres logical replication past 50k writes a second?",
+   "source_url": "https://x.com/piahale_example/status/1601",
+   "extractor": "claude_extract_v1:posts:fixture"
+  }
+ ]
+}

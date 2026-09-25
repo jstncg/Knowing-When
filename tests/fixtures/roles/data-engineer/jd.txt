@@ -1,0 +1,18 @@
+Data Engineer
+New York City, on-site
+
+We train action models on video of people playing games. You will own the pipelines that turn millions of gameplay clips into clean, labeled training data.
+
+What you'll do
+- Build and run batch and streaming pipelines that ingest, filter and label gameplay video at petabyte scale.
+- Design dataset versioning so researchers can reproduce any training run.
+- Work with researchers to find and fix data quality problems that hurt training.
+
+Required
+- 4+ years building production data pipelines.
+- Strong Python and SQL.
+- Distributed processing experience such as Spark, Ray or Beam.
+
+Preferred
+- Experience with video or other large media datasets.
+- Open-source contributions to data tooling.

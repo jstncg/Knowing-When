@@ -1,0 +1,27 @@
+{
+  "id": "mts-15-private-note",
+  "role": "mts",
+  "trap": "positive",
+  "subject": "person:mts-o",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "note",
+      "type": "note_open",
+      "date": "2026-09-15",
+      "observed": "2026-09-15T18:00:00Z",
+      "source": "note",
+      "tier": 0,
+      "quote": "Met at CoRL; said they're open to conversations now that their September paper is out."
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "reason": "A GI teammate heard it from them directly this week: the strongest possible signal, and current.",
+    "cites": [
+      "note"
+    ]
+  }
+}

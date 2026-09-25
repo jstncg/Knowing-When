@@ -1,0 +1,31 @@
+{
+  "id": "mts-11-postdoc-end-next-summer",
+  "role": "mts",
+  "trap": "announced_future_date",
+  "subject": "person:mts-k",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": true,
+  "events": [
+    {
+      "id": "placement",
+      "type": "placement_end_expected",
+      "date": "2027-06-30",
+      "observed": "2026-09-01",
+      "source": "lab_page",
+      "tier": 1,
+      "quote": "Their postdoctoral appointment ends June 30, 2027."
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "reason": "A June 2027 end means they interview this winter; industry research offers for summer starts land from December to March. Now is early; three months before the end is late.",
+    "until_between": [
+      "2026-11-15",
+      "2027-03-15"
+    ],
+    "cites": [
+      "placement"
+    ]
+  }
+}

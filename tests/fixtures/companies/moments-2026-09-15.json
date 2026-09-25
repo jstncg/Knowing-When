@@ -1,0 +1,33 @@
+{
+  "note": "An invented company read for the simulation, as scripts/companies.py read writes one: every company, headline, paper, author and link is made up. Driftwire, Sample Sim Labs and Mock World Models Lab are invented GTM accounts in tests/fixtures/accounts; Jonah Pike (D902) works at Driftwire in tests/fixtures/demo.",
+  "read_on": "2026-09-15",
+  "since": "2026-08-16",
+  "moments": [
+    {"company": "Mock World Models Lab", "kind": "layoffs_reported", "day": "2026-09-11",
+     "quote": "Mock World Models Lab lays off 30 researchers as it narrows its focus",
+     "source_url": "https://example.org/news/mock-world-models-layoffs"},
+    {"company": "Mock World Models Lab", "kind": "layoffs_reported", "day": "2026-09-12",
+     "quote": "Mock World Models Lab lays off 30 staff, including most of its research team",
+     "source_url": "https://example.org/news/mock-world-models-layoffs-2"},
+    {"company": "Mock World Models Lab", "kind": "team_paper", "day": "2026-09-03",
+     "quote": "Latent action world models from gameplay video",
+     "source_url": "https://example.org/papers/latent-action-world-models",
+     "authors": [{"name": "Ada Example", "url": "https://example.org/authors/ada-example"},
+                 {"name": "Bo Example", "url": "https://example.org/authors/bo-example"}]},
+    {"company": "Mock World Models Lab", "kind": "team_paper", "day": "2026-08-20",
+     "quote": "Game agents that learn from player clips",
+     "source_url": "https://example.org/papers/game-agents-from-clips",
+     "authors": [{"name": "Ada Example", "url": "https://example.org/authors/ada-example"},
+                 {"name": "Cy Example", "url": "https://example.org/authors/cy-example"}]},
+    {"company": "Sample Sim Labs", "kind": "acquisition_called_off", "day": "2026-09-12",
+     "quote": "Birch Media walks away from Sample Sim Labs deal",
+     "source_url": "https://example.org/news/sample-sim-deal-off"},
+    {"company": "Driftwire", "kind": "team_paper", "day": "2026-08-25",
+     "quote": "Learning game agents from player clips",
+     "source_url": "https://example.org/driftwire/research/agents-from-clips",
+     "authors": [{"name": "Lee Example", "url": "https://example.org/driftwire/team/lee"},
+                 {"name": "Jonah Pike", "url": "https://example.org/authors/jonah-pike"}]}
+  ],
+  "errors": [],
+  "openalex": "OpenAlex: 14 search pages, invented."
+}

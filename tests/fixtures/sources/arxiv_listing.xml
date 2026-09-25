@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <title>ArXiv Query: search_query=au:"Jane Doe"</title>
+  <entry>
+    <id>http://arxiv.org/abs/2501.01234v2</id>
+    <updated>2025-03-10T09:15:00Z</updated>
+    <published>2025-01-05T18:00:00Z</published>
+    <title>Action-Conditioned World Models
+  for Long Horizons</title>
+    <summary>We study world models.</summary>
+    <author><name>Jane Doe</name><arxiv:affiliation>Example University</arxiv:affiliation></author>
+    <author><name>Alex Roe</name></author>
+    <arxiv:primary_category term="cs.LG"/>
+    <link href="http://arxiv.org/abs/2501.01234v2" rel="alternate" type="text/html"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.00001v1</id>
+    <updated>2024-12-01T00:00:00Z</updated>
+    <published>2024-12-01T00:00:00Z</published>
+    <title>A Note on Planning</title>
+    <summary>Short note.</summary>
+    <author><name>Jane Doe</name></author>
+    <link href="http://arxiv.org/abs/2412.00001v1" rel="alternate" type="text/html"/>
+  </entry>
+</feed>

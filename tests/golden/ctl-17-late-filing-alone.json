@@ -1,0 +1,45 @@
+{
+  "id": "ctl-17-late-filing-alone",
+  "role": "controller",
+  "trap": "single_family_strong",
+  "subject": "controller-q|org:granite",
+  "related": [
+    "org:granite"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "late",
+      "type": "late_filing",
+      "date": "2026-08-17",
+      "observed": "2026-08-17",
+      "source": "sec_filing",
+      "tier": 1,
+      "quote": "Form 12b-25: the registrant cannot file its Form 10-Q within the prescribed time.",
+      "subject": "org:granite"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2020-08-03",
+      "observed": "2020-08-05",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-q|org:granite",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Granite"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "verify_first",
+    "reason": "A late 10-Q means the close broke on the controller's watch: they may be under pressure or on the way out, or it may be a one-off. Find out what happened before calling.",
+    "cites": [
+      "late"
+    ]
+  }
+}

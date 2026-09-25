@@ -1,0 +1,54 @@
+{
+  "id": "bk-04-work-in-progress-four-months-into-a-job",
+  "role": "backend",
+  "trap": "recent_move",
+  "subject": "person:bk-d",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "started",
+      "type": "job_started",
+      "date": "2026-05-04",
+      "observed": "2026-05-04",
+      "source": "claude_extract_v1",
+      "tier": 1,
+      "quote": "Senior Backend Engineer, Example Streams"
+    },
+    {
+      "id": "post",
+      "type": "x_post",
+      "date": "2026-09-16",
+      "observed": "2026-09-16",
+      "source": "x_posts_v1",
+      "tier": 1,
+      "url": "https://x.com/example_bk_d/status/4001",
+      "quote": "Rewriting our event ingestion in Rust this month. p99 went from 40ms to 6ms on the first shard; still chasing a backpressure bug."
+    },
+    {
+      "id": "wip",
+      "type": "work_in_progress",
+      "date": "2026-09-16",
+      "observed": "2026-09-16",
+      "source": "claude_extract_v1:posts:2026-09-23.5:abc123def456:a1b2c3:small",
+      "tier": 1,
+      "url": "https://x.com/example_bk_d/status/4001",
+      "quote": "Rewriting our event ingestion in Rust this month. p99 went from 40ms to 6ms on the first shard; still chasing a backpressure bug."
+    }
+  ],
+  "expected": {
+    "call": "wait",
+    "until_between": [
+      "2027-03-01",
+      "2027-08-31"
+    ],
+    "also_ok": [
+      "not_now"
+    ],
+    "cites": [
+      "started"
+    ],
+    "reason": "They started at Example Streams in May, four months ago, and the post is about their work there. A fresh early sign does not beat the first-year hold (as the recent promotion beats a fresh paper in mts-06); come back about a year into the job."
+  }
+}

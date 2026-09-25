@@ -1,0 +1,42 @@
+{
+  "id": "mts-20-leak-would-add-reason",
+  "role": "mts",
+  "trap": "observed_after_as_of",
+  "subject": "person:mts-t",
+  "related": [],
+  "as_of": "2026-08-01",
+  "judgment": false,
+  "events": [
+    {
+      "id": "aff",
+      "type": "affiliation_seen",
+      "date": "2025",
+      "observed": "2025-06-01",
+      "source": "openalex",
+      "tier": 1,
+      "quote": "Researcher T (Example University) on 'Video world models'"
+    },
+    {
+      "id": "pi",
+      "type": "pi_departure",
+      "date": "2026-07-25",
+      "observed": "2026-08-10",
+      "source": "lab_news",
+      "tier": 2,
+      "quote": "Our PI is leaving the university to start a company."
+    },
+    {
+      "id": "accepted",
+      "type": "paper_accepted",
+      "date": "2026-07-28",
+      "observed": "2026-08-12",
+      "source": "openreview",
+      "tier": 1,
+      "quote": "Accepted to TMLR: 'Video world models'"
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "On 1 August nothing current was known. The PI's departure and the acceptance only became public on 10 and 12 August; calling on them before then would be leakage."
+  }
+}

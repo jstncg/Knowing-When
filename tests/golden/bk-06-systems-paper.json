@@ -1,0 +1,28 @@
+{
+  "id": "bk-06-systems-paper",
+  "role": "backend",
+  "trap": "weak_signal_alone",
+  "subject": "person:bk-f",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "preprint",
+      "type": "paper_v1",
+      "date": "2026-09-12",
+      "observed": "2026-09-12",
+      "source": "arxiv",
+      "tier": 1,
+      "quote": "Submitted 12 Sep 2026: 'Tail-latency budgets for streaming replay buffers'"
+    }
+  ],
+  "expected": {
+    "call": "reach_now",
+    "track": "rapport",
+    "cites": [
+      "preprint"
+    ],
+    "reason": "A preprint of ten days ago on tail latency for streaming replay buffers is squarely the infrastructure GI runs. A paper of the last month opens a note about the work, never a pitch on its own."
+  }
+}

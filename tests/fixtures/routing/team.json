@@ -1,0 +1,12 @@
+{
+  "note": "Invented people. The real roster lives in research/private/gi-team.json.",
+  "members": [
+    {"name": "Dana Kest", "title": "Research lead", "email": "dana@gi.example", "slack_user_id": "U0DANA",
+     "openalex_ids": ["A555"], "history": [{"org": "Pine Lab", "start": 2019, "end": 2024}]},
+    {"name": "Omar Lind", "title": "Research engineer", "email": "omar@gi.example", "x_handle": "omarlind",
+     "history": [{"org": "Acme Research", "start": 2021, "end": 2023}],
+     "signs_for": ["mts-research"], "works_on": ["scaling laws"]},
+    {"name": "Ines Ward", "title": "CEO", "x_handle": "inesward", "slack_user_id": "U0INES",
+     "signs_for": ["mts-research:senior"]}
+  ]
+}

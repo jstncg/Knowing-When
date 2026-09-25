@@ -1,0 +1,283 @@
+[
+ {
+  "filing": {
+   "cik": "0001032208",
+   "company": "SEMPRA",
+   "accession": "0001032208-25-000040",
+   "form": "8-K",
+   "filing_date": "2025-06-23",
+   "report_date": "2025-06-18",
+   "accepted_at": "2025-06-23T20:12:37.000Z",
+   "items": [
+    "5.02"
+   ],
+   "primary_doc": "srescg-20250618.htm"
+  },
+  "events": [
+   {
+    "subject_type": "person",
+    "subject_id": "caroline-winn|sempra",
+    "event_type": "officer_appointment",
+    "event_date": "2025-06-21",
+    "date_precision": "day",
+    "observed_at": "2025-06-23T20:12:37+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1032208/000103220825000040/srescg-20250618.htm",
+    "source_version_hash": "8da127b185c005b102e3ae34754048c4da6fb9ab880c7da31ddc7fd0e2f75fee",
+    "quote": "On June 21, 2025, the Board of Directors of Sempra (the \u201cSempra Board\u201d) promoted Caroline A. Winn to the position of executive vice president of Sempra overseeing Southern California Gas Company (\u201cSoCalGas\u201d) and San Diego Gas & Electric Company (\u201cSDG&E\u201d), Sempra\u2019s California utility subsidiaries.",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null,
+    "person_name": "Caroline A. Winn",
+    "title": "executive vice president of Sempra",
+    "company": "SEMPRA",
+    "reason": ""
+   },
+   {
+    "subject_type": "person",
+    "subject_id": "peter-wall|sempra",
+    "event_type": "officer_departure",
+    "event_date": "2025-06-18",
+    "date_precision": "day",
+    "observed_at": "2025-06-23T20:12:37+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1032208/000103220825000040/srescg-20250618.htm",
+    "source_version_hash": "8da127b185c005b102e3ae34754048c4da6fb9ab880c7da31ddc7fd0e2f75fee",
+    "quote": "On June 18, 2025, Peter R. Wall provided notice that he will resign as senior vice president, controller and chief accounting officer of Sempra and as a director of SoCalGas.",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null,
+    "person_name": "Peter R. Wall",
+    "title": "senior vice president, controller and chief accounting officer",
+    "company": "SEMPRA",
+    "reason": ""
+   },
+   {
+    "subject_type": "person",
+    "subject_id": "dyan-wold|sempra",
+    "event_type": "officer_appointment",
+    "event_date": "2025-06-21",
+    "date_precision": "day",
+    "observed_at": "2025-06-23T20:12:37+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1032208/000103220825000040/srescg-20250618.htm",
+    "source_version_hash": "8da127b185c005b102e3ae34754048c4da6fb9ab880c7da31ddc7fd0e2f75fee",
+    "quote": "On June 21, 2025, the Sempra Board promoted Dyan Z. Wold, the current vice president, controller and chief accounting officer of Sempra\u2019s subsidiary Sempra Infrastructure Partners, to the position of vice president, controller and chief accounting officer of Sempra.",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null,
+    "person_name": "Dyan Z. Wold",
+    "title": "vice president, controller and chief accounting officer",
+    "company": "SEMPRA",
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "filing": {
+   "cik": "0001357615",
+   "company": "KBR, INC.",
+   "accession": "0001357615-25-000035",
+   "form": "8-K",
+   "filing_date": "2025-06-02",
+   "report_date": "2025-05-27",
+   "accepted_at": "2025-06-02T20:01:52.000Z",
+   "items": [
+    "5.02"
+   ],
+   "primary_doc": "kbr-20250527.htm"
+  },
+  "events": [
+   {
+    "subject_type": "person",
+    "subject_id": "alison-vasquez|kbr-inc",
+    "event_type": "officer_departure",
+    "event_date": "2025-06-18",
+    "date_precision": "day",
+    "observed_at": "2025-06-02T20:01:52+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1357615/000135761525000035/kbr-20250527.htm",
+    "source_version_hash": "c49955f89b31946a0555c5151c94edc6a2a9d270964098d2bcd824fb8344581e",
+    "quote": "On May 27, 2025, Alison Vasquez notified KBR, Inc. (\u201cKBR\u201d) of her decision to resign from her role of Senior Vice President, Chief Accounting Officer at KBR, effective June 18, 2025, to pursue another opportunity.",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null,
+    "person_name": "Alison Vasquez",
+    "title": "Senior Vice President, Chief Accounting Officer",
+    "company": "KBR, INC.",
+    "reason": "to pursue another opportunity"
+   },
+   {
+    "subject_type": "person",
+    "subject_id": "evans-shad|kbr-inc",
+    "event_type": "officer_appointment",
+    "event_date": "2025-05-27",
+    "date_precision": "day",
+    "observed_at": "2025-06-02T20:01:52+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1357615/000135761525000035/kbr-20250527.htm",
+    "source_version_hash": "c49955f89b31946a0555c5151c94edc6a2a9d270964098d2bcd824fb8344581e",
+    "quote": "Effective as of Ms. Vasquez\u2019s departure date, KBR has appointed Shad E. Evans, Senior Vice President of Financial Operations, to serve as interim Chief Accounting Officer.",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null,
+    "person_name": "Shad E. Evans",
+    "title": "Chief Accounting Officer",
+    "company": "KBR, INC.",
+    "reason": ""
+   },
+   {
+    "subject_type": "person",
+    "subject_id": "jennefer-taylor|kbr-inc",
+    "event_type": "officer_appointment",
+    "event_date": "2025-08-01",
+    "date_precision": "day",
+    "observed_at": "2025-06-02T20:01:52+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1357615/000135761525000035/kbr-20250527.htm",
+    "source_version_hash": "c49955f89b31946a0555c5151c94edc6a2a9d270964098d2bcd824fb8344581e",
+    "quote": "Mr. Evans will serve as interim Chief Accounting Officer until July 31, 2025, and thereafter Jennefer Taylor will assume the role of Vice President, Chief Accounting Officer, effective August 1, 2025.",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null,
+    "person_name": "Jennefer Taylor",
+    "title": "Vice President, Chief Accounting Officer",
+    "company": "KBR, INC.",
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "filing": {
+   "cik": "0000940942",
+   "company": "Hub Group, Inc.",
+   "accession": "0001171843-25-003765",
+   "form": "8-K",
+   "filing_date": "2025-06-06",
+   "report_date": "2025-06-06",
+   "accepted_at": "2025-06-06T20:05:40.000Z",
+   "items": [
+    "5.02"
+   ],
+   "primary_doc": "f8k_060625.htm"
+  },
+  "events": [
+   {
+    "subject_type": "person",
+    "subject_id": "brent-rhodes|hub-group-inc",
+    "event_type": "officer_departure",
+    "event_date": "2025-06-27",
+    "date_precision": "day",
+    "observed_at": "2025-06-06T20:05:40+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/940942/000117184325003765/f8k_060625.htm",
+    "source_version_hash": "4890315dcb72b8ecaf242bcefa130596ff938e04d1903e555ce0028f0c0aa5c3",
+    "quote": "Resignation of Principal Officer On June 2, 2025, Brent Rhodes notified Hub Group, Inc. (the \u201cCompany\u201d) of his decision to resign from the position of Chief Accounting Officer effective June 27, 2025 (\u201cEffective Date\u201d).",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null,
+    "person_name": "Brent Rhodes",
+    "title": "Chief Accounting Officer",
+    "company": "Hub Group, Inc.",
+    "reason": "to pursue another opportunity"
+   },
+   {
+    "subject_type": "person",
+    "subject_id": "dennis-mathews|hub-group-inc",
+    "event_type": "officer_appointment",
+    "event_date": "2025-06-30",
+    "date_precision": "day",
+    "observed_at": "2025-06-06T20:05:40+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/940942/000117184325003765/f8k_060625.htm",
+    "source_version_hash": "4890315dcb72b8ecaf242bcefa130596ff938e04d1903e555ce0028f0c0aa5c3",
+    "quote": "Appointment of Principal Officer On June 6, 2025, Dennis Mathews was appointed as the Company\u2019s Chief Accounting Officer effective June 30, 2025.",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null,
+    "person_name": "Dennis Mathews",
+    "title": "Chief Accounting Officer",
+    "company": "Hub Group, Inc.",
+    "reason": ""
+   }
+  ]
+ },
+ {
+  "filing": {
+   "cik": "0001134765",
+   "company": "Charlie's Holdings, Inc.",
+   "accession": "0001437749-25-019288",
+   "form": "8-K",
+   "filing_date": "2025-06-03",
+   "report_date": "2025-05-29",
+   "accepted_at": "2025-06-03T20:15:17.000Z",
+   "items": [
+    "1.01",
+    "2.01",
+    "9.01"
+   ],
+   "primary_doc": "chuc20250603_8k.htm"
+  },
+  "events": []
+ },
+ {
+  "filing": {
+   "cik": "0001879001",
+   "company": "Verses AI Inc.",
+   "accession": "0001641172-25-017140",
+   "form": "NT 10-K",
+   "filing_date": "2025-06-30",
+   "report_date": "2025-03-31",
+   "accepted_at": "2025-06-30T20:15:30.000Z",
+   "items": [],
+   "primary_doc": "formnt10-k.htm"
+  },
+  "events": [
+   {
+    "subject_type": "org",
+    "subject_id": "0001879001",
+    "event_type": "late_filing",
+    "event_date": "2025-06-30",
+    "date_precision": "day",
+    "observed_at": "2025-06-30T20:15:30+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1879001/000164117225017140/formnt10-k.htm",
+    "source_version_hash": "80d46e8dafddb50ae37073a65556d2dc5426c72424a17b0f6a323a1310ce582f",
+    "quote": "Verses AI Inc. (the \u201cCompany\u201d) is unable, without unreasonable effort or expense, to file its Annual Report on Form 10-K for the year ended March 31, 2025 (the \u201c2025 Form 10-K\u201d) within the prescribed time period as result of the Company having limited internal resources and no previous reporting",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null
+   }
+  ]
+ },
+ {
+  "filing": {
+   "cik": "0001032208",
+   "company": "SEMPRA",
+   "accession": "0001032208-26-000010",
+   "form": "10-K",
+   "filing_date": "2026-02-26",
+   "report_date": "2025-12-31",
+   "accepted_at": "2026-02-26T22:11:32.000Z",
+   "items": [],
+   "primary_doc": "sre-20251231.htm"
+  },
+  "events": [
+   {
+    "subject_type": "org",
+    "subject_id": "0001032208",
+    "event_type": "annual_report_filed",
+    "event_date": "2026-02-26",
+    "date_precision": "day",
+    "observed_at": "2026-02-26T22:11:32+00:00",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1032208/000103220826000010/0001032208-26-000010-index.htm",
+    "source_version_hash": "45f94e170d80cdff87ca5ce4b5cad83ce0707552904fcaf775fd89d11c25c9b9",
+    "quote": "Filing Date 2026-02-26 Accepted 2026-02-26 17:11:32 Documents 235 Period of Report 2025-12-31",
+    "tier": 1,
+    "extractor": "sec_8k_v1",
+    "author": "",
+    "supersedes": null
+   }
+  ]
+ }
+]

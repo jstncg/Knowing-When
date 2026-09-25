@@ -1,0 +1,41 @@
+{
+  "id": "mts-18-moved-this-year",
+  "role": "mts",
+  "trap": "recent_move",
+  "subject": "person:mts-r",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "moved",
+      "type": "affiliation_change",
+      "date": "2026",
+      "observed": "2026-09-10",
+      "source": "openalex",
+      "tier": 1,
+      "quote": "Researcher R (Meta FAIR) on 'Diffusion world models' [previously Example University]"
+    },
+    {
+      "id": "accepted",
+      "type": "paper_accepted",
+      "date": "2026-09-10",
+      "observed": "2026-09-10",
+      "source": "openreview",
+      "tier": 1,
+      "quote": "Accepted to TMLR: 'Latent action models from gameplay video'"
+    }
+  ],
+  "expected": {
+    "call": "verify_first",
+    "reason": "Their latest paper lists Meta FAIR instead of their university. That is a move this year or an internship, and paper affiliations lag. Confirm which: a fresh hire is not now, an intern heading back is a moment. Since 2026-09-23 a paper out is enough for a note about the work, never a pitch, so a note about the accepted paper is also acceptable; a pitch is not.",
+    "also_ok": [
+      "not_now",
+      "reach_now"
+    ],
+    "cites": [
+      "moved"
+    ],
+    "track": "rapport"
+  }
+}

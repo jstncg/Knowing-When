@@ -1,0 +1,37 @@
+{
+  "archetype": "engineering",
+  "detectors": [
+    {"id": "tenure_milestone", "reason": "Time in their current role is listed on a call as context, never a reason."},
+    {"id": "team_exodus", "reason": "Two or more people leaving their data team within weeks changes the team they work in."},
+    {"id": "acquisition_closed", "reason": "An acquisition of their employer reshapes data teams and scope."},
+    {"id": "warn_notice", "reason": "A WARN layoff notice at their employer means teams are being cut."},
+    {"id": "retention_cliff", "reason": "An acquisition's retention cliff is listed on a call as context, never a reason."},
+    {"id": "paper_talk", "reason": "A talk on data infrastructure puts their pipeline work in public, per the JD's scale."},
+    {"id": "launch", "reason": "A data tooling or dataset release they shipped is owned work at the scale the JD asks for."},
+    {"id": "gi_attention", "reason": "Public attention to GI or Medal is a direct reason to write."},
+    {"id": "private_note", "reason": "A GI teammate hearing they are open is the strongest reason to write."},
+    {"id": "self_stated_availability", "reason": "They said they are looking, or when they are free: an invitation to talk."}
+  ],
+  "answer_key": {
+    "query": "Data engineers joining AI labs or gaming platforms: LinkedIn job-change posts and engineering team announcements",
+    "sources": ["crustdata_person", "exa"]
+  },
+  "hypotheses": [
+    {"id": "explicit_invitation", "detector_ids": ["private_note", "self_stated_availability"], "gap": ""},
+    {"id": "organization_change", "detector_ids": ["acquisition_closed", "warn_notice", "team_exodus"], "gap": ""},
+    {"id": "warm_route", "detector_ids": [], "gap": "gap: needs adapter for authorized referral records"},
+    {"id": "production_milestone", "detector_ids": ["launch", "paper_talk"], "gap": ""}
+  ],
+  "gaps": ["gap: needs adapter for internal data platform work, which leaves no public trace"],
+  "topics": [
+    "gameplay video datasets",
+    "video data pipelines",
+    "labeling video at scale",
+    "dataset versioning and reproducible training data",
+    "data quality for model training",
+    "Spark, Ray or Beam at scale",
+    "streaming ingestion",
+    "large media datasets",
+    "open-source data tooling"
+  ]
+}

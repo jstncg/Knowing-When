@@ -1,0 +1,122 @@
+{
+ "archetype": "non_publishing_operations",
+ "detectors": [
+  {
+   "id": "tenure_milestone",
+   "reason": "Time in their current role is listed on a call as context, never a reason."
+  },
+  {
+   "id": "exec_departure",
+   "reason": "An officer leaving changes the leadership a Controller reports to and the close they run."
+  },
+  {
+   "id": "team_exodus",
+   "reason": "Two or more officers leaving one company within weeks unsettles the finance team."
+  },
+  {
+   "id": "retention_cliff",
+   "reason": "An acquisition's retention cliff is listed on a call as context, never a reason."
+  },
+  {
+   "id": "own_precedent",
+   "reason": "The pattern before their past moves is listed on a call as context, never a reason."
+  },
+  {
+   "id": "acquisition_closed",
+   "reason": "An acquisition folds the finance function into the buyer's, the multi-entity work the JD describes."
+  },
+  {
+   "id": "warn_notice",
+   "reason": "Layoffs at the employer put finance roles at risk."
+  },
+  {
+   "id": "auditor_change",
+   "reason": "An auditor change resets the audit relationship the Controller owns."
+  },
+  {
+   "id": "late_filing",
+   "reason": "A late 10-K or 10-Q means the close broke, pressure that lands on the Controller."
+  },
+  {
+   "id": "paper_talk",
+   "reason": "A dated talk on close, audit or finance automation is a peer conversation opener."
+  },
+  {
+   "id": "gi_attention",
+   "reason": "Public attention to GI shows interest in the company."
+  },
+  {
+   "id": "calendar_quiet_close",
+   "reason": "Quarter close and audit season are when Controllers cannot engage."
+  },
+  {
+   "id": "private_note",
+   "reason": "A GI human hearing of an invitation or reconnect is the explicit_invitation hypothesis."
+  },
+  {
+   "id": "self_stated_availability",
+   "reason": "Saying they are open to a new role is an invitation to talk."
+  }
+ ],
+ "answer_key": {
+  "query": "SEC 8-K item 5.02 departures of Controllers, Chief Accounting Officers and Principal Accounting Officers, against Form 3/4/5 filers with those titles",
+  "sources": [
+   "sec"
+  ]
+ },
+ "hypotheses": [
+  {
+   "id": "explicit_invitation",
+   "detector_ids": [
+    "private_note",
+    "self_stated_availability"
+   ],
+   "gap": ""
+  },
+  {
+   "id": "organization_change",
+   "detector_ids": [
+    "exec_departure",
+    "team_exodus",
+    "acquisition_closed",
+    "warn_notice",
+    "auditor_change",
+    "retention_cliff"
+   ],
+   "gap": ""
+  },
+  {
+   "id": "warm_route",
+   "detector_ids": [],
+   "gap": "gap: needs adapter for confirmed introducer records (who can introduce, and whether they will)"
+  },
+  {
+   "id": "finance_milestone",
+   "detector_ids": [
+    "paper_talk"
+   ],
+   "gap": ""
+  }
+ ],
+ "gaps": [
+  "gap: needs adapter for finance leadership changes at private companies (SEC covers registrants only)",
+  "gap: needs adapter for person-attributed close, audit and automation milestones (vendor case studies, finance community posts)",
+  "gap: needs adapter for confirmed introducer records (who can introduce, and whether they will)"
+ ],
+ "role_id": "controller",
+ "sources": [
+  "sec",
+  "warn",
+  "openalex",
+  "crustdata_person",
+  "wayback",
+  "exa",
+  "research_extraction",
+  "manual_note"
+ ],
+ "calendars": [
+  "calendar_quiet_close"
+ ],
+ "manifest_version": "2026-09-22.3",
+ "compiled_at": "2026-09-22T22:53:30.583213+00:00"
+}

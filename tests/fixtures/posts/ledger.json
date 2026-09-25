@@ -1,0 +1,32 @@
+[
+  {
+    "person_id": "X900",
+    "kind": "identity",
+    "at": "2026-09-01T00:00:00+00:00",
+    "links": [
+      "https://maraquill.example/",
+      "https://x.com/maraquill_example"
+    ],
+    "note": "Invented: two pages that tie the profile to them."
+  },
+  {
+    "person_id": "X901",
+    "kind": "identity",
+    "at": "2026-09-01T00:00:00+00:00",
+    "links": [
+      "https://ivystroud.example/",
+      "https://x.com/ivystroud_example"
+    ],
+    "note": "Invented: two pages that tie the profile to them."
+  },
+  {
+    "person_id": "X902",
+    "kind": "identity",
+    "at": "2026-09-01T00:00:00+00:00",
+    "links": [
+      "https://noabrandt.example/about",
+      "https://www.linkedin.com/in/noabrandt-example"
+    ],
+    "note": "Invented: two pages that tie the profile to them."
+  }
+]

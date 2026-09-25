@@ -1,0 +1,53 @@
+{
+  "id": "ctl-08-stale-signals",
+  "role": "controller",
+  "trap": "stale_signal",
+  "subject": "controller-h|org:ridge",
+  "related": [
+    "org:ridge",
+    "cfo|org:ridge"
+  ],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "cfo_exit",
+      "type": "officer_departure",
+      "date": "2026-03-02",
+      "observed": "2026-03-04",
+      "source": "sec_8k",
+      "tier": 1,
+      "quote": "The Chief Financial Officer notified the Company of their resignation, effective 2026-03-02.",
+      "subject": "cfo|org:ridge"
+    },
+    {
+      "id": "warn",
+      "type": "warn_notice",
+      "date": "2026-02-20",
+      "observed": "2026-02-23",
+      "source": "warn",
+      "tier": 1,
+      "quote": "WARN notice filed 2026-02-20: 140 employees affected by a reduction in force.",
+      "subject": "org:ridge"
+    },
+    {
+      "id": "role",
+      "type": "profile_change",
+      "date": "2019-04-01",
+      "observed": "2019-04-03",
+      "source": "crustdata",
+      "tier": 1,
+      "subject": "controller-h|org:ridge",
+      "changes": [
+        {
+          "field": "experience.employment_details.current",
+          "to": "Controller, Ridge"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "The CFO left and layoffs were filed seven months ago. Those windows have passed; they stayed through it."
+  }
+}

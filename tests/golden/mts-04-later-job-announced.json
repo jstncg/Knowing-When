@@ -1,0 +1,49 @@
+{
+  "id": "mts-04-later-job-announced",
+  "role": "mts",
+  "trap": "later_job_announced",
+  "subject": "person:mts-d",
+  "related": [],
+  "as_of": "2026-09-22",
+  "judgment": false,
+  "events": [
+    {
+      "id": "next_job",
+      "type": "role_announced",
+      "date": "2027-01",
+      "observed": "2026-08-15",
+      "source": "homepage",
+      "tier": 1,
+      "quote": "In January 2027 I will join Anthropic as a Member of Technical Staff."
+    },
+    {
+      "id": "defense",
+      "type": "placement_end_expected",
+      "date": "2026-12-15",
+      "observed": "2026-08-15",
+      "source": "homepage",
+      "tier": 1,
+      "quote": "PhD defense scheduled for December 15, 2026."
+    },
+    {
+      "id": "accepted",
+      "type": "paper_accepted",
+      "date": "2026-09-05",
+      "observed": "2026-09-05",
+      "source": "openreview",
+      "tier": 1,
+      "quote": "Accepted to TMLR: 'Latent action models from gameplay video'"
+    }
+  ],
+  "expected": {
+    "call": "not_now",
+    "reason": "They have announced their next job (Anthropic, January 2027). The defense and the acceptance are why they were on the market, and that market is closed. Revisit about a year into the new role.",
+    "until_between": [
+      "2027-10-01",
+      "2028-12-31"
+    ],
+    "also_ok": [
+      "wait"
+    ]
+  }
+}
