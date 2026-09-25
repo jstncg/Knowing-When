@@ -103,16 +103,27 @@ def read(store, jobs, max_calls, model, since=None):
                                                    types=types, since=since))
         print(f"{subject['id']}: {result['posts']} posts in {result['calls']} batches, {result['events']} events, "
               f"{result['retired']} retired", *result["errors"], sep="\n  ")
-    print(f"{budget.used} model calls")
+    print(f"{budget.used} model calls, {budget.tokens['cache_read_input_tokens']:,} input tokens read from the "
+          "prompt cache")
     return budget
 
 
 def estimate_usd(todo, usd_in=USD_IN, usd_out=USD_OUT, worst=False):
-    """The estimated cost of the calls for these unread batches: about 4 characters a token and a mostly empty
-    answer, or with worst, 2 characters a token and each call's whole output limit (scripts/daily.py's cap)."""
+    """The estimated cost of the calls for these unread batches: about 4 characters a token, the system prompt
+    written to the prompt cache by the first call and read by the rest, and a mostly empty answer; or with worst,
+    2 characters a token, every input token priced as a cache write, and each call's whole output limit
+    (scripts/daily.py's cap)."""
     chars = 2 if worst else 4
-    tokens_in = sum((len(extraction.POSTS_SYSTEM) + len(json.dumps(c))) // chars + OVERHEAD_TOKENS for c in todo)
-    return (tokens_in * usd_in + len(todo) * (extraction.POSTS_MAX_TOKENS if worst else OUT_TOKENS) * usd_out) / 1e6
+    system = len(extraction.POSTS_SYSTEM) // chars
+    rest = sum(len(json.dumps(c)) // chars + OVERHEAD_TOKENS for c in todo)
+    if worst:
+        return providers.usd({"cache_creation_input_tokens": len(todo) * system + rest,
+                              "output_tokens": len(todo) * extraction.POSTS_MAX_TOKENS}, usd_in, usd_out)
+    writes = min(len(todo), 1)
+    return providers.usd({"input_tokens": rest, "cache_creation_input_tokens": writes * system,
+                          "cache_read_input_tokens": (len(todo) - writes) * system,
+                          "output_tokens": len(todo) * OUT_TOKENS},
+                         usd_in, usd_out)
 
 
 def moments_now(store, people, days, as_of, model, usd_in, usd_out, profiles=None):

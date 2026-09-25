@@ -830,7 +830,7 @@ GENERIC_ORG_WORDS = {"university", "institute", "college", "school", "lab", "lab
 
 def _employer_names(text):
     """The employers a roster string names, parentheticals dropped: "Tidewell (co-founder); formerly
-    Northgate Institute / University of Washington" -> Tidewell, Northgate Institute, University of Washington."""
+    Northgate Institute / Lakemont University" -> Tidewell, Northgate Institute, Lakemont University."""
     parts = re.split(r"[;/]", re.sub(r"\([^)]*\)", " ", text or ""))
     return [re.sub(r"^(formerly|earlier|previously|also)\s+", "", p.strip(), flags=re.I) for p in parts if p.strip()]
 

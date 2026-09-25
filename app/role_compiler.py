@@ -748,7 +748,7 @@ async def propose_strategy(jd_text: str, jd_url: str, settings: dict) -> dict:
     payload = {
         "model": settings.get("model") or providers.DEFAULT_MODEL,
         "max_tokens": 7000,
-        "system": STRATEGY_SYSTEM,
+        "system": [providers.cached(STRATEGY_SYSTEM)],
         "output_config": {"format": {"type": "json_schema", "schema": structured.output_schema(StrategyProposal)}},
         "messages": [
             {

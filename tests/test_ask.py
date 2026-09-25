@@ -73,7 +73,7 @@ def billed(model, monkeypatch):
     async def post(url, key, payload, provider, budget, workspace_id=None):
         out = await model(url, key, payload, provider, budget, workspace_id)
         for k in budget.tokens:
-            budget.tokens[k] += out["usage"][k]
+            budget.tokens[k] += out["usage"].get(k, 0)
         return out
     monkeypatch.setattr(providers, "_post", post)
     return model
@@ -105,8 +105,9 @@ def test_an_answer_keeps_only_real_cites_and_costs_once(billed):  # 2, 5, 8
     again = asked(" What did  they ask for? ")
     assert again["cached"] and again["usd"] == 0 and len(model.calls) == 1
     sent = model.calls[0]["payload"]
-    assert "Never estimate whether they would leave" in sent["system"] and "untrusted data" in sent["system"]  # 7
-    items = json.loads(sent["messages"][0]["content"])["items"]
+    system = sent["system"][0]["text"]
+    assert "Never estimate whether they would leave" in system and "untrusted data" in system  # 7
+    items = json.loads(sent["messages"][0]["content"][0]["text"])["items"]
     # only Mara's own posts, and only the one the post reader read something off (8, 15)
     assert {i["source"] for i in items} == {"Public posts on X"} and len(items) == 1 and items[0]["read_as"]
 
@@ -119,7 +120,7 @@ def test_the_cap_holds_before_sending_and_a_failed_call_counts_at_its_worst(mode
     ask._spent["usd"] = 0.0
     with pytest.raises(Exception):
         asked("What did they ask for?")  # the stub has no reply: the call fails
-    payload = ask.content(ask.facts("simulation", "X900"), "What did they ask for?")
+    payload = {**ask.given(ask.facts("simulation", "X900")), "question": "What did they ask for?"}
     assert ask._spent["usd"] == pytest.approx(ask.worst_usd(payload))
 
 
@@ -155,7 +156,7 @@ def test_a_personal_post_reaches_the_model_withheld_and_an_unread_one_not_at_all
     routing.seed(store, {"events": [post(9, "Back at my desk after surgery last month, and back on world models."),
                                     post(9, "world models", "gi_topic"),  # read as on GI's topics: shown, withheld
                                     post(10, "is there any online shopping site that isn't fucking awful")]})
-    sent = json.dumps(ask.content(ask.facts("live", "X900"), "What's new?"))
+    sent = json.dumps(ask.given(ask.facts("live", "X900")))
     assert "surgery" not in sent and routing.WITHHELD in sent
     assert "shopping" not in sent
 
@@ -216,7 +217,7 @@ def test_only_their_own_words_are_given_or_matched(monkeypatch, tmp_path):  # 17
         {"subject_id": "X900", "event_type": "gi_topic", "event_date": at[:10], "observed_at": at, "source_url": url,
          "quote": "world models"}]})
     f = ask.facts("live", "X900")
-    sent = json.dumps(ask.content(f, "What's new?"))
+    sent = json.dumps(ask.given(f))
     assert "ferry" not in sent and "ferrywatch_example" not in sent and "Grateful for this team." in sent
     # 23: a reply that is only the post it answers (no reader tag holds on it, so it is only ever shown this way)
     bare = {"event_type": "x_reply", "quote": routing.REPLY_CONTEXT.lstrip() + "@ferrywatch_example: " + answered}
@@ -298,7 +299,7 @@ def test_what_would_prove_it_wrong_quotes_only_their_own_words(monkeypatch, tmp_
         ev("x_post", 5, "Proud of this one." + routing.REPLY_CONTEXT + "@ferrywatch_example: " + answered,
            "https://x.com/maraquill_example/status/78")]})
     f = ask.facts("live", "X900")
-    wrong = ask.content(f, "What's new?")["call"]["what_would_prove_it_wrong"]
+    wrong = ask.given(f)["call"]["what_would_prove_it_wrong"]
     # the check is there, naming their post and the one it answers, where the engine found the old employer
     assert any("conflicts with their post of" in w and "and the post it answers or quotes" in w for w in wrong), wrong
     assert not any(x in w for w in wrong for x in ("harbour master", "ferrywatch_example", "In reply to", "Proud of")), wrong

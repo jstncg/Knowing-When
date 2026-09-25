@@ -48,7 +48,7 @@ def employer_news(store, feed, as_of=AS_OF, monkeypatch=None):
     ("Birch completes acquisition of Acme", "Acme", True),
     ("Acme to be acquired by Birch", "Acme", True),
     ("Acme agrees to sell itself to Birch", "Acme", True),
-    ("Atlassian to acquire The Browser Company for $610 million", "The Browser Company", True),
+    ("Examplecorp to acquire The Example Lantern Company for $410 million", "The Example Lantern Company", True),
     ("Birch completes Acme acquisition", "Acme", True),
     ("Birch to acquire Snap", "Snap Inc.", True),  # the profile's legal name, as headlines write it
     ("Birch to acquire Acme Robotics", "Acme Robotics, Inc.", True),
@@ -300,9 +300,9 @@ def test_an_employer_deal_makes_a_pitch_only_of_a_sign_as_fresh_as_the_stale_sig
 
 def test_an_old_deal_is_never_a_reason_on_its_fading_strength_and_one_deal_counts_once(store, monkeypatch):
     person(store)
-    journey.save_employers(store, profile("The Browser Company", "2023-01"), READ_ON)
-    employer_news(store, rss(("Atlassian to acquire The Browser Company for $610 million", "Mon, 08 Sep 2025 12:00:00 GMT"),
-                             ("Atlassian completes acquisition of The Browser Company", "Tue, 21 Oct 2025 12:00:00 GMT")),
+    journey.save_employers(store, profile("The Example Lantern Company", "2023-01"), READ_ON)
+    employer_news(store, rss(("Examplecorp to acquire The Example Lantern Company for $410 million", "Mon, 08 Sep 2025 12:00:00 GMT"),
+                             ("Examplecorp completes acquisition of The Example Lantern Company", "Tue, 21 Oct 2025 12:00:00 GMT")),
                   monkeypatch=monkeypatch)
     launch(store, "2026-07-20")
     # Nine and ten months on, the deal is no reason for now: their launch alone is a note.

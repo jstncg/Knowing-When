@@ -148,7 +148,7 @@ async def preview(jd_text, settings, jd_url=""):
     budget = providers.Budget(settings)
     spec = await rc.compile_role(jd_text, slug(proposal["title"]), settings, proposal["signals"], budget)
     tokens = {k: proposal["_usage"]["tokens"].get(k, 0) + budget.tokens.get(k, 0)
-              for k in ("input_tokens", "output_tokens")}
+              for k in providers.USAGE}
     priced = (settings.get("model") or providers.DEFAULT_MODEL) == MODEL
     return _preview(proposal, spec, cost={"usd": round(usd(tokens), 2) if priced else None, **tokens})
 

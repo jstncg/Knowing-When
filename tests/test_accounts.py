@@ -345,10 +345,10 @@ def test_a_note_says_gi_does_similar_work_only_when_it_is_on_gi_own_work():
         return accounts.draft(acme, Signal(kind=kind, day="2026-09-02", quote=quote, source_url="https://example.org/p",
                                            authors=[{"name": a} for a in authors]), to, "Oda Example")
 
-    driving = note("team_paper", "Clear Skies Only: Weather-Specific Safety Margins for Driving VLAs", ["Max Example"])
+    driving = note("team_paper", "Clear Skies Only: Rain-Aware Speed Caps for Delivery Robot VLAs", ["Max Example"])
     assert similar not in driving and "compare notes" not in driving and "team" not in driving
     assert driving.startswith(f"Hey Max, saw your paper. At General Intuition {accounts.GI_LINE}.")  # no line yet: held
-    kestrel = note("team_paper", "Kestrel: Active Abstraction with Programmatic World Models for Grid Puzzles")
+    kestrel = note("team_paper", "Kestrel: Writing World Models in Code for Grid Puzzles")
     assert similar in kestrel and "rather than written as code" in kestrel and "compare notes" in kestrel
     manipulation = note("job_post", "Robot Learning Engineer - Manipulation")
     assert similar not in manipulation and f"At General Intuition {accounts.GI_LINE}." in manipulation
@@ -357,7 +357,7 @@ def test_a_note_says_gi_does_similar_work_only_when_it_is_on_gi_own_work():
                   "Video World Modeling at Scale", "Blink: Diffusion Models Are Real-Time Game Engines",
                   "Large Action Models", "Learning World Modelling from Gameplays", "World Models as Game Engines"):
         assert similar in note("team_paper", quote), quote
-    for quote in ("Clear Skies Only: Weather-Specific Safety Margins for Driving Vision-Language-Action Models",
+    for quote in ("Clear Skies Only: Rain-Aware Speed Caps for Delivery Robot Vision-Language-Action Models",
                   "An Open-Source Vision-Language-Action Model", "Vision Language Action Models for Humanoids",
                   "Emergent World Models in Othello-GPT", "Video Game Addiction and Sleep in Adolescents",
                   "Inverse Dynamics Analysis of Knee Joint Loading During Running", "World models for language agents",
@@ -372,25 +372,24 @@ def test_a_note_says_gi_does_similar_work_only_when_it_is_on_gi_own_work():
     assert "spent a lot of time on this" not in note("public_ask", "Anyone know how the licensing game plays out for small labs?")
 
 
-FOG = "Clear Skies Only: Weather-Specific Safety Margins for Driving VLAs"
-KESTREL = "Kestrel: Active Abstraction with Programmatic World Models for Grid Puzzles"
-RIO = {"name": "Rio Example", "url": "https://openalex.org/A21", "at": "Amazon (Germany)",
-       "affiliation": "Example University of Technology Amazon Exampleburg",
-       "listed_at": ["Example University of Technology", "Amazon"], "city": "Exampleburg", "own_words": True, "first": True}
-FOG_GIST = "setting safety margins per weather for driving VLAs"
-AMAZON = "Amazon (Frontier AI & Robotics, ex-Covariant)"
-JOSS = {"name": "Joss Example", "url": "https://openalex.org/A7", "at": "Amazon (Germany)",
-        "affiliation": "Example University of Technology Amazon Example City, Germany"}
+FOG = "Clear Skies Only: Rain-Aware Speed Caps for Delivery Robot VLAs"
+KESTREL = "Kestrel: Writing World Models in Code for Grid Puzzles"
+RIO = {"name": "Rio Example", "url": "https://openalex.org/A21", "at": "Ashgrove (Norway)",
+       "affiliation": "Example University of Technology Ashgrove Exampleburg",
+       "listed_at": ["Example University of Technology", "Ashgrove"], "city": "Exampleburg", "own_words": True, "first": True}
+FOG_GIST = "capping a delivery robot's speed when it rains"
+ASHGROVE = "Ashgrove (Arms, Carts)"
+JOSS = {"name": "Joss Example", "url": "https://openalex.org/A7", "at": "Ashgrove (Norway)",
+        "affiliation": "Example University of Technology Ashgrove Example City, Norway"}
 
 
 def _kestrel(authors=()):
-    """The Mac's Amazon row on 2026-09-24: the account's top author by paper count is its champion, and its newest
-    paper is one he is not on."""
+    """An account whose top author by paper count is its champion, and whose newest paper is one he is not on."""
     hollis = Contact(name="Hollis Example", title="Author of 2 papers on GI's topics since 2025-09-24",
-                       part="champion", source_url="https://openalex.org/A5050088104")
-    paper = Signal(kind="team_paper", day="2026-09-10", quote=KESTREL, source_url="https://arxiv.org/abs/2607.28287",
-                   authors=list(authors), gist="learning world models as programs to solve grid puzzles")
-    return Account(id="amazon", name=AMAZON, owner="Oda Example", buys="data", contacts=[hollis], signals=[paper])
+                       part="champion", source_url="https://openalex.org/A99")
+    paper = Signal(kind="team_paper", day="2026-09-10", quote=KESTREL, source_url="https://arxiv.org/abs/2607.00000",
+                   authors=list(authors), gist="predicting grid puzzle moves with small programs")
+    return Account(id="ashgrove", name=ASHGROVE, owner="Oda Example", buys="data", contacts=[hollis], signals=[paper])
 
 
 def test_a_paper_is_written_to_one_of_its_authors_there_never_to_the_account_top_author(simulation):
@@ -401,9 +400,9 @@ def test_a_paper_is_written_to_one_of_its_authors_there_never_to_the_account_top
     assert held["blocked"] == "Which of the paper's authors work there isn't on file: `scripts/accounts.py authors` reads it."
     row = accounts.assess(store, as_of, _kestrel([JOSS]), records)
     assert row["write_to"]["name"] == "Joss Example" and row["write_to"]["source_url"] == "https://openalex.org/A7"
-    assert row["write_to"]["title"] == "Author of the paper, listed at Amazon"  # stored before the paper's own words
-    assert row["draft"].startswith("Hey Joss, saw your Kestrel paper. Learning world models as programs to solve "
-                                   "grid puzzles really caught my eye. We're building world models")
+    assert row["write_to"]["title"] == "Author of the paper, listed at Ashgrove"  # stored before the paper's own words
+    assert row["draft"].startswith("Hey Joss, saw your Kestrel paper. Predicting grid puzzle moves with small "
+                                   "programs really caught my eye. We're building world models")
     assert "Hollis" not in json.dumps(accounts.weekly([row], 1, "2026-09-20"))
     job = Signal(kind="job_post", day="2026-09-12", quote="Research Scientist, World Models", source_url="https://example.org/j")
     jobs_row = accounts.assess(store, as_of, _kestrel([JOSS]).model_copy(update={"signals": [job]}), records)
@@ -415,24 +414,24 @@ def test_a_paper_is_written_to_one_of_its_authors_there_never_to_the_account_top
 
 def test_a_paper_note_says_your_paper_to_its_author_and_the_card_names_the_company_alone(simulation):
     paper = Signal(kind="team_paper", day="2026-09-10", quote="Driving VLAs under fog", source_url="https://example.org/p",
-                   authors=[{"name": "Cleo Example", "at": "NVIDIA (United States)"}], gist="keeping driving VLAs safe in fog")
-    nvidia = Account(id="n", name="NVIDIA (Cosmos, Isaac, GR00T, ACE)")
-    assert accounts.draft(nvidia, paper, {"name": "Cleo Example"}, "Oda Example").startswith(
+                   authors=[{"name": "Cleo Example", "at": "Nimbus Labs (United States)"}], gist="keeping driving VLAs safe in fog")
+    nimbus = Account(id="n", name="Nimbus Labs (Tern, Heron)")
+    assert accounts.draft(nimbus, paper, {"name": "Cleo Example"}, "Oda Example").startswith(
         "Hey Cleo, saw your paper. Keeping driving VLAs safe in fog really caught my eye.")
-    assert accounts.draft(nvidia, paper, {"name": "Sid Example"}, "Oda Example").startswith(
+    assert accounts.draft(nimbus, paper, {"name": "Sid Example"}, "Oda Example").startswith(
         "Hey Sid, saw the paper.")  # never sent: only an author gets a paper's note
-    assert accounts.short("NVIDIA (Cosmos, Isaac, GR00T, ACE)") == "NVIDIA" and accounts.short(AMAZON) == "Amazon"
+    assert accounts.short("Nimbus Labs (Tern, Heron)") == "Nimbus Labs" and accounts.short(ASHGROVE) == "Ashgrove"
     assert accounts.short("Acme") == "Acme" and accounts.short("(Acme)") == "(Acme)"
-    for kind, quote in (("funding", "NVIDIA raises"), ("job_post", "Research Scientist, World Models"),
-                        ("new_lead", "Joins NVIDIA")):
-        text = accounts.draft(nvidia, Signal(kind=kind, day="2026-09-10", who="Max Example", quote=quote,
+    for kind, quote in (("funding", "Nimbus Labs raises"), ("job_post", "Research Scientist, World Models"),
+                        ("new_lead", "Joins Nimbus Labs")):
+        text = accounts.draft(nimbus, Signal(kind=kind, day="2026-09-10", who="Max Example", quote=quote,
                                              source_url="https://example.org/s"), {"name": "Max Example"}, "Oda Example")
-        assert "NVIDIA" in text and "Cosmos" not in text, kind
+        assert "Nimbus Labs" in text and "Tern" not in text, kind
     (store, _), _, records = accounts.workspace("simulation")
-    row = accounts.assess(store, "2026-09-20T12:00:00+00:00", _acme(paper, name="NVIDIA (Cosmos, Isaac, GR00T, ACE)"), records)
+    row = accounts.assess(store, "2026-09-20T12:00:00+00:00", _acme(paper, name="Nimbus Labs (Tern, Heron)"), records)
     assert row["write_to"]["name"] == "Cleo Example" and row["draft"].startswith("Hey Cleo, saw your paper.")
     card = json.dumps(accounts.weekly([row], 1, "2026-09-20"))
-    assert "*1. NVIDIA*" in card and "Cosmos" not in card and "their team" not in card
+    assert "*1. Nimbus Labs*" in card and "Tern" not in card and "their team" not in card
 
 
 def test_find_keeps_each_paper_authors_as_the_paper_lists_them_there():
@@ -462,9 +461,9 @@ def test_authors_fills_in_each_paper_authors_venue_and_first_version_and_keeps_t
     from scripts import accounts as cli
 
     recent, old = date.today().isoformat(), (date.today() - timedelta(days=61)).isoformat()
-    kept = {"name": "Joss Example", "url": JOSS["url"], "at": "Amazon (Germany)", "listed_at": ["Amazon"], "own_words": True}
+    kept = {"name": "Joss Example", "url": JOSS["url"], "at": "Ashgrove (Norway)", "listed_at": ["Ashgrove"], "own_words": True}
     papers = [{"kind": "team_paper", "day": recent, "quote": KESTREL, "source_url": "https://doi.org/10.1/kestrel"},
-              {"kind": "team_paper", "day": recent, "quote": "Nobody from Amazon on it", "source_url": "https://openalex.org/W9"},
+              {"kind": "team_paper", "day": recent, "quote": "Nobody from Ashgrove on it", "source_url": "https://openalex.org/W9"},
               {"kind": "team_paper", "day": recent, "quote": "Gone", "source_url": "https://doi.org/10.1/gone"},
               {"kind": "team_paper", "day": old, "quote": "Past its window", "source_url": "https://doi.org/10.1/old"},
               {"kind": "team_paper", "day": recent, "quote": "Typed in", "who": "the lab", "source_url": "https://doi.org/10.1/kestrel"},
@@ -477,15 +476,15 @@ def test_authors_fills_in_each_paper_authors_venue_and_first_version_and_keeps_t
                "authors": [kept]},  # typed in by hand: nothing to read, nothing to say
               {"kind": "team_paper", "day": recent, "quote": "Moved", "source_url": "https://openalex.org/W4",
                "authors": [kept]}]  # OpenAlex no longer lists them there: the authors kept stay, and it is still checked
-    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "amazon", "name": AMAZON, "signals": papers}]}))
-    amazon_de = {"id": "https://openalex.org/I8", "display_name": "Amazon (Germany)", "type": "company"}
+    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "ashgrove", "name": ASHGROVE, "signals": papers}]}))
+    ashgrove_inst = {"id": "https://openalex.org/I8", "display_name": "Ashgrove (Norway)", "type": "company"}
     uni = {"id": "https://openalex.org/I7", "display_name": "Example University of Technology", "type": "education"}
     kestrel = {"id": "https://openalex.org/W7", "title": KESTREL, "publication_date": recent,
                "abstract_inverted_index": {"We": [0], "learn": [1], "programs.": [2]},
                "primary_location": {"source": {"display_name": "Example Workshop Proceedings"}}, "authorships": [
                    {"author_position": "first", "author": {"id": JOSS["url"], "display_name": "Joss Example"},
-                    "institutions": [uni, amazon_de], "affiliations": [
-                        {"raw_affiliation_string": JOSS["affiliation"], "institution_ids": [uni["id"], amazon_de["id"]]}]},
+                    "institutions": [uni, ashgrove_inst], "affiliations": [
+                        {"raw_affiliation_string": JOSS["affiliation"], "institution_ids": [uni["id"], ashgrove_inst["id"]]}]},
                    {"author": {"id": "https://openalex.org/A8", "display_name": "Sade Example"},
                     "institutions": [{"id": "https://openalex.org/I9", "display_name": "Example Library", "type": "facility"}]}]}
     preprint = {"id": "https://openalex.org/W6", "title": KESTREL.upper().replace(":", " -"), "publication_date": "2026-06-11",
@@ -509,7 +508,7 @@ def test_authors_fills_in_each_paper_authors_venue_and_first_version_and_keeps_t
     cli.authors(fetch)
     out = capsys.readouterr().out
     after = json.loads((tmp_path / "accounts.json").read_text())["accounts"][0]["signals"]
-    joss = {**JOSS, "listed_at": ["Example University of Technology", "Amazon"], "city": "Example City", "own_words": True,
+    joss = {**JOSS, "listed_at": ["Example University of Technology", "Ashgrove"], "city": "Example City", "own_words": True,
             "first": True}
     read = {"venue": "Example Workshop Proceedings", "abstract": "We learn programs."}
     found = {**read, "first_public": "2026-06-11", "first_at": "arXiv", "checked": True}
@@ -519,12 +518,12 @@ def test_authors_fills_in_each_paper_authors_venue_and_first_version_and_keeps_t
     assert after[9] == {**papers[9], **read, "checked": True}
     assert len(asked) == 9 and sum("search=" in u for u in asked) == 3 and not any("done" in u or "typed" in u for u in asked)
     assert any("works/https://doi.org/10.1/kestrel" in u for u in asked) and any("works/W9" in u for u in asked)
-    assert f"Read the authors of 3 papers; the file before is {tmp_path}" in out and "Amazon: “Kestrel" in out
-    assert ("Looked for an earlier version of 3 papers:\n  - Amazon: “Kestrel: Active Abstraction with Programmatic World "
-            "Models for Grid Puzzles”: on arXiv since June 2026") in out
-    assert "so its note stays held:\n  - Amazon (Frontier AI & Robotics, ex-Covariant): “Nobody from Amazon on it”" in out
-    assert "Couldn't read:\n  - Amazon (Frontier AI & Robotics, ex-Covariant): “Gone” (HTTPStatusError)" in out
-    assert "  - Amazon (Frontier AI & Robotics, ex-Covariant): “On arXiv” (not a DOI or OpenAlex link)" in out
+    assert f"Read the authors of 3 papers; the file before is {tmp_path}" in out and "Ashgrove: “Kestrel" in out
+    assert ("Looked for an earlier version of 3 papers:\n  - Ashgrove: “Kestrel: Writing World Models in Code "
+            "for Grid Puzzles”: on arXiv since June 2026") in out
+    assert "so its note stays held:\n  - Ashgrove (Arms, Carts): “Nobody from Ashgrove on it”" in out
+    assert "Couldn't read:\n  - Ashgrove (Arms, Carts): “Gone” (HTTPStatusError)" in out
+    assert "  - Ashgrove (Arms, Carts): “On arXiv” (not a DOI or OpenAlex link)" in out
     assert "Typed with" not in out and "Moved" not in out
     assert accounts.first_version(kestrel, [kestrel, {**kestrel, "publication_date": "2020-02-01"}], [JOSS]) is None  # itself
     backups = list(tmp_path.glob("accounts.before-authors-*.json"))
@@ -534,7 +533,7 @@ def test_authors_fills_in_each_paper_authors_venue_and_first_version_and_keeps_t
 def _paper_account(quote=FOG, **paper):
     s = Signal(kind="team_paper", quote=quote, source_url="https://doi.org/10.1/fog",
                **{"day": "2026-09-02", "authors": [RIO], "checked": True, "gist": FOG_GIST, **paper})
-    return Account(id="amazon", name=AMAZON, segment="Robotics", owner="Oda Example", signals=[s])
+    return Account(id="ashgrove", name=ASHGROVE, segment="Robotics", owner="Oda Example", signals=[s])
 
 
 def _card(row):
@@ -547,7 +546,7 @@ def test_a_paper_is_dated_by_its_month_and_a_later_version_says_when_it_first_we
     row = accounts.assess(store, as_of, _paper_account(venue="Example Workshop Proceedings", first_public="2026-08-03",
                                                        first_at="arXiv"), records)
     assert "company, in Example Workshop Proceedings, on arXiv since August 2026: “Clear Skies Only" in _card(row)
-    assert "(Amazon, in Example Workshop Proceedings, on arXiv since August 2026)" in row["why"]
+    assert "(Ashgrove, in Example Workshop Proceedings, on arXiv since August 2026)" in row["why"]
     for text in (_card(row), row["why"], json.dumps(row["signals"])):
         assert "Sep 2" not in text and "Aug 3" not in text  # a record's day is often not the paper's: never a day
     alone = accounts.assess(store, as_of, _paper_account(venue="Example Workshop Proceedings"), records)
@@ -591,13 +590,13 @@ def test_the_card_gives_the_paper_own_affiliation_and_no_group_the_paper_does_no
     (store, _), _, records = accounts.workspace("simulation")
     row = accounts.assess(store, "2026-09-20T12:00:00+00:00", _paper_account(), records)
     card = _card(row)
-    assert card.split("\n")[0] == "*1. Amazon* · write by Nov 1"  # not the account's "Robotics", nor its teams
-    assert "Robotics" not in card and "Frontier" not in card and "Amazon (Germany)" not in card
+    assert card.split("\n")[0] == "*1. Ashgrove* · write by Nov 1"  # not the account's "Robotics", nor its teams
+    assert "Robotics" not in card and "Arms" not in card and "Ashgrove (Norway)" not in card
     assert "*To:* <https://openalex.org/A21|Rio Example>, First author of the paper, listed at Example University of " \
-           "Technology and Amazon, Exampleburg · *From:* Oda Example" in card
+           "Technology and Ashgrove, Exampleburg · *From:* Oda Example" in card
     stored = {k: v for k, v in RIO.items() if k not in ("listed_at", "first", "city", "own_words")}  # kept before
     older = accounts.assess(store, "2026-09-20T12:00:00+00:00", _paper_account(authors=[stored]), records)
-    assert older["write_to"]["title"] == "Author of the paper, listed at Amazon"
+    assert older["write_to"]["title"] == "Author of the paper, listed at Ashgrove"
     assert older["draft"] is None and older["blocked"] == ("Where the paper itself lists its authors isn't read yet: "
                                                            "`scripts/accounts.py authors` reads it.")  # OpenAlex's match
     unread = {**RIO, "listed_at": [], "city": "", "affiliation": "Acme Robotics Mountain View"}  # the line reads two ways
@@ -624,10 +623,10 @@ def _line(raw, *names, first=True):
 
 def test_the_card_names_only_places_the_paper_own_line_gives():
     # OpenAlex matched a line that runs two places together to two places it never names, and missed one it does.
-    assert _line("Example University of Technology Amazon Exampleburg", "Amazon (Germany)",
-                 "Advanced Example Mask Technology Center", "Example Hochschule für Technik – University of Applied "
-                 "Sciences") == (["Example University of Technology", "Amazon"], "Exampleburg",
-                                 "Example University of Technology Amazon Exampleburg")
+    assert _line("Example University of Technology Ashgrove Exampleburg", "Ashgrove (Norway)",
+                 "Example Materials Center", "Example College of Applied "
+                 "Sciences") == (["Example University of Technology", "Ashgrove"], "Exampleburg",
+                                 "Example University of Technology Ashgrove Exampleburg")
     assert _line("NVIDIA, Santa Clara, CA, USA", "Nvidia (United States)")[:2] == (["NVIDIA"], "Santa Clara")
     assert _line("Google Research, Mountain View, CA 94043", "Google (United States)")[:2] == (["Google Research"],
                                                                                               "Mountain View")
@@ -645,8 +644,8 @@ def test_the_card_names_only_places_the_paper_own_line_gives():
             ("Covariant.ai, Emeryville, California", ("Covariant (United States)",), (["Covariant"], "Emeryville")),
             ("Example University and Acme Robotics, Exampleton", ("Acme Robotics (United States)",),
              (["Example University", "Acme Robotics"], "Exampleton")),
-            ("Amazon; Chinese Academy of Sciences, Beijing, China", ("Amazon (United States)",),
-             (["Amazon", "Chinese Academy of Sciences"], "Beijing")),  # a subject's word inside an institution's name
+            ("Ashgrove; Chinese Academy of Sciences, Beijing, China", ("Ashgrove (United States)",),
+             (["Ashgrove", "Chinese Academy of Sciences"], "Beijing")),  # a subject's word inside an institution's name
             ("NVIDIA; Weizmann Institute of Science, Rehovot, Israel", ("Nvidia (United States)",),
              (["NVIDIA", "Weizmann Institute of Science"], "Rehovot"))):
         assert _line(raw, *names)[:2] == want, raw
@@ -656,23 +655,23 @@ def test_the_card_names_only_places_the_paper_own_line_gives():
 
 
 def test_an_author_counts_for_the_account_only_when_their_own_line_names_it():
-    amazon = Account(id="amazon", name=AMAZON)
+    ashgrove = Account(id="ashgrove", name=ASHGROVE)
     tu = {"id": "https://openalex.org/I1", "display_name": "Example University of Technology", "type": "education"}
-    de = {"id": "https://openalex.org/I2", "display_name": "Amazon (Germany)", "type": "company"}
+    inst = {"id": "https://openalex.org/I2", "display_name": "Ashgrove (Norway)", "type": "company"}
 
     def work(*lines):
         return {"id": "https://openalex.org/W1", "title": WORK["title"], "publication_date": "2026-09-01",
                 "doi": "https://doi.org/10.1/x", "authorships": [
                     {"author_position": "first", "author": {"id": "https://openalex.org/A1", "display_name": "Nia Example"},
-                     "institutions": [tu, de],
-                     "affiliations": [{"raw_affiliation_string": line, "institution_ids": [tu["id"], de["id"]]}
+                     "institutions": [tu, inst],
+                     "affiliations": [{"raw_affiliation_string": line, "institution_ids": [tu["id"], inst["id"]]}
                                       for line in lines]}]}
 
-    # OpenAlex put her at Amazon on a line that names only the university: not the account's author
-    assert accounts.authors_at(work("Example University of Technology, Exampleburg, Germany"), amazon, [amazon]) == []
-    assert [a["name"] for a in accounts.authors_at(work("Example University of Technology Amazon Exampleburg"),
-                                                   amazon, [amazon])] == ["Nia Example"]
-    assert [a["name"] for a in accounts.authors_at(work(), amazon, [amazon])] == ["Nia Example"]  # no line: OpenAlex's
+    # OpenAlex put her at Ashgrove on a line that names only the university: not the account's author
+    assert accounts.authors_at(work("Example University of Technology, Exampleburg, Norway"), ashgrove, [ashgrove]) == []
+    assert [a["name"] for a in accounts.authors_at(work("Example University of Technology Ashgrove Exampleburg"),
+                                                   ashgrove, [ashgrove])] == ["Nia Example"]
+    assert [a["name"] for a in accounts.authors_at(work(), ashgrove, [ashgrove])] == ["Nia Example"]  # no line: OpenAlex's
     acme = Account(id="acme", name="Acme")
     inc = {"id": "https://openalex.org/I3", "display_name": "Acme Technologies (United States)", "type": "company"}
     plain = {**work(), "authorships": [{**work()["authorships"][0], "institutions": [inc], "affiliations": [
@@ -686,9 +685,9 @@ def test_an_author_counts_for_the_account_only_when_their_own_line_names_it():
         # a short name inside another name is not the company
         assert accounts._names({"affiliations": [{"raw_affiliation_string": line}]}, {"display_name": company}) is named, line
     fetch = _fetch({"api.openalex.org": {"meta": {"next_cursor": None},
-                                         "results": [work("Example University of Technology, Exampleburg, Germany")]},
+                                         "results": [work("Example University of Technology, Exampleburg, Norway")]},
                     "news.google.com": RSS})
-    row = next(c for c in accounts.find(fetch, "2025-09-24", [amazon], topics=("world model",)) if c["account"] == "amazon")
+    row = next(c for c in accounts.find(fetch, "2025-09-24", [ashgrove], topics=("world model",)) if c["account"] == "ashgrove")
     assert row["authors"] == [] and row["papers"][0]["authors"] == []
 
 
@@ -740,7 +739,7 @@ def test_a_paper_note_opens_with_the_paper_short_name_and_where_it_went_up_never
             ("Learning Minecraft Agents from Gameplay Video", {"abstract": "We train Minecraft agents from video."},
              "saw your Minecraft agent paper."),  # a name, as its own words write it
             ("Scaling Atari Agents with Video", {"gist": "training Atari agents on video alone"}, "saw your Atari agent paper."),
-            ("Kestrel : Active Abstraction with Programmatic World Models", {}, "saw your Kestrel paper.")):
+            ("Kestrel : Writing World Models in Code", {}, "saw your Kestrel paper.")):
         text = note(quote, **paper)
         assert text.startswith(f"Hey Rio, {opener} ") and "really caught my eye." in text, quote
         assert quote not in text and "“" not in text and "  " not in text, quote  # the title is never pasted in
@@ -756,12 +755,12 @@ def test_a_paper_note_says_what_the_paper_does_and_the_gi_fact_closest_to_it():
                    authors=[{"name": "Rio Example"}], gist=gist)
         return accounts.draft(acme, s, to, "Oda Example")
 
-    assert note(FOG, gist=FOG_GIST) == ("Hey Rio, saw your paper. Setting safety margins per weather for "
-                                        f"driving VLAs really caught my eye. At General Intuition {accounts.GI_LINE}. "
+    assert note(FOG, gist=FOG_GIST) == ("Hey Rio, saw your paper. Capping a delivery robot's speed when it "
+                                        f"rains really caught my eye. At General Intuition {accounts.GI_LINE}. "
                                         "Would love to hear more about it if you're up for a chat.\n\nOda")
-    gist = "learning world models as programs to solve grid puzzles"
-    assert note(KESTREL, gist=gist) == ("Hey Rio, saw your Kestrel paper. Learning world models as programs to "
-                                        "solve grid puzzles really caught my eye. We're building world models at General "
+    gist = "predicting grid puzzle moves with small programs"
+    assert note(KESTREL, gist=gist) == ("Hey Rio, saw your Kestrel paper. Predicting grid puzzle moves with small "
+                                        "programs really caught my eye. We're building world models at General "
                                         "Intuition too, trained on gameplay video from Medal rather than written as code. "
                                         "Would love to compare notes if you're interested.\n\nOda")
     for quote in (FOG, KESTREL, "Latent Actions from Video Games", "Robot policies from video"):
@@ -792,9 +791,9 @@ def test_a_paper_note_says_what_the_paper_does_and_the_gi_fact_closest_to_it():
 
 def test_what_a_paper_does_is_its_own_words_never_the_title_again():
     title = KESTREL
-    assert accounts.gist_problem("learning world models as programs to solve grid puzzles", title) is None
-    assert "title" in accounts.gist_problem("active abstraction with programmatic world models", title)
-    assert "title" in accounts.gist_problem("The Programmatic World Models for Grid Puzzles idea", title)
+    assert accounts.gist_problem("predicting grid puzzle moves with small programs", title) is None
+    assert "title" in accounts.gist_problem("writing world models in code", title)
+    assert "title" in accounts.gist_problem("The World Models in Code for Grid Puzzles idea", title)
     assert accounts.gist_problem("programs", title) and accounts.gist_problem(" ".join(["word"] * 30), title)
     assert accounts.gist_problem("", title)
 
@@ -806,7 +805,7 @@ def test_a_paper_with_no_line_on_what_it_does_waits_and_holds_back_nothing_else(
     assert row["write_to"]["name"] == "Rio Example" and row["draft"] is None
     assert row["blocked"] == ("Say what the paper does before anyone writes: `scripts/accounts.py gist` lists it with "
                               "its abstract.")
-    copied = accounts.assess(store, as_of, _paper_account(gist="weather-specific safety margins for driving"), records)
+    copied = accounts.assess(store, as_of, _paper_account(gist="rain-aware speed caps for delivery"), records)
     assert copied["draft"] is None and copied["blocked"].startswith("The line on what the paper does can't go out: It "
                                                                     "repeats the title")
     job = Signal(kind="job_post", day="2026-09-12", quote="Research Scientist, World Models", source_url="https://example.org/j")
@@ -820,25 +819,25 @@ def test_the_gist_command_lists_papers_with_their_abstract_and_sets_a_line_it_ch
 
     recent = date.today().isoformat()
     paper = {"kind": "team_paper", "day": recent, "quote": KESTREL, "source_url": "https://doi.org/10.1/kestrel",
-             "abstract": "We learn world models as short programs and use them to solve grid puzzles.",
-             "authors": [{"name": "Joss Example", "listed_at": ["Amazon"], "own_words": True}], "checked": True}
+             "abstract": "We write world models as short programs and use them to predict grid puzzle moves.",
+             "authors": [{"name": "Joss Example", "listed_at": ["Ashgrove"], "own_words": True}], "checked": True}
     done = {**paper, "quote": "Done", "source_url": "https://doi.org/10.1/done", "gist": "something already said"}
     typed = {"kind": "team_paper", "day": recent, "quote": "Typed in", "who": "Joss Example", "source_url": "https://example.org/t"}
     copied = {**paper, "quote": "Grid Puzzles Solved Fast", "source_url": "https://doi.org/10.1/copy",
               "gist": "grid puzzles solved fast today"}
-    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "amazon", "name": AMAZON,
+    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "ashgrove", "name": ASHGROVE,
                                                                       "signals": [paper, done, typed, copied]}]}))
     monkeypatch.setattr(cli, "LIVE", tmp_path)
     cli.gist()
     out = capsys.readouterr().out
-    assert f"Amazon: “{KESTREL}” https://doi.org/10.1/kestrel" in out and "short programs" in out and "Done" not in out
+    assert f"Ashgrove: “{KESTREL}” https://doi.org/10.1/kestrel" in out and "short programs" in out and "Done" not in out
     assert "“Typed in” https://example.org/t" in out and "“Grid Puzzles Solved Fast”" in out and "It repeats the title" in out
     with pytest.raises(SystemExit, match="title"):
-        cli.gist("https://doi.org/10.1/kestrel", "active abstraction with programmatic world models")
+        cli.gist("https://doi.org/10.1/kestrel", "writing world models in code")
     assert "gist" not in json.loads((tmp_path / "accounts.json").read_text())["accounts"][0]["signals"][0]
-    cli.gist("https://doi.org/10.1/kestrel", "learning world models as short programs to solve grid puzzles.")
+    cli.gist("https://doi.org/10.1/kestrel", "predicting grid puzzle moves with short programs.")
     after = json.loads((tmp_path / "accounts.json").read_text())["accounts"][0]["signals"]
-    assert after[0]["gist"] == "learning world models as short programs to solve grid puzzles" and after[1] == done
+    assert after[0]["gist"] == "predicting grid puzzle moves with short programs" and after[1] == done
     assert len(list(tmp_path.glob("accounts.before-gist-*.json"))) == 1
 
 
@@ -849,7 +848,7 @@ def test_a_line_on_what_a_paper_is_about_opens_its_note_when_a_person_set_one(mo
     recent = date.today().isoformat()
     paper = {"kind": "team_paper", "day": recent, "quote": title, "source_url": "https://doi.org/10.1/kart",
              "venue": "arXiv", "gist": "training a kart agent on laps its players narrated", "authors": [{"name": "Rio Example"}]}
-    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "amazon", "name": AMAZON, "signals": [paper]}]}))
+    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "ashgrove", "name": ASHGROVE, "signals": [paper]}]}))
     monkeypatch.setattr(cli, "LIVE", tmp_path)
     for bad, why in (("kart", "2 to 6 words"), ("steered kart racing agent", "what the paper is about in other words"),
                      ("about steered kart agents", "about"), ("steered kart agents on arXiv", "where it went up")):
@@ -884,24 +883,24 @@ def test_authors_drops_an_author_openalex_placed_there_whose_own_line_never_name
     from scripts import accounts as cli
 
     recent = date.today().isoformat()
-    matched = {"name": "Nia Example", "url": "https://openalex.org/A5", "at": "Amazon (Germany)", "listed_at": ["Amazon"]}
+    matched = {"name": "Nia Example", "url": "https://openalex.org/A5", "at": "Ashgrove (Norway)", "listed_at": ["Ashgrove"]}
     typed = {"name": "Lou Example"}  # typed in by hand: stays
     paper = {"kind": "team_paper", "day": recent, "quote": KESTREL, "source_url": "https://doi.org/10.1/kestrel",
              "checked": True, "gist": "solving grid puzzles with small programs", "authors": [matched]}
     both = {**paper, "quote": "With one typed in", "source_url": "https://doi.org/10.1/both", "authors": [matched, typed]}
-    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "amazon", "name": AMAZON, "owner": "Oda Example",
+    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "ashgrove", "name": ASHGROVE, "owner": "Oda Example",
                                                                       "signals": [paper, both]}]}))
     uni = {"id": "https://openalex.org/I7", "display_name": "Example University of Technology", "type": "education"}
-    de = {"id": "https://openalex.org/I8", "display_name": "Amazon (Germany)", "type": "company"}
+    inst = {"id": "https://openalex.org/I8", "display_name": "Ashgrove (Norway)", "type": "company"}
     work = {"id": "https://openalex.org/W7", "title": KESTREL, "publication_date": recent, "authorships": [
-        {"author_position": "first", "author": {"id": matched["url"], "display_name": "Nia Example"}, "institutions": [uni, de],
-         "affiliations": [{"raw_affiliation_string": "Example University of Technology, Exampleburg, Germany",
-                           "institution_ids": [uni["id"], de["id"]]}]}]}
+        {"author_position": "first", "author": {"id": matched["url"], "display_name": "Nia Example"}, "institutions": [uni, inst],
+         "affiliations": [{"raw_affiliation_string": "Example University of Technology, Exampleburg, Norway",
+                           "institution_ids": [uni["id"], inst["id"]]}]}]}
     monkeypatch.setattr(cli, "LIVE", tmp_path)
     cli.authors(lambda url: json.dumps(work).encode())
     after = json.loads((tmp_path / "accounts.json").read_text())["accounts"][0]
     assert after["signals"][0]["authors"] == [] and after["signals"][1]["authors"] == [typed]
-    assert f"so its note stays held:\n  - {AMAZON}: “{KESTREL}”" in capsys.readouterr().out
+    assert f"so its note stays held:\n  - {ASHGROVE}: “{KESTREL}”" in capsys.readouterr().out
     (store, _), _, records = accounts.workspace("simulation")
     row = accounts.assess(store, f"{recent}T12:00:00+00:00", Account.model_validate({**after, "signals": after["signals"][:1]}),
                           records)
@@ -962,9 +961,9 @@ def test_authors_keeps_its_title_searches_inside_openalex_credits(monkeypatch, t
 
     recent = date.today().isoformat()
     papers = [{"kind": "team_paper", "day": recent, "quote": f"Paper {n}", "source_url": f"https://doi.org/10.1/p{n}",
-               "authors": [{"name": "Joss Example", "url": JOSS["url"], "listed_at": ["Amazon"]}]} for n in (1, 2)]
-    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "amazon", "name": AMAZON, "signals": papers}]}))
-    amazon_de = {"id": "https://openalex.org/I8", "display_name": "Amazon (Germany)", "type": "company"}
+               "authors": [{"name": "Joss Example", "url": JOSS["url"], "listed_at": ["Ashgrove"]}]} for n in (1, 2)]
+    (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [{"id": "ashgrove", "name": ASHGROVE, "signals": papers}]}))
+    ashgrove_inst = {"id": "https://openalex.org/I8", "display_name": "Ashgrove (Norway)", "type": "company"}
     asked = []
 
     def fetch(url):
@@ -972,7 +971,7 @@ def test_authors_keeps_its_title_searches_inside_openalex_credits(monkeypatch, t
         if "search=" in url:
             return json.dumps({"results": []}).encode()
         return json.dumps({"id": "https://openalex.org/W1", "title": "Paper", "authorships": [
-            {"author": {"id": JOSS["url"], "display_name": "Joss Example"}, "institutions": [amazon_de]}]}).encode()
+            {"author": {"id": JOSS["url"], "display_name": "Joss Example"}, "institutions": [ashgrove_inst]}]}).encode()
 
     monkeypatch.setattr(cli, "LIVE", tmp_path)
     cli.authors(fetch, budget=openalex.Budget(most=openalex.CREDITS_A_PAGE))  # room for one search
@@ -1572,7 +1571,7 @@ def test_find_update_adds_only_recent_evidence_to_its_own_account_a_few_at_a_tim
     from scripts import accounts as cli
 
     (tmp_path / "accounts.json").write_text(json.dumps({"accounts": [
-        {"id": "meta", "name": "Meta (FAIR)", "buys": "watch"}, {"id": "acme", "name": "Acme Robotics (Acme)"}]}))
+        {"id": "meta", "name": "Meta", "buys": "watch"}, {"id": "acme", "name": "Acme Robotics (Acme)"}]}))
     recent = date.today().isoformat()
     found = [{"name": "Metaverse Labs (United States)", "account": None, "big": False, "papers": [
                  {"title": "T", "day": recent, "url": "https://example.org/p"}],

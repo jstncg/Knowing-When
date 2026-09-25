@@ -125,7 +125,8 @@ def test_propose_uses_authenticated_provider_and_does_not_activate(monkeypatch):
     async def fake_post(url, key, payload, provider, budget, workspace_id):
         calls.append((url, key, payload, provider, workspace_id))
         budget.take()
-        assert "untrusted source data" in payload["system"]
+        assert payload["system"] == [providers.cached(rc.STRATEGY_SYSTEM)]
+        assert "untrusted source data" in payload["system"][0]["text"]
         request = json.loads(payload["messages"][0]["content"])
         assert request["jd_text"] == JD
         assert request["output_schema"]["additionalProperties"] is False

@@ -68,8 +68,8 @@ class Company:
 
     @property
     def search(self):
-        """The name as headlines write it: "Meta (FAIR)" is Meta, "Sony Interactive Entertainment / Sony AI" is
-        Sony Interactive Entertainment."""
+        """The name as headlines write it: "Nimbus Labs (Tern)" is Nimbus Labs, "Birch Robotics / Birch AI" is
+        Birch Robotics."""
         return " ".join(accounts._words(self.name))
 
 

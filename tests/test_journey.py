@@ -361,13 +361,13 @@ def test_answer_key_contexts_are_keyed_by_openalex_author(tmp_path):
 def test_openalex_identity_needs_the_pre_move_employer_among_the_authors_own_institutions(tmp_path):
     confirmed = journey.employer_confirmed
     assert confirmed("MIT (CSAIL)", ["Massachusetts Institute of Technology"])
-    assert confirmed("UC Berkeley (assistant professor)", ["University of California, Berkeley"])
+    assert confirmed("UC Larkfield (assistant professor)", ["University of California, Larkfield"])
     assert confirmed("Google DeepMind", ["Google (United States)", "DeepMind (United Kingdom)"])
-    assert confirmed("Tidewell (co-founder); formerly Northgate Institute / University of Washington",
-                     ["University of Washington"])
+    assert confirmed("Tidewell (co-founder); formerly Northgate Institute / Lakemont University",
+                     ["Lakemont University"])
     # A shared generic word or a parenthetical place is a namesake's, not the person's.
     assert not confirmed("Example University", ["University of Tokyo"])
-    assert not confirmed("OpenAI (Zurich)", ["University of Zurich"])
+    assert not confirmed("Example Lab (Lisbon)", ["University of Lisbon"])
     # The key script accepted the destination lab; the context does not.
     (tmp_path / "mts-joiners.json").write_text(json.dumps({"people": [
         {"name": "Jane Doe", "prior_affiliation": "Example University", "lab": "Frontier Lab", "join_date": "2025-06-01",

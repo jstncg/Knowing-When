@@ -61,20 +61,35 @@ def small_model(settings: dict) -> str:
     return settings.get("small_model") or SMALL_MODEL
 
 
+def _user(content: dict, shared: dict | None, cache: bool = True):
+    text = json.dumps(content, ensure_ascii=False)
+    if shared is None:
+        return text
+    facts = json.dumps(shared, ensure_ascii=False)
+    first = providers.cached(facts) if cache else {"type": "text", "text": facts}
+    return [first, {"type": "text", "text": text}]
+
+
 async def ask(
     settings: dict,
     *,
     system: str,
     content: dict,
     output: type[BaseModel],
+    shared: dict | None = None,
+    cache: bool = True,
     model: str | None = None,
     max_tokens: int = 1500,
     budget: providers.Budget | None = None,
 ) -> tuple[BaseModel, dict]:
     """Return the validated model output and the provider's usage block.
 
-    `content` is serialized as the single user turn; callers put untrusted
-    text under named keys so the system prompt can say what is data.
+    `content` is serialized as the user turn; callers put untrusted text under
+    named keys so the system prompt can say what is data. The system prompt
+    is marked for caching (providers.cached); a prompt under the model's
+    minimum is simply not cached. `shared` is data several calls repeat (one
+    person's facts, asked about more than once): it goes before `content` and
+    is marked too. cache=False marks neither.
     """
     if not settings.get("anthropic_key"):
         raise providers.ProviderError(
@@ -88,10 +103,8 @@ async def ask(
             "effort": "low",
             "format": {"type": "json_schema", "schema": output_schema(output)},
         },
-        "system": system,
-        "messages": [
-            {"role": "user", "content": json.dumps(content, ensure_ascii=False)}
-        ],
+        "system": [providers.cached(system)] if cache else system,
+        "messages": [{"role": "user", "content": _user(content, shared, cache)}],
     }
     data = await providers._post(
         _MESSAGES,

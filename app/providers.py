@@ -282,6 +282,23 @@ async def fetch_document(url: str) -> dict:
 
 
 MAX_CALLS_PER_RUN = (2, 24)  # the range Settings accepts; a Budget never exceeds the top
+# What Anthropic bills a call for. input_tokens is only what the prompt cache neither wrote nor read.
+USAGE = ("input_tokens", "cache_creation_input_tokens", "cache_read_input_tokens", "output_tokens")
+CACHE_WRITE, CACHE_READ = 1.25, 0.1  # a 5-minute cache write and a cache read, as multiples of the input price
+
+
+def cached(text: str) -> dict:
+    """A text block the prompt cache keeps for 5 minutes. A later call whose request is the same up to the end of this
+    block reads it at a tenth of the input price; the first pays a quarter more to write it. A prefix shorter than
+    the model's minimum (512 tokens on Claude Opus 5, 1,024 on Claude Sonnet 5) is not cached and costs no more."""
+    return {"type": "text", "text": text, "cache_control": {"type": "ephemeral"}}
+
+
+def usd(tokens: dict, usd_in: float, usd_out: float) -> float:
+    """What a Budget's tokens cost at these list prices, US$ per million tokens, cache writes and reads included."""
+    return (usd_in * (tokens.get("input_tokens", 0) + CACHE_WRITE * tokens.get("cache_creation_input_tokens", 0)
+                      + CACHE_READ * tokens.get("cache_read_input_tokens", 0))
+            + usd_out * tokens.get("output_tokens", 0)) / 1e6
 
 
 class Budget:
@@ -292,7 +309,7 @@ class Budget:
             raise ProviderError("max_calls_per_run must be an integer.") from None
         self.used = 0
         self.warnings: list[str] = []
-        self.tokens = {"input_tokens": 0, "output_tokens": 0}  # Anthropic's usage over this budget's calls
+        self.tokens = dict.fromkeys(USAGE, 0)  # Anthropic's usage over this budget's calls
 
     def take(self):
         if self.used >= self.limit:
@@ -1053,7 +1070,7 @@ async def research(candidate: dict, role: dict, settings: dict) -> dict:
     payload = {
         "model": settings.get("model") or DEFAULT_MODEL,
         "max_tokens": 16000,
-        "system": RESEARCH_SYSTEM,
+        "system": [cached(RESEARCH_SYSTEM)],
         "messages": [
             {
                 "role": "user",

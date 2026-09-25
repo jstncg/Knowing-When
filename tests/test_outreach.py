@@ -306,7 +306,7 @@ def test_a_call_lost_in_transit_counts_at_its_worst_an_error_status_at_nothing_a
         asyncio.run(outreach.write("Ivy Stroud", ROLE, "rapport", IVY, FACTS, settings={},
                                    store=Store(f"sqlite:///{tmp_path / 'r.sqlite'}"), budget=rejected,
                                    others=[("Mara Quill", MARA)], as_of=AS_OF, max_usd=1.00))
-    assert rejected.tokens == {"input_tokens": 0, "output_tokens": 0}  # an error status is not billed
+    assert not any(rejected.tokens.values())  # an error status is not billed
     with pytest.raises(ValueError, match="runs only with that model"):  # the cap's price is Opus 5's
         outreach.drafter({}, budget, None, model="claude-other", max_usd=1.00)
     assert outreach.drafter({}, budget, None, model="claude-other")  # uncapped: only the calls cap, as before
@@ -324,12 +324,12 @@ def test_a_drafts_worst_case_grows_with_what_it_is_given_and_a_left_out_fact_is_
 
 
 def test_a_statement_no_source_makes_holds_the_draft(tmp_path, monkeypatch):
-    made_up = SUPPORTED + [{"claim": "Ivy ported NetHack to JAX", "source": "i1", "words": "ported NetHack to JAX"},
+    made_up = SUPPORTED + [{"claim": "Ivy ported Tetris to Rust", "source": "i1", "words": "ported Tetris to Rust"},
                            {"claim": "GI built DIAMOND", "source": "", "words": ""}]
     fake_model(monkeypatch, made_up)
     got = write(Store(f"sqlite:///{tmp_path / 'o.sqlite'}"))
     assert not got["checks"]["passes"]
-    assert got["checks"]["problems"] == ["no source says: Ivy ported NetHack to JAX", "no source says: GI built DIAMOND"]
+    assert got["checks"]["problems"] == ["no source says: Ivy ported Tetris to Rust", "no source says: GI built DIAMOND"]
 
 
 def test_out_of_calls_before_the_fact_check_holds_the_draft(tmp_path, monkeypatch):
@@ -347,9 +347,9 @@ def test_dates_are_absolute_gi_keeps_to_its_public_facts_and_where_they_work_is_
     assert 'a date that is not absolute: "July"' in problems and not any("March" in p for p in problems)
     assert not any("May" in p for p in problems)  # "May we talk?" is a question, not a month
     assert {"says what GI works on beyond its public facts", "talks about their job situation"} <= set(problems)
-    for loss in ("Sorry your team was disbanded.", "Heard Helio is winding down.", "Sorry about the job loss.",
-                 "Heard Helio shut down.", "Sorry Helio closed its doors.", "Sorry about Helio's shutdown.",
-                 "Sorry about the cuts at Helio.",
+    for loss in ("Sorry your team was disbanded.", "Heard Examplesoft is winding down.", "Sorry about the job loss.",
+                 "Heard Examplesoft shut down.", "Sorry Examplesoft closed its doors.", "Sorry about Examplesoft's shutdown.",
+                 "Sorry about the cuts at Examplesoft.",
                  'You wrote "our team was disbanded on Sept 10, so I am open-sourcing the netcode".'):  # their words too
         assert outreach.LOSS_WHY in check({**SPECIFIC, "body": SPECIFIC["body"] + " " + loss})["problems"], loss
     for work in ("Removing redundant frames helped.", "The restructuring of the renderer is neat.",

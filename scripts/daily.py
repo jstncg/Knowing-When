@@ -88,7 +88,7 @@ from dotenv import dotenv_values  # noqa: E402
 
 import posts  # noqa: E402
 import social_pull  # noqa: E402
-from app import call_log, contact, extraction, journey, slack, starts, today  # noqa: E402
+from app import call_log, contact, extraction, journey, providers, slack, starts, today  # noqa: E402
 from app import scorecard as sc  # noqa: E402
 from app.models import iso, utcnow  # noqa: E402
 from app.sources import apify, github  # noqa: E402
@@ -178,7 +178,7 @@ def pulled_usd(planned, raw):
 
 
 def read_usd(tokens):
-    return (tokens["input_tokens"] * posts.USD_IN + tokens["output_tokens"] * posts.USD_OUT) / 1e6
+    return providers.usd(tokens, posts.USD_IN, posts.USD_OUT)
 
 
 def watchlist(people_file, store, now, hires=()):
@@ -416,7 +416,7 @@ def run(people_file, folder, store_url, dry_run=False, now=None, post=False):
         if jobs:
             charge(usd + read_worst)
             budget = posts.read(store, jobs, calls, posts.READ_MODEL, read_since)
-            line["read_calls"] = budget.used
+            line["read_calls"], line["read_tokens"] = budget.used, budget.tokens  # so the log shows whether the cache was read
             charge(usd + read_usd(budget.tokens))
         if post:  # the scheduled run's calls only: never a run by hand
             line["calls_logged"] = log_calls(folder / CALLS, store, readers, now, notes)

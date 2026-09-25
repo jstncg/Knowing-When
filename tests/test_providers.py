@@ -913,12 +913,14 @@ def test_research_larger_output_budget_still_rejects_truncated_proposal(monkeypa
     def handler(req):
         payload = json.loads(req.content)
         assert payload["max_tokens"] == 16000
-        assert "at most 12 evidence entries and 4 events" in payload["system"]
-        assert "Avoid redundant repetition" in payload["system"]
-        assert "at most 130 words" in payload["system"]
-        assert "one low-pressure question" in payload["system"]
-        assert "at most 200 words" in payload["system"]
-        assert "Identity verification remains a human gate" in payload["system"]
+        assert payload["system"] == [p.cached(p.RESEARCH_SYSTEM)]  # cached; today's date is in the user turn
+        system = payload["system"][0]["text"]
+        assert "at most 12 evidence entries and 4 events" in system
+        assert "Avoid redundant repetition" in system
+        assert "at most 130 words" in system
+        assert "one low-pressure question" in system
+        assert "at most 200 words" in system
+        assert "Identity verification remains a human gate" in system
         return httpx.Response(
             200,
             json={
@@ -1344,11 +1346,19 @@ def test_timing_assessment_quotes_cannot_be_joined_across_highlights():
     assert result["timing_assessment"] is None
 
 
-def test_a_budget_adds_up_the_tokens_anthropic_reports(monkeypatch):
-    fake_client(monkeypatch, lambda req: httpx.Response(200, json={"usage": {"input_tokens": 1200, "output_tokens": 80}}))
+def test_a_budget_adds_up_the_tokens_anthropic_reports_and_prices_the_cache(monkeypatch):
+    usage = {"input_tokens": 1200, "cache_creation_input_tokens": 2000, "cache_read_input_tokens": 0,
+             "output_tokens": 80, "cache_creation": {"ephemeral_5m_input_tokens": 2000}, "service_tier": "standard"}
+    fake_client(monkeypatch, lambda req: httpx.Response(200, json={"usage": usage}))
     budget = p.Budget({})
     for _ in range(2):
         asyncio.run(p._post("https://api.anthropic.com/v1/messages", "test-key", {}, "Anthropic", budget))
-    assert budget.used == 2 and budget.tokens == {"input_tokens": 2400, "output_tokens": 160}
+    counted = {"input_tokens": 2400, "cache_creation_input_tokens": 4000, "cache_read_input_tokens": 0,
+               "output_tokens": 160}
+    assert budget.used == 2 and budget.tokens == counted
     asyncio.run(p._post("https://api.exa.ai/search", "test-key", {}, "Exa", budget))
-    assert budget.tokens == {"input_tokens": 2400, "output_tokens": 160}  # only Anthropic's usage is tokens
+    assert budget.tokens == counted  # only Anthropic's usage is tokens
+    # a cache write costs a quarter more than plain input, a read a tenth of it
+    assert p.usd({"input_tokens": 1_000_000}, 2.0, 10.0) == 2.0
+    assert p.usd({"cache_creation_input_tokens": 1_000_000}, 2.0, 10.0) == 2.5
+    assert p.usd({"cache_read_input_tokens": 1_000_000, "output_tokens": 1_000_000}, 2.0, 10.0) == pytest.approx(10.2)

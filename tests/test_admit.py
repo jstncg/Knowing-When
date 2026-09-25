@@ -98,7 +98,7 @@ def test_a_github_is_theirs_only_when_every_word_of_the_shorter_name_is_in_the_o
 
 
 @pytest.mark.parametrize("blog, tied", [("none", False), ("N/A", False), ("coming soon", False), ("rin.example", True),
-                                        ("https://alex.computer", True), ("https://x.com/rin_v", False),
+                                        ("https://alex.example", True), ("https://x.com/rin_v", False),
                                         ("rin@example.com", False), ("mailto:rin@example.com", False), ("e.g.", False),
                                         ("127.0.0.1", False), ("https://rin@rin.example", False),
                                         ("gist.github.com/rinv", False), ("uk.linkedin.com/in/rin", False),

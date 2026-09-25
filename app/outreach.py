@@ -728,7 +728,7 @@ async def ground(draft, items, facts_rows, role, *, settings, store, budget, mod
 
     async def run():
         out, _ = await structured.ask(settings, system=GROUND, content=payload, output=Claims, model=model,
-                                      max_tokens=GROUND_OUT, budget=budget)
+                                      max_tokens=GROUND_OUT, budget=budget, cache=False)
         return out.model_dump()
 
     once = once or (lambda content_hash, extractor, run: timeline.extract_once(store, content_hash, extractor, run))
@@ -742,7 +742,7 @@ async def ground(draft, items, facts_rows, role, *, settings, store, budget, mod
 
 def usd(tokens):
     """What the tokens a budget counted cost at MODEL's list price."""
-    return (tokens.get("input_tokens", 0) * USD_IN + tokens.get("output_tokens", 0) * USD_OUT) / 1e6
+    return providers.usd(tokens, USD_IN, USD_OUT)
 
 
 def tokens_in(system, content):
@@ -752,8 +752,9 @@ def tokens_in(system, content):
 
 
 def worst_usd(system, content):
-    """One draft's cost at most: DRAFT_CALLS calls, each taking in tokens_in and giving out its most."""
-    return (DRAFT_CALLS * tokens_in(system, content) * USD_IN + 2 * (WRITE_OUT + GROUND_OUT) * USD_OUT) / 1e6
+    """One draft's cost at most: DRAFT_CALLS calls, each taking in tokens_in and giving out its most. Draft calls are
+    never cached (a run makes only a few, and the pre-registered --redraft cap prices them uncached)."""
+    return usd({"input_tokens": DRAFT_CALLS * tokens_in(system, content), "output_tokens": 2 * (WRITE_OUT + GROUND_OUT)})
 
 
 class OverCap(Exception):
@@ -837,7 +838,7 @@ async def write(name, role, track, items, facts_rows, *, settings, store, budget
 
         async def run():
             out, _ = await structured.ask(settings, system=system, content=payload, output=Draft, model=model,
-                                          max_tokens=WRITE_OUT, budget=budget)
+                                          max_tokens=WRITE_OUT, budget=budget, cache=False)
             return out.model_dump()
 
         draft = await once(digest([model, system, payload]), EXTRACTOR, run)

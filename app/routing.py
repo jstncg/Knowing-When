@@ -641,7 +641,7 @@ def _phrase(text):
 
 
 def _parts(text):
-    """The first two items of a list their post opens with a line on ("Built X - autograd - backprop - ..."), each
+    """The first two items of a list their post opens with a line on ("Built X - parser - renderer - ..."), each
     one to five words of theirs: the parts a draft can name. [] for anything else, such as two dashes in a sentence
     ("a renderer - took longer than planned - but it works"): a list has three items or more."""
     head, *items = LIST_ITEM.split((text or "").strip())
@@ -783,7 +783,7 @@ def template(name, role, context, events, opener=None, sender_name=None, tie=Non
         said, parts = _phrase(words), _parts(words)
         subject = _about(opener.get("source_url"))
         seen = f"saw {github[0]}" if github else _saw("your post", opener.get("source_url"))
-        # The parts their list names, in their words: "especially "scalar autograd" and "reverse-mode backprop"".
+        # The parts their list names, in their words: "especially "formula parser" and "lazy recalculation"".
         especially = f", especially \"{parts[0]}\" and \"{parts[1]}\"" if said and parts else ""
         hook = f"{seen}: {_in_quotes(said)} It really caught my eye{especially}." if said else \
             f"{seen}, and it really caught my eye."

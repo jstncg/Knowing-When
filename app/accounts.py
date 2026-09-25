@@ -150,7 +150,7 @@ class Signal(BaseModel):
     abstract: str = ""  # a paper's abstract, as OpenAlex has it, for whoever writes its gist
     gist: str = ""      # what the paper does, in plain words a person wrote from it: never the title again (gist_problem)
     about: str = ""     # what the paper is about, as a person put it for the note's opener ("saw your paper about
-                        # conditioned game agents"), in place of _called's; never the title's words (about_problem)
+                        # puzzle-solving agents"), in place of _called's; never the title's words (about_problem)
 
 
 class Contact(BaseModel):
@@ -266,7 +266,7 @@ def call(account, day, done=()):
 
 
 def short(name):
-    """An account's company name without the teams GI has in mind: "NVIDIA (Cosmos, Isaac)" is "NVIDIA", so a note
+    """An account's company name without the teams GI has in mind: "Nimbus Labs (Tern, Heron)" is "Nimbus Labs", so a note
     or a card never reads as if the person written to were on those teams."""
     return re.sub(r"\s*\([^()]*\)\s*$", "", name).strip() or name
 
@@ -625,7 +625,7 @@ HEADS = {"agent": "agent", "agents": "agent", "model": "model", "models": "model
 
 
 def _called(title, context=()):
-    """"Halcyon" for "Halcyon: Active Abstraction ...", "tide-pool agent" for "Training a Tide-Pool
+    """"Halcyon" for "Halcyon: Writing World Models ...", "tide-pool agent" for "Training a Tide-Pool
     Agent on ...", or "" when the title gives neither plainly: a name that is a label ("Position Paper"), or a
     subject of one word ("Models") or that is no kind of thing. A title's capitals read lower unless one of
     ``context`` (what the paper does, its abstract) writes the word so mid-sentence, as a name ("Minecraft")."""
@@ -652,7 +652,7 @@ def _called(title, context=()):
     def case(part, opens):
         named = any(re.search(rf"[^.!?\s]\s+{re.escape(part)}\b", text) for text in context)  # mid-sentence, their words
         return part.lower() if part[1:].islower() and (titled or opens) and not named else part
-    # "Video Game Agent" and "Open-Ended" in a title's capitals read lower; "VLM" stays, and "Minecraft" where named
+    # "Puzzle Agent" and "Open-Ended" in a title's capitals read lower; "RL" stays, and "Minecraft" where named
     return " ".join("-".join(case(p, first and i == 0 and j == 0) for j, p in enumerate(w.split("-")))
                     for i, w in enumerate(subject))
 

@@ -167,7 +167,7 @@ def test_kill_pass_checks_the_watch_events_readiness_would_promote(model, store,
                                               readiness=reach))["events"]
     assert checked["timing_action"] == "verify_first" and checked["kill_pass"]["superseded_by"]
     assert rejected == proposal()["events"][1:]  # never checked: they can never carry a ping
-    assert [c["payload"]["system"] == verify.ENTAILS_SYSTEM for c in model.calls] == [False, True]
+    assert [c["payload"]["system"][0]["text"] == verify.ENTAILS_SYSTEM for c in model.calls] == [False, True]
     # Readiness not reaching: nothing would be promoted, so nothing is searched.
     quiet = run(verify.kill_pass(proposal(), {"name": "Dana Reyes"}, settings=settings, store=store,
                                  search_fn=search, budget=verify.providers.Budget(settings),

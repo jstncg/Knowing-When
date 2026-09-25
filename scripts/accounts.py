@@ -36,7 +36,7 @@ separate from hiring and ops: its list goes to its own Slack channel.
       accounts.before-gist-<time>.json.
   uv run python scripts/accounts.py about LINK "what the paper is about"
       Where a title has no short name to open the note with ("saw your Halcyon paper"), a person's words for what the
-      paper is about: "saw your paper about conditioned game agents on arXiv" (2 to 6 words, no four in a row from
+      paper is about: "saw your paper about puzzle-solving agents on arXiv" (2 to 6 words, no four in a row from
       the title), keeping the file before in accounts.before-about-<time>.json.
   uv run python scripts/accounts.py people --describe
       Free, on the Mac: the Apify store's LinkedIn people-search actors, their prices and input fields, to price
@@ -290,7 +290,7 @@ def gist(url=None, text=None):
 
 
 def about(url, text):
-    """Sets what a paper is about, for its note's opener ("saw your paper about conditioned game agents on arXiv"),
+    """Sets what a paper is about, for its note's opener ("saw your paper about puzzle-solving agents on arXiv"),
     after checking it (``accounts.about_problem``) and copying the file aside."""
     path = LIVE / "accounts.json"
     if not path.exists():

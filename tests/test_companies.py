@@ -81,12 +81,12 @@ def test_the_watch_list_is_collaborators_accounts_and_watched_peoples_employers_
 
 
 def test_read_keeps_the_months_news_and_papers_on_gis_work_and_notes_a_failed_feed():
-    watched = [Company("Nimbus Labs", "rival"), Company("Meta (FAIR)", "rival"), Company("Birch Robotics")]
+    watched = [Company("Nimbus Labs", "rival"), Company("Meta (Example Lab)", "rival"), Company("Birch Robotics")]
     result = companies.read(fetch, watched, DAY, pages=1)
     news = [(m["company"], m["kind"], m["day"]) for m in result["moments"] if m["kind"] != "team_paper"]
     assert news == [("Nimbus Labs", "layoffs_reported", "2026-09-10"),
                     ("Nimbus Labs", "acquisition_called_off", "2026-09-12"),  # and the deal before it is left out
-                    ("Meta (FAIR)", "layoffs_reported", "2026-09-09")]  # its AI unit, not its sales staff
+                    ("Meta (Example Lab)", "layoffs_reported", "2026-09-09")]  # its AI unit, not its sales staff
     [paper] = [m for m in result["moments"] if m["kind"] == "team_paper"]
     assert (paper["company"], paper["quote"], paper["source_url"]) == \
         ("Nimbus Labs", "Latent action world models from gameplay video", "https://doi.org/10.1/1")

@@ -92,7 +92,8 @@ def daily(tmp_path, monkeypatch):
 
     def read(store, jobs, max_calls, model, since):
         module.reads.append(([s["id"] for s, _, _ in jobs], max_calls, model, since))
-        return SimpleNamespace(used=max_calls, tokens={"input_tokens": 4000 * max_calls, "output_tokens": 300 * max_calls})
+        return SimpleNamespace(used=max_calls, tokens={"input_tokens": 4000 * max_calls, "cache_creation_input_tokens": 1000 * max_calls,
+                                                              "cache_read_input_tokens": 3000 * max_calls, "output_tokens": 300 * max_calls})
     monkeypatch.setattr(module.posts, "read", read)
 
     module.posted = "Posted the morning list with 1 card in its thread.\n"  # what route.py --send says
@@ -174,11 +175,13 @@ def test_a_run_pulls_reads_routes_and_logs_one_line_with_its_cost(daily, tmp_pat
     assert (line["draft_calls"], line["draft_usd"]) == (0, 0.0)  # every free draft passed: no model draft
     # X at its 50-tweet minimum, one LinkedIn post, a start-fee allowance per run, and the reading's tokens.
     pull = 50 * 0.0004 + 1 * 0.002 + 2 * daily.RUN_FEE_USD
-    reading = (8000 * 2.0 + 600 * 10.0) / 1e6
+    reading = ((8000 + 1.25 * 2000 + 0.1 * 6000) * 2.0 + 600 * 10.0) / 1e6  # cache writes and reads priced
     assert line == lines(tmp_path)[0]
     assert line["status"] == "ok" and line["usd"] == pytest.approx(pull + reading, abs=1e-4)
     assert line["month_usd"] == line["usd"] and line["pulled"] == "2026-09-20" and line["since"] == "2026-09-17"
     assert line["new_events"] == 3 and line["read_calls"] == 2 and line["route"].startswith("1 of 2 people")
+    assert line["read_tokens"] == {"input_tokens": 8000, "cache_creation_input_tokens": 2000, "cache_read_input_tokens": 6000,
+                                   "output_tokens": 600}  # the reading's usage, cache use included
     # What Apify's own run records say each run cost goes beside the estimate, to check the prices against.
     assert sorted((c["actor"], c["events"]["result"]) for c in line["apify_reported"]) == \
         [(apify.X_SEARCH, 2), (apify.LINKEDIN_POSTS, 1)]
@@ -303,7 +306,7 @@ def test_a_failed_actor_run_counts_at_its_worst_and_the_next_run_asks_again(dail
     assert sorted((c["actor"], c["status"]) for c in line["apify_reported"]) == \
         [(apify.X_SEARCH, "FAILED"), (apify.LINKEDIN_POSTS, "SUCCEEDED")]  # a failed run may still have charged
     # X at its worst case, the LinkedIn post, two start fees, and one week read (Ada's LinkedIn post).
-    assert line["usd"] == pytest.approx(0.06 + 0.002 + 2 * daily.RUN_FEE_USD + (4000 * 2.0 + 300 * 10.0) / 1e6, abs=1e-4)
+    assert line["usd"] == pytest.approx(0.06 + 0.002 + 2 * daily.RUN_FEE_USD + ((4000 + 1.25 * 1000 + 0.1 * 3000) * 2.0 + 300 * 10.0) / 1e6, abs=1e-4)
     run(daily, tmp_path, now=datetime(2026, 9, 21, 14, 30, tzinfo=timezone.utc))
     assert [i["searchTerms"][0][-16:] for a, i, *_ in daily.fake.runs if a == apify.X_SEARCH] == \
         ["since:2026-09-19"] * 2  # the same days, asked again
@@ -315,7 +318,7 @@ def test_a_github_failure_changes_neither_the_cost_nor_where_the_next_run_starts
     monkeypatch.setattr(daily.github, "fetch", gone)
     line = run(daily, tmp_path)
     assert line["failed"] == ["ada-example"] and line["status"] == "partial" and line["pulled"] == "2026-09-20"
-    assert line["usd"] == pytest.approx(50 * 0.0004 + 0.002 + 2 * daily.RUN_FEE_USD + (8000 * 2.0 + 600 * 10.0) / 1e6,
+    assert line["usd"] == pytest.approx(50 * 0.0004 + 0.002 + 2 * daily.RUN_FEE_USD + ((8000 + 1.25 * 2000 + 0.1 * 6000) * 2.0 + 600 * 10.0) / 1e6,
                                         abs=1e-4)
 
 

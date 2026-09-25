@@ -302,11 +302,11 @@ def suggested(mode, subject_id, key):
     return f and _answer(f, SUGGESTED[key], FREE[key](f), free=True, usd=0.0, model=None)
 
 
-def content(f, question):
-    """What the model is given: the question, the call, the free answers' facts and the numbered items."""
+def given(f):
+    """What the model is given about the person, the same for every question on them: the call, the free answers'
+    facts and the numbered items. It goes before the question and is cached (structured.ask's shared)."""
     p = f["p"]
-    return {"question": question,
-            "person": {"name": p["name"], "employer": p["employer"], "role": p["role"]["title"],
+    return {"person": {"name": p["name"], "employer": p["employer"], "role": p["role"]["title"],
                        "job_description_topics": f["topics"]},
             "call": {"headline": p["headline"], "why_now": p["why_now"], "confidence": p["confidence"],
                      "what_would_prove_it_wrong": p["falsifiers"]},
@@ -317,8 +317,9 @@ def content(f, question):
 
 
 def worst_usd(payload):
-    """A question's cost at most: outreach.tokens_in's upper bound in, MAX_OUT out, at MODEL's list price."""
-    return outreach.usd({"input_tokens": outreach.tokens_in(SYSTEM, payload), "output_tokens": MAX_OUT})
+    """A question's cost at most: outreach.tokens_in's upper bound in, every token of it a cache write, and MAX_OUT
+    out, at MODEL's list price."""
+    return outreach.usd({"cache_creation_input_tokens": outreach.tokens_in(SYSTEM, payload), "output_tokens": MAX_OUT})
 
 
 def _kept(lines, known):
@@ -349,7 +350,8 @@ async def ask(mode, subject_id, question, settings):
                          "suggested questions are free and work without it.")
     if not (f := facts(mode, subject_id)):
         return None
-    payload = content(f, question)
+    shared = given(f)
+    payload = {**shared, "question": question}
     key = digest([MODEL, SYSTEM, payload])
     if key in _answers:
         return {**_answers[key], "usd": 0.0, "cached": True}
@@ -359,8 +361,8 @@ async def ask(mode, subject_id, question, settings):
     _spent["usd"] += worst
     budget, spent = providers.Budget({"max_calls_per_run": 1}), worst
     try:
-        out, _ = await structured.ask(settings, system=SYSTEM, content=payload, output=Answer, model=MODEL,
-                                      max_tokens=MAX_OUT, budget=budget)
+        out, _ = await structured.ask(settings, system=SYSTEM, shared=shared, content={"question": question},
+                                      output=Answer, model=MODEL, max_tokens=MAX_OUT, budget=budget)
         spent = outreach.usd(budget.tokens)
     except providers.ProviderRejected:
         spent = 0.0  # refused (a bad key, a rate limit): nothing billed

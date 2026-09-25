@@ -972,11 +972,11 @@ def test_a_profile_is_an_account_page_or_the_page_as_given_never_a_repository_po
 
 def test_x_is_never_the_channel_for_a_sender_without_an_x_account():
     noor = {"name": "Noor Hale"}
-    x = routing.ContactRoute(kind="x", value="@nate_example", source_url="https://x.com/nate_example")
+    x = routing.ContactRoute(kind="x", value="@rin_example", source_url="https://x.com/rin_example")
     posts = [{"event_type": "x_post", "observed_at": "2026-09-01T00:00:00+00:00"}] * 3
     none = routing.channel(noor, [x], posts, AS_OF)
     assert none.kind == "none" and none.reason.startswith("No way in for Noor: X is their only route on file")
-    site = routing.ContactRoute(kind="site", value="https://nate.example", source_url="https://nate.example")
+    site = routing.ContactRoute(kind="site", value="https://rinvale.example", source_url="https://rinvale.example")
     assert routing.channel(noor, [x, site], posts, AS_OF).kind == "site"
     # Another teammate who writes for the role and has an X account writes instead.
     team = [routing.Teammate(name="Noor Hale", signs_for=["product-designer"]),
@@ -1333,7 +1333,7 @@ def test_a_post_that_names_what_they_built_and_lists_its_parts_is_named_not_past
     # describes the thing rather than names it ("ChatGPT plugin"); a second name, which may be someone else's; a part
     # in quotes of its own; a one-word part; or no list.
     parts = " - GPU voxel traversal - Soft shadow sampling - A CLI"
-    for quote in ("A PyTorch clone in pure Python. - Tensor autograd engine - Broadcasting-aware gradients - A CLI",
+    for quote in ("A NumPy clone in pure Go. - Formula parser - Lazy recalculation - A CLI",
                   "My tiny LLM from scratch. - Byte pair tokenizer - Rotary attention layers - Top-k sampling",
                   "Our paper made it into NeurIPS!" + parts, "Excited to meet OpenAI researchers at the summit." + parts,
                   "Compiled VoxelRay into WebAssembly." + parts,
@@ -1467,7 +1467,7 @@ def test_a_day_they_named_in_their_own_post_is_theirs_to_say():
 def test_a_quote_is_closed_with_a_full_stop_only_after_a_word():
     assert routing._in_quotes("Tide Journal v2.4 is live for everyone") == '"Tide Journal v2.4 is live for everyone."'
     assert routing._in_quotes("It's out now 🎉") == '"It\'s out now 🎉"'
-    assert routing._in_quotes("Get it at https://qj.example") == '"Get it at https://qj.example"'
+    assert routing._in_quotes("Get it at https://tool.example") == '"Get it at https://tool.example"'
     assert routing._in_quotes("Is it out?") == '"Is it out?"'
 
 

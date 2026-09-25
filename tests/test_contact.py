@@ -323,17 +323,17 @@ def test_one_profile_read_is_confirmed_by_a_record_tying_it_to_their_site_and_a_
 
     linkedin = ["https://www.linkedin.com/in/rin-vale"]
     assert gate(["https://www.linkedin.com/in/rin-vale/", "https://rinvale.example/"], linkedin).state == "clear"
-    post = "https://www.linkedin.com/posts/rin-vale_world-models-activity-7477764155186393088-i9qL"
+    post = "https://www.linkedin.com/posts/rin-vale_world-models-activity-7000000000000000001-abcd"
     assert gate([post, "https://rinvale.example/work"], linkedin).state == "clear"  # their post, on their profile
-    other = "https://www.linkedin.com/posts/rin-vale-2_world-models-activity-7477764155186393088-i9qL"
+    other = "https://www.linkedin.com/posts/rin-vale-2_world-models-activity-7000000000000000001-abcd"
     assert gate([other, "https://rinvale.example/"], linkedin).state == "check_first"  # someone else's post
     # Their X post and their site tie X; GitHub needs its own tie, and a second record gives it.
     read = ["https://x.com/rin_example", "https://github.com/rinvale-example"]
-    x_only = gate(["https://x.com/Rin_Example/status/2077092137657905211", "https://rinvale.example/projects/lemma"], read)
+    x_only = gate(["https://x.com/Rin_Example/status/9002", "https://rinvale.example/projects/lemma"], read)
     assert x_only.state == "check_first" and "(https://github.com/rinvale-example untied)" in x_only.reason
     github = [entry("identity", "2026-09-02", links=["https://github.com/rinvale-example/lemma",
                                                      "https://rinvale.example/projects/lemma"])]
-    assert gate(["https://x.com/Rin_Example/status/2077092137657905211", "https://rinvale.example/projects/lemma"], read,
+    assert gate(["https://x.com/Rin_Example/status/9002", "https://rinvale.example/projects/lemma"], read,
                 later=github).state == "clear"
 
 
